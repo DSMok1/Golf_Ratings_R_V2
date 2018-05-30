@@ -25,7 +25,7 @@ Import_Tourney_Results <- function(ID)  {
   
   ### Variables ####
   
-  Event_ID = ID
+  Event_ID = 6955 # Change back to "ID" when done with testing/editing
   
   
   ### Download Page ####
@@ -33,6 +33,17 @@ Import_Tourney_Results <- function(ID)  {
   URL_Source = paste0("http://www.owgr.com/en/Events/EventResult.aspx?eventid=",Event_ID)
   
   HTML_Source <- read_html(URL_Source)
+ 
+  
+  ### Testing Block for new approach ####
+  
+  
+  Test_table  <-html_table(html_node(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent table:nth-child(1)"), 
+                           header = TRUE, trim = TRUE, fill = TRUE, dec = ".")
+  colnames(Test_table) = Test_table[1,]
+  Test_table = Test_table[-1,]
+  # Data type issues in this table
+  
   
   
   ### Import Elements ####
