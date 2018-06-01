@@ -37,15 +37,21 @@ Import_Tourney_Results <- function(ID)  {
   
   ### Testing Block for new approach ####
   
+  Test_Header <-
+    html_nodes(HTML_Source,
+               "#phmaincontent_0_ctl00_PanelCurrentEvent .header") %>%
+    html_text(., trim = TRUE) %>% revalue(., c("Ctry" = "Country",
+                                               "Agg" = "Total"))
   
-  Test_table  <-html_table(html_node(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent table:nth-child(1)"), 
-                           header = TRUE, trim = TRUE, fill = TRUE, dec = ".")
-  colnames(Test_table) = Test_table[1,]
-  Test_table = Test_table[-1,]
-  # Data type issues in this table
+  Test_table  <-
+    html_table(
+      html_node(
+        HTML_Source,
+        "#phmaincontent_0_ctl00_PanelCurrentEvent table:nth-child(1)"
+      ), header = TRUE, trim = TRUE, fill = TRUE, dec = ".") %>%
+    set_colnames(Test_Header) %>% extract(-1, )
   
-  
-  
+
   ### Import Elements ####
   
   # Event Wide Data
