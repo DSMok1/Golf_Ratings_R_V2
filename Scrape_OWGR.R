@@ -25,7 +25,7 @@ Import_Tourney_Results <- function(ID)  {
   
   ### Variables ####
   
-  Event_ID = 6955 # Change back to "ID" when done with testing/editing
+  Event_ID = 6978 # Change back to "ID" when done with testing/editing
   
   
   ### Download Page ####
@@ -49,7 +49,8 @@ Import_Tourney_Results <- function(ID)  {
         HTML_Source,
         "#phmaincontent_0_ctl00_PanelCurrentEvent table:nth-child(1)"
       ), header = TRUE, trim = TRUE, fill = TRUE, dec = ".") %>%
-    set_colnames(Test_Header) %>% extract(-1, )
+    set_colnames(Test_Header) %>% extract(-1, ) %>% 
+    type.convert(as.is = TRUE, na.strings = c("-"))
   
 
   ### Import Elements ####
@@ -73,10 +74,6 @@ Import_Tourney_Results <- function(ID)  {
       gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector() %>%
       mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 
-      ),
-      warn_missing = FALSE
-    )
-    
     Event_Tour_1 = Event_Tour[1]
     Event_Tour_2 = Event_Tour[2]
     Event_Tour_3 = Event_Tour[3]
