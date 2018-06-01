@@ -66,35 +66,13 @@ Import_Tourney_Results <- function(ID)  {
     Status_Scrape <-
       "No Player Information for this tournament available"
     
+    Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
+    
     Event_Tour <-
       html_nodes(HTML_Source, ".event_logo") %>% html_attr("src") %>%
-      gsub("^.*/","",.) %>% gsub("\\.a.*$","",.)
-    
-    Event_Tour <- revalue(
-      Event_Tour, c(
-        "WGC" = "WGC",
-        "JapanGolfTour" = "Japan Golf Tour",
-        "Major Combo 2" = "Major Championship",
-        "asian_tour1" = "Asian Tour",
-        "PGA" = "PGA Tour",
-        "sunshine_tour" = "Sunshine Tour",
-        "Korean Golf Tour 2" = "Korean Golf Tour",
-        "oneAsia" = "OneAsia Tour",
-        "PGATOUR_Australasia" = "PGA Tour Australasia",
-        "AUS Logo2" = "PGA Tour Australasia",
-        "european_tour" = "European Tour",
-        "european_challenge" = "European Challenge Tour",
-        "webcom" = "Web.com Tour",
-        "pga_latinoamerica" = "PGA Tour Latinoamerica",
-        "asian_development" = "Asian Development Tour",
-        "PGA Tour China Logo" = "PGA Tour China",
-        "PGA Tour Canada2" = "PGA Tour Canada",
-        "CAN3" = "PGA Tour Canada",
-        "EPT Logo" = "EuroPro Tour" ,
-        "NGL Logo" = "Nordic Golf League",
-        "PGT Logo" = "ProGolf Tour",
-        "Alps Golf Tour" = "Alps Golf Tour",
-        "MGT Logo 2" = "MENA Tour"
+      gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector() %>%
+      mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+
       ),
       warn_missing = FALSE
     )
