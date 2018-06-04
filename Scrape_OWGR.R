@@ -139,16 +139,19 @@ Import_Tourney_Results <- function(ID)  {
         
       } else {
         
-        Rounds_Vector <- colnames(Player_Data_Raw)[nchar(colnames(Player_Data_Raw))< 3]
+        # Only include the column names of length 2 (i.e. R1, R2)
+        Rounds_Vector <-
+          colnames(Player_Data_Raw)[nchar(colnames(Player_Data_Raw)) == 2]
         
         # Reshame data into tall form, with one row per round
         Player_Data <-
           reshape(
-            Player_Data_Raw, varying = c("Round_1","Round_2","Round_3","Round_4"), timevar = "Round_Num",
-            sep = "_", direction = "long"
+            Player_Data_Raw, varying = Rounds_Vector, timevar = "Round_Num",
+            sep = "", direction = "long"
           )
-        names(Player_Data)[names(Player_Data) == "Round"] <- "Score"
+        names(Player_Data)[names(Player_Data) == "R"] <- "Score"
         Player_Data <- subset(Player_Data,select = -c(id))
+        
       }
       
       #Merge in Tournament Information
@@ -205,7 +208,7 @@ Import_Tourney_Results <- function(ID)  {
   
   # Add in the replacement of the Event_Tour
 
-  Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
+  # Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
   # mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
   
   
@@ -371,6 +374,9 @@ write.csv(
     "Data/Upcoming_Fields_RVest.csv"
   ), row.names = FALSE
 )
+
+
+
 
 
 
