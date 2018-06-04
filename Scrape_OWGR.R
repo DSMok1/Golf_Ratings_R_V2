@@ -64,15 +64,15 @@ Import_Tourney_Results <- function(ID)  {
   Player_Data <- NA
   
   if (Event_Name != "") {
+    
+    # Set the default Status
     Status_Scrape <-
       "No Player Information for this tournament available"
-    
-    Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
-    
+
     Event_Tour <-
       html_nodes(HTML_Source, ".event_logo") %>% html_attr("src") %>%
-      gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector() %>%
-      mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+      gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector()  #  %>% Save this for later?
+      # mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 
     Event_Tour_1 = Event_Tour[1]
     Event_Tour_2 = Event_Tour[2]
@@ -199,6 +199,11 @@ Import_Tourney_Results <- function(ID)  {
   Status$Scrape_Date <- Sys.Date()
   Event_Data$Scrape_Date <- Sys.Date()
   Player_Data$Scrape_Date <- Sys.Date()
+  
+  # Add in the replacement of the Event_Tour
+
+  Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
+  
   
   
   #Here's what to return
