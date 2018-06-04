@@ -87,19 +87,18 @@ Import_Tourney_Results <- function(ID)  {
     
     # Is this a completed event, coming soon, or far in the future?
     First_Col <-
-      html_nodes(HTML_Source, "#event_result_table th") %>% html_text()
+      html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent .header:nth-child(1)") %>% 
+      html_text(., trim = TRUE)
     
     if (length(First_Col) == 0) {
       First_Col <- 0
-    } else {
-      First_Col <-
-        First_Col %>% extract2(1) %>% gsub("[\r\n]", "",.) %>% str_trim()
-    }
+    } 
     
     
     if (First_Col == "Pos") {
       # Player Results if the tournament is completed
       Status_Scrape <- "Tournament Results Collected"
+      
       
       Pos <-
         html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(1)") %>% html_text()
