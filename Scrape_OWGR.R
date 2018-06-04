@@ -33,24 +33,10 @@ Import_Tourney_Results <- function(ID)  {
   URL_Source = paste0("http://www.owgr.com/en/Events/EventResult.aspx?eventid=",Event_ID)
   
   HTML_Source <- read_html(URL_Source)
+  # Refer to RVest docs and SelectorGadget for how to access html nodes
  
   
   ### Testing Block for new approach ####
-  
-  Test_Header <-
-    html_nodes(HTML_Source,
-               "#phmaincontent_0_ctl00_PanelCurrentEvent .header") %>%
-    html_text(., trim = TRUE) %>% revalue(., c("Ctry" = "Country",
-                                               "Agg" = "Total"))
-  
-  Test_table  <-
-    html_table(
-      html_node(
-        HTML_Source,
-        "#phmaincontent_0_ctl00_PanelCurrentEvent table:nth-child(1)"
-      ), header = TRUE, trim = TRUE, fill = TRUE, dec = ".") %>%
-    set_colnames(Test_Header) %>% extract(-1, ) %>% 
-    type.convert(as.is = TRUE, na.strings = c("-"))
   
 
   ### Import Elements ####
@@ -77,8 +63,7 @@ Import_Tourney_Results <- function(ID)  {
     # This brings in a vector of event tours from the multiple logos that cycle
     Event_Tour <-
       html_nodes(HTML_Source, ".event_logo") %>% html_attr("src") %>%
-      gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector()  #  %>% Save this for later?
-      # mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+      gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector()  
 
     Event_Tour_1 = Event_Tour[1]
     Event_Tour_2 = Event_Tour[2]
@@ -111,38 +96,41 @@ Import_Tourney_Results <- function(ID)  {
       # Player Results if the tournament is completed
       Status_Scrape <- "Tournament Results Collected"
       
+      # Get the primary table's header
+      Raw_Table_Header <-
+        html_nodes(HTML_Source,
+                   "#phmaincontent_0_ctl00_PanelCurrentEvent .header") %>%
+        html_text(., trim = TRUE) %>% revalue(., c("Ctry" = "Country",
+                                                   "Agg" = "Total",
+                                                   "Name" = "Player_Name",
+                                                   "Ranking Points" = "WGR_Pts"))
       
-      Pos <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(1)") %>% html_text()
-      Pos_Num <- as.integer(gsub("\\D","",Pos))
-      Country <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent .flag") %>% html_attr("alt")
-      Player_Name <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent a") %>% html_text()
-      Player_ID <-
+      # Parse the primary data table
+      Player_Data_Raw  <-
+        html_table(
+          html_node(
+            HTML_Source,
+            "#phmaincontent_0_ctl00_PanelCurrentEvent table:nth-child(1)"
+          ), header = TRUE, trim = TRUE, fill = TRUE, dec = ".") 
+      
+      # Remove header data from first row, if it's there
+      if (Player_Data_Raw[1,1]=="Pos") {
+        Player_Data_Raw  %<>% set_colnames(Raw_Table_Header) %>% extract(-1, )
+      }
+      
+      # Clean up data types
+      Player_Data_Raw  %<>% type.convert(as.is = TRUE, na.strings = c("-"))
+
+      # Add in the integer form of the position
+      Player_Data_Raw %<>% mutate(Pos_Num = as.integer(gsub("\\D","",Pos)))
+      
+      # Scrape the two items that are hidden in HTML attributes
+      Player_Data_Raw$Country <- html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent .flag") %>% html_attr("alt")
+      Player_Data_Raw$Player_ID <-
         html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent a") %>% html_attr("href") %>% gsub("^.*=","",.) %>% as.integer()
-      Round_1 <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(4)") %>% html_text() %>% as.integer()
-      Round_2 <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(5)") %>% html_text() %>% as.integer()
-      Round_3 <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(6)") %>% html_text() %>% as.integer()
-      Round_4 <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(7)") %>% html_text() %>% as.integer()
-      Total <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(8)") %>% html_text() %>% as.integer()
-      WGR_Pts <-
-        html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent td:nth-child(9)") %>% html_text() %>% as.integer()
-      
-      # Combine into data frame
-      Player_Data_Raw <-
-        cbind.data.frame(
-          Player_Name,Player_ID,Country,Pos,Pos_Num,Round_1,Round_2,Round_3,Round_4,Total,WGR_Pts
-        )
-      remove(
-        Player_Name,Player_ID,Country,Pos,Pos_Num,Round_1,Round_2,Round_3,Round_4,Total,WGR_Pts
-      )
-      
+
+         
+      # if there are no scores here:
       if (max(Player_Data_Raw$Total) == 0) {
         Status_Scrape <- "No Tournament Scores Available"
         
@@ -150,6 +138,9 @@ Import_Tourney_Results <- function(ID)  {
           Player_Data_Raw[,c("Player_Name","Player_ID","Country","Pos","Pos_Num","WGR_Pts")]
         
       } else {
+        
+        Rounds_Vector <- colnames(Player_Data_Raw)[nchar(colnames(Player_Data_Raw))< 3]
+        
         # Reshame data into tall form, with one row per round
         Player_Data <-
           reshape(
@@ -215,7 +206,7 @@ Import_Tourney_Results <- function(ID)  {
   # Add in the replacement of the Event_Tour
 
   Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
-  
+  # mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
   
   
   #Here's what to return
