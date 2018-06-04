@@ -25,7 +25,7 @@ Import_Tourney_Results <- function(ID)  {
   
   ### Variables ####
   
-  Event_ID = 6978 # Change back to "ID" when done with testing/editing
+  Event_ID = 6978 # Change back to "ID" when done with testing/editing 
   
   
   ### Download Page ####
@@ -55,20 +55,26 @@ Import_Tourney_Results <- function(ID)  {
 
   ### Import Elements ####
   
+  # Initialized status of scraping (overwrite if a webpage is found)
+  Status_Scrape <- "Tournament ID Not Valid"
+  
   # Event Wide Data
   Event_Name <-
     html_node(HTML_Source, "#event_result_table h2") %>% html_text()
-  Status_Scrape <- "Tournament ID Not Valid"
   
+  # Initialize Event & Player Data
   Event_Data <- NA
   Player_Data <- NA
   
+  ## This if() wraps the entire import of data from the webpage--
+  ## there needs to be a tournament name before attempting import
   if (Event_Name != "") {
     
     # Set the default Status
     Status_Scrape <-
       "No Player Information for this tournament available"
 
+    # This brings in a vector of event tours from the multiple logos that cycle
     Event_Tour <-
       html_nodes(HTML_Source, ".event_logo") %>% html_attr("src") %>%
       gsub("^.*/","",.) %>% gsub("\\.a.*$","",.) %>% as.vector()  #  %>% Save this for later?
@@ -77,24 +83,30 @@ Import_Tourney_Results <- function(ID)  {
     Event_Tour_1 = Event_Tour[1]
     Event_Tour_2 = Event_Tour[2]
     Event_Tour_3 = Event_Tour[3]
+    
     Event_Date <-
       html_node(HTML_Source, "#event_result_table time") %>% html_text() %>% dmy() %>% as.Date()
     
+    # Compile the event-wide data into a simple data frame
     Event_Data <-
       cbind.data.frame(
         Event_Name,Event_ID,Event_Date,Event_Tour_1,Event_Tour_2,Event_Tour_3,stringsAsFactors = FALSE
       )
     
+    # Next consider the actual primary data table
     # Is this a completed event, coming soon, or far in the future?
+    # Look at the header of the first column in the table... assuming it exists
     First_Col <-
       html_nodes(HTML_Source, "#phmaincontent_0_ctl00_PanelCurrentEvent .header:nth-child(1)") %>% 
       html_text(., trim = TRUE)
     
+    # Put a zero in "First_Col" if there's nothing there
     if (length(First_Col) == 0) {
       First_Col <- 0
     } 
     
     
+    ## This if wraps all of the importing of tournament results
     if (First_Col == "Pos") {
       # Player Results if the tournament is completed
       Status_Scrape <- "Tournament Results Collected"
@@ -162,6 +174,7 @@ Import_Tourney_Results <- function(ID)  {
       
     }
     
+    ## This if wraps the importing of upcoming tournament fields
     if (First_Col == "World Ranking") {
       # Players in the tournament if the tournament is coming soon
       Status_Scrape <- "Upcoming Tournament Field Collected"
