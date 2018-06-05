@@ -25,7 +25,7 @@ Import_Tourney_Results <- function(ID)  {
   
   ### Variables ####
   
-  Event_ID = 6978 # Change back to "ID" when done with testing/editing 
+  Event_ID = ID # Change back to "ID" when done with testing/editing 
   
   
   ### Download Page ####
