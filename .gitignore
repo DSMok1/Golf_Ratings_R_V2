@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Large Files
+
+Player_Results_Rvest.csv
