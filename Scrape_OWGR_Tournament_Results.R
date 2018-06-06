@@ -39,7 +39,6 @@ Import_Tourney_Results <- function(ID)  {
  
   
   ### Testing Block for new approach ####
-  
 
   ### Import Elements ####
   
@@ -226,14 +225,20 @@ Import_Tourney_Results <- function(ID)  {
 # str(Result)
 
 
+
 ### Read in Previous Data, if it exists ####
 
 # Previous Player Results Scrape Output:
 
 Player_Result_Folder <- "Data/Player_Results/"
-Player_Result_File_List <- dir(Player_Result_Folder, pattern="*.csv")
+Player_Result_File_List <- dir(Player_Result_Folder, pattern="Player_Results_.*\\.csv")
 Player_Results_Raw <- Player_Result_File_List %>%
   map_dfr(~ read.csv(file.path(Player_Result_Folder,.),stringsAsFactors = FALSE))
+
+Player_Results <- Player_Results_Raw[!is.na(Player_Results_Raw$Event_Date),]
+Player_Results$Year <- NULL
+Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
+Player_Results$Scrape_Date <- as.Date(Player_Results$Scrape_Date)
 
 
 Tournament_Info_Raw <- read.csv("Data/Tournament_Info_RVest.csv", stringsAsFactors = FALSE)
@@ -241,16 +246,13 @@ Scrape_Status_Raw <- read.csv("Data/Scrape_Status_RVest.csv", stringsAsFactors =
 # Upcoming_Fields <- read.csv("Data/Upcoming_Fields_RVest.csv")
 
 
-Player_Results <- Player_Results_Raw[!is.na(Player_Results_Raw$Event_Date),]
-Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
-Player_Results$Scrape_Date <- as.Date(Player_Results$Scrape_Date)
-
 Tournament_Info <- Tournament_Info_Raw[!is.na(Tournament_Info_Raw$Event_Date),]
 Tournament_Info$Event_Date <- as.Date(Tournament_Info$Event_Date)
 Tournament_Info$Scrape_Date <- as.Date(Tournament_Info$Scrape_Date)
 
 Scrape_Status <- Scrape_Status_Raw[,c("Event_ID","Status_Scrape","Scrape_Date")]
 Scrape_Status$Scrape_Date <- as.Date(Scrape_Status$Scrape_Date)
+
 
 ### IDs to Scrape ####
 
@@ -351,6 +353,7 @@ for (ID in Begin_ID:End_ID) {
 # times <- microbenchmark()
 
 
+
 ### Filter out unnecessary player result data ####
 Player_Results <- Player_Results %>% 
   filter(Score > 55 & Score < 125 & Pos != "WD" & Pos != "DQ" )
@@ -359,11 +362,27 @@ Scrape_Status <- merge(Scrape_Status,Tournament_Info[,c("Event_ID","Event_Name",
 
 ###  Output CSVs ####
 
-write.csv(
-  Player_Results,file = (
-    "Data/Player_Results_RVest.csv"
-  ), row.names = FALSE
-)
+# Player_Results are a large file (too large to store on Github), 
+# so they must be split.  Split by year.
+
+split_Player_Results <- Player_Results %>% 
+  mutate( Year = as.factor(year(Event_Date))) %>%
+  split(.,.$Year)
+
+for (Year in names(split_Player_Results)) {
+  write.csv(split_Player_Results[[Year]],
+            paste0("Data/Player_Results/Player_Results_",Year, ".csv"),
+            row.names = FALSE)
+  
+  #Progress Indicator:
+  cat("Outputting player results for year",Year,"to CSV\n")
+}
+
+remove(split_Player_Results)
+
+
+
+# Write out the remaining 3 files
 
 write.csv(
   Tournament_Info,file = (
