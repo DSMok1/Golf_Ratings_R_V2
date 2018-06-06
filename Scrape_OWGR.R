@@ -11,6 +11,7 @@ library(magrittr)
 library(lubridate)
 library(stringr)
 library(dplyr)
+library(purrr)
 
 ### Make this a Function ####
 
@@ -22,6 +23,7 @@ Import_Tourney_Results <- function(ID)  {
   library(lubridate)
   library(stringr)
   library(dplyr)
+  library(purrr)
   
   ### Variables ####
   
@@ -224,12 +226,16 @@ Import_Tourney_Results <- function(ID)  {
 # str(Result)
 
 
-### IDs to Scrape ####
+### Read in Previous Data, if it exists ####
+
+# Previous Player Results Scrape Output:
+
+Player_Result_Folder <- "Data/Player_Results/"
+Player_Result_File_List <- dir(Player_Result_Folder, pattern="*.csv")
+Player_Results_Raw <- Player_Result_File_List %>%
+  map_dfr(~ read.csv(file.path(Player_Result_Folder,.),stringsAsFactors = FALSE))
 
 
-# Previous Scrape Output:
-Player_Results_Raw <- 
-  read.csv("Data/Player_Results_RVest.csv", stringsAsFactors = FALSE)
 Tournament_Info_Raw <- read.csv("Data/Tournament_Info_RVest.csv", stringsAsFactors = FALSE)
 Scrape_Status_Raw <- read.csv("Data/Scrape_Status_RVest.csv", stringsAsFactors = FALSE)
 # Upcoming_Fields <- read.csv("Data/Upcoming_Fields_RVest.csv")
@@ -246,7 +252,7 @@ Tournament_Info$Scrape_Date <- as.Date(Tournament_Info$Scrape_Date)
 Scrape_Status <- Scrape_Status_Raw[,c("Event_ID","Status_Scrape","Scrape_Date")]
 Scrape_Status$Scrape_Date <- as.Date(Scrape_Status$Scrape_Date)
 
-
+### IDs to Scrape ####
 
 # Rescrape last 2 weeks of data:
 
