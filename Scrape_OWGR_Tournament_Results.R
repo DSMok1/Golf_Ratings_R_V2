@@ -207,12 +207,6 @@ Import_Tourney_Results <- function(ID)  {
   Event_Data$Scrape_Date <- Sys.Date()
   Player_Data$Scrape_Date <- Sys.Date()
   
-  # Add in the replacement of the Event_Tour
-
-  # Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
-  # mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
-  
-  
   #Here's what to return
   Output <- list(Status_Scrape,Status,Event_Data,Player_Data)
   
@@ -354,11 +348,20 @@ for (ID in Begin_ID:End_ID) {
 
 
 
-### Filter out unnecessary player result data ####
+### Clean up unnecessary player result data ####
+
 Player_Results <- Player_Results %>% 
   filter(Score > 55 & Score < 125 & Pos != "WD" & Pos != "DQ" )
 
 Scrape_Status <- merge(Scrape_Status,Tournament_Info[,c("Event_ID","Event_Name","Event_Date")],all.x = TRUE)
+
+# Add in the replacement of the Event_Tour designations
+
+Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
+
+Player_Results$Event_Tour_1 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+Player_Results$Event_Tour_2 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+Player_Results$Event_Tour_3 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 
 ###  Output CSVs ####
 
@@ -399,8 +402,6 @@ write.csv(
     "Data/Upcoming_Fields_RVest.csv"
   ), row.names = FALSE
 )
-
-
 
 
 
