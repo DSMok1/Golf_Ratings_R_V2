@@ -16,11 +16,6 @@ library(stringr)
 library(dplyr)
 
 
-
-
-
-
-
 ###  Section to attempt to do sparse matrix regression ###
 
 # Just use the smallest data set for this
@@ -30,17 +25,61 @@ Results_Source$Round_ID <-
 Results_Source$Player_ID %<>% as.factor()
 str(Results_Source)
 
-# filter out players with less than 10 rounds
+# filter out players with less than 15 rounds
 Results_Source %<>% 
-  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>10)) %>% 
+  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>15)) %>% 
   droplevels()
 
 str(Results_Source)
 
+Results_Sparse_Reg <- Results_Source[,c("Score","Round_ID","Player_ID")]
+str(Results_Sparse_Reg)
+
+library(SparseM)
+library(glmnet)
 
 
 
+data.frame.2.sparseMatrix <- function(df) {
+  dtypes = lapply(df, class)
+  nrows = dim(df)[1]
+  ncols = dim(df)[2]
+  
+  for (col_idx in 1:ncols) {
+    # convert target column into sparseMatrix with colname(s)
+    colname = colnames(df)[col_idx]
+    if(dtypes[col_idx] == 'factor'){
+      col_in_sprMtx = sparse.model.matrix(as.formula(paste("~-1+", colname)), df)
+    }
+    else{
+      col_in_sprMtx = sparseMatrix(i=1:nrows, j=rep(1, nrows), x=df[, col_idx], dims = c(nrows, 1))
+      colnames(col_in_sprMtx) = c(colname)
+    }
+    col_in_sprMtx = drop0(col_in_sprMtx)
+    
+    # Add column in sparseMatrix form to the result sparseMatrix
+    if(col_idx == 1){
+      result = col_in_sprMtx
+    }
+    else{
+      result = cbind(result, col_in_sprMtx)
+    }
+  }                             
+  return(result)
+}
 
+
+Results_Sparse <- data.frame.2.sparseMatrix(Results_Sparse_Reg)
+
+str(Results_Sparse)
+
+
+# This isn't working
+fit <- glmnet(Results_Sparse,Results_Sparse[,1],lambda = 0)
+# cv <- cv.glmnet(Results_Sparse,Results_Sparse[,1],nfolds=3)
+# pred <- predict(fit, Results_Sparse,type="response", s=cv$lambda.min)
+
+coef(fit)
 
 
 # ### Primary Variables to Adjust ####
