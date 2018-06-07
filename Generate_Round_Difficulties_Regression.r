@@ -32,11 +32,13 @@ Results_Source %<>%
 
 str(Results_Source)
 
-Results_Sparse_Reg <- Results_Source[,c("Score","Round_ID","Player_ID")]
+Variables_Sparse_Reg <- Results_Source[,c("Round_ID","Player_ID")]
+Response_Vector <- Results_Source[,c("Score")]
 str(Results_Sparse_Reg)
 
-library(SparseM)
 library(glmnet)
+library(broom)
+library(ggplot2)
 
 
 
@@ -69,17 +71,39 @@ data.frame.2.sparseMatrix <- function(df) {
 }
 
 
-Results_Sparse <- data.frame.2.sparseMatrix(Results_Sparse_Reg)
+Matrix_Sparse_Reg <- data.frame.2.sparseMatrix(Variables_Sparse_Reg)
+str(Matrix_Sparse_Reg)
 
-str(Results_Sparse)
+
+# Elastic Net
+# Elastic Net only keeps those variables that are clearly non-zero.
+fit_elastic <- glmnet(Matrix_Sparse_Reg,Response_Vector)
+cv_elastic <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10)
+pred_elastic <- predict(fit_elastic, Matrix_Sparse_Reg,type="response", s=cv_elastic$lambda.min)
+plot(fit_elastic)
+print(fit_elastic)
+plot(cv_elastic)
+coef(cv_elastic, s = "lambda.min")
+print(cv_elastic$lambda.min)
+
+# Ridge Regression
+# Ridge regression keeps all variables, but cross validates a shrinkage
+# parameter which pushes all variables towards 0
+
+lambda_grid=10^seq(4,-8,length=100)
+fit_ridge <- glmnet(Matrix_Sparse_Reg,Response_Vector, alpha = 0, lambda=lambda_grid)
+cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=50, alpha = 0, lambda=lambda_grid)
+pred_ridge <- predict(fit_ridge, Matrix_Sparse_Reg,type="response", s=cv_ridge$lambda.min)
+Ridge_Results <- tidy(coef(cv_ridge, s = "lambda.min"))
+plot(cv_ridge)
+print(cv_ridge$lambda.min)
+
+# The minimum lambda is basically standard linear regression:
+LM_Results <- tidy(coef(cv_ridge, s = min(lambda_grid)))
+
+qplot(Ridge_Results$value[-1],LM_Results$value[-1])
 
 
-# This isn't working
-fit <- glmnet(Results_Sparse,Results_Sparse[,1],lambda = 0)
-# cv <- cv.glmnet(Results_Sparse,Results_Sparse[,1],nfolds=3)
-# pred <- predict(fit, Results_Sparse,type="response", s=cv$lambda.min)
-
-coef(fit)
 
 
 # ### Primary Variables to Adjust ####
