@@ -14,20 +14,31 @@ library(magrittr)
 library(lubridate)
 library(stringr)
 library(dplyr)
+library(purrr)
 
 
 ###  Section to attempt to do sparse matrix regression ###
 
-# Try with a full year of data
-Results_Source <- read.csv(("Data/Player_Results/Player_Results_2017.csv"))
+Player_Result_Folder <- "Data/Player_Results/"
+Player_Result_File_List <- dir(Player_Result_Folder, pattern="Player_Results_.*\\.csv")
+Player_Results_Raw <- Player_Result_File_List %>%
+  map_dfr(~ read.csv(file.path(Player_Result_Folder,.),stringsAsFactors = FALSE))
+
+Player_Results <- Player_Results_Raw[!is.na(Player_Results_Raw$Event_Date),]
+Player_Results$Year <- NULL
+Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
+
+
+# Try with all data since 2014
+Results_Source <- Player_Results %>% filter(Event_Date>"2014-01-01")
 Results_Source$Round_ID <-
   paste(Results_Source$Event_ID,Results_Source$Round_Num,sep = "_") %>% as.factor()
 Results_Source$Player_ID %<>% as.factor()
 str(Results_Source)
 
-# filter out players with less than 15 rounds
+# filter out players with less than 40 rounds
 Results_Source %<>% 
-  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>25)) %>% 
+  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>40)) %>% 
   droplevels()
 
 str(Results_Source)
@@ -77,13 +88,14 @@ str(Matrix_Sparse_Reg)
 
 # Elastic Net
 # Elastic Net only keeps those variables that are clearly non-zero.
-fit_elastic <- glmnet(Matrix_Sparse_Reg,Response_Vector)
-cv_elastic <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10)
-pred_elastic <- predict(fit_elastic, Matrix_Sparse_Reg,type="response", s=cv_elastic$lambda.min)
-plot(fit_elastic)
-plot(cv_elastic)
-head(coef(cv_elastic, s = "lambda.min"))
-print(cv_elastic$lambda.min)
+
+# fit_elastic <- glmnet(Matrix_Sparse_Reg,Response_Vector)
+# cv_elastic <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10)
+# pred_elastic <- predict(fit_elastic, Matrix_Sparse_Reg,type="response", s=cv_elastic$lambda.min)
+# plot(fit_elastic)
+# plot(cv_elastic)
+# head(coef(cv_elastic, s = "lambda.min"))
+# print(cv_elastic$lambda.min)
 
 # Ridge Regression
 # Ridge regression keeps all variables, but cross validates a shrinkage
