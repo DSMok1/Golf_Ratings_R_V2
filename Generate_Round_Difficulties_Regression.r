@@ -18,8 +18,8 @@ library(dplyr)
 
 ###  Section to attempt to do sparse matrix regression ###
 
-# Just use the smallest data set for this
-Results_Source <- read.csv(("Data/Player_Results/Player_Results_2006.csv"))
+# Try with a full year of data
+Results_Source <- read.csv(("Data/Player_Results/Player_Results_2017.csv"))
 Results_Source$Round_ID <-
   paste(Results_Source$Event_ID,Results_Source$Round_Num,sep = "_") %>% as.factor()
 Results_Source$Player_ID %<>% as.factor()
@@ -27,7 +27,7 @@ str(Results_Source)
 
 # filter out players with less than 15 rounds
 Results_Source %<>% 
-  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>15)) %>% 
+  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>25)) %>% 
   droplevels()
 
 str(Results_Source)
@@ -81,18 +81,17 @@ fit_elastic <- glmnet(Matrix_Sparse_Reg,Response_Vector)
 cv_elastic <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10)
 pred_elastic <- predict(fit_elastic, Matrix_Sparse_Reg,type="response", s=cv_elastic$lambda.min)
 plot(fit_elastic)
-print(fit_elastic)
 plot(cv_elastic)
-coef(cv_elastic, s = "lambda.min")
+head(coef(cv_elastic, s = "lambda.min"))
 print(cv_elastic$lambda.min)
 
 # Ridge Regression
 # Ridge regression keeps all variables, but cross validates a shrinkage
 # parameter which pushes all variables towards 0
 
-lambda_grid=10^seq(4,-8,length=100)
+lambda_grid=10^seq(4,-10,length=100)
 fit_ridge <- glmnet(Matrix_Sparse_Reg,Response_Vector, alpha = 0, lambda=lambda_grid)
-cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=50, alpha = 0, lambda=lambda_grid)
+cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10, alpha = 0, lambda=lambda_grid)
 pred_ridge <- predict(fit_ridge, Matrix_Sparse_Reg,type="response", s=cv_ridge$lambda.min)
 Ridge_Results <- tidy(coef(cv_ridge, s = "lambda.min"))
 plot(cv_ridge)
@@ -103,6 +102,15 @@ LM_Results <- tidy(coef(cv_ridge, s = min(lambda_grid)))
 
 qplot(Ridge_Results$value[-1],LM_Results$value[-1])
 
+max(Ridge_Results$value)
+max(LM_Results$value)
+min(Ridge_Results$value)
+min(LM_Results$value)
+
+# Split Results Out
+LM_Intercept <- LM_Results$value[1]
+LM_Rounds <- LM_Results[grep("Round",LM_Results$row),]
+LM_Players <- LM_Results[grep("Player",LM_Results$row),]
 
 
 
