@@ -61,20 +61,40 @@ Player_Results <- Player_Results_Raw[!is.na(Player_Results_Raw$Event_Date),]
 Player_Results$Year <- NULL
 Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
 
+# Add Round_ID variable
+Player_Results$Round_ID <-
+  paste(Player_Results$Event_ID,Player_Results$Round_Num,sep = "_") %>% as.factor()
+Player_Results$Player_ID %<>% as.factor()
+str(Player_Results)
 
-# Try with all data since 2014
-Results_Source <- Player_Results %>% filter(Event_Date>"2014-01-01")
-Results_Source$Round_ID <-
-  paste(Results_Source$Event_ID,Results_Source$Round_Num,sep = "_") %>% as.factor()
-Results_Source$Player_ID %<>% as.factor()
-str(Results_Source)
 
-# filter out players with less than 40 rounds
-Results_Source %<>% 
-  semi_join(Results_Source %>% count(Player_ID) %>% filter (n>40)) %>% 
-  droplevels()
+### Function to select data to use in Regression ###
 
-str(Results_Source)
+Filter_Player_Results<- function(Raw_Data=Player_Results,
+                                 Begin_Date="1990-01-01",
+                                 End_Date="2050-01-01",
+                                 Player_Min_Rounds=0,
+                                 Tourn_Min_Players=0){
+  
+  Filtered_Results <- Raw_Data %>% filter(Event_Date>Begin_Date) %>%
+    filter(Event_Date<End_Date)
+  
+  Filtered_Results %<>%
+    semi_join(Filtered_Results %>% count(Player_ID) %>% filter (n>Player_Min_Rounds)) %>% 
+    semi_join(Filtered_Results %>% count(Round_ID) %>% filter (n>Tourn_Min_Players)) %>% 
+    semi_join(Filtered_Results %>% count(Player_ID) %>% filter (n>Player_Min_Rounds)) %>% 
+    semi_join(Filtered_Results %>% count(Round_ID) %>% filter (n>Tourn_Min_Players)) %>%
+    droplevels()
+  
+  str(Filtered_Results)
+
+  return(Filtered_Results)
+}
+
+### Select data to use in regression ###
+
+Results_Source <- Filter_Player_Results(Player_Results,"2014-01-01","2016-01-01",40,15)
+
 
 Variables_Sparse_Reg <- Results_Source[,c("Round_ID","Player_ID")]
 Response_Vector <- Results_Source[,c("Score")]
