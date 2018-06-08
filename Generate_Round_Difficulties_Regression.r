@@ -91,57 +91,103 @@ Filter_Player_Results<- function(Raw_Data=Player_Results,
   return(Filtered_Results)
 }
 
+### Ridge Regression and Linear Regression as a function ###
+
+LM_Regression_Ratings <- function(Source_Data, Weight_Weekly_Exponent = 1, RegType = "Linear") {
+  
+  #Pull out the data that will be needed for the regression
+  Variables_Sparse_Reg <- Source_Data[,c("Round_ID","Player_ID")]
+  Response_Vector <- Source_Data[,c("Score")]
+  str(Variables_Sparse_Reg)
+  
+  #Convert to sparse matrix
+  Matrix_Sparse_Reg <- data.frame.2.sparseMatrix(Variables_Sparse_Reg)
+  str(Matrix_Sparse_Reg)
+  
+  
+  # Elastic Net
+  # Elastic Net only keeps those variables that are clearly non-zero.
+  
+  # fit_elastic <- glmnet(Matrix_Sparse_Reg,Response_Vector)
+  # cv_elastic <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10)
+  # pred_elastic <- predict(fit_elastic, Matrix_Sparse_Reg,type="response", s=cv_elastic$lambda.min)
+  # plot(fit_elastic)
+  # plot(cv_elastic)
+  # head(coef(cv_elastic, s = "lambda.min"))
+  # print(cv_elastic$lambda.min)
+  
+  # Ridge Regression
+  # Ridge regression keeps all variables, but cross validates a shrinkage
+  # parameter which pushes all variables towards 0
+  
+  lambda_grid=10^seq(4,-10,length=100)
+  fit_ridge <- glmnet(Matrix_Sparse_Reg,Response_Vector, alpha = 0, lambda=lambda_grid)
+  cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10, alpha = 0, lambda=lambda_grid)
+  pred_ridge <- predict(fit_ridge, Matrix_Sparse_Reg,type="response", s=cv_ridge$lambda.min)
+  Ridge_Results <- tidy(coef(cv_ridge, s = "lambda.min"))
+  plot(cv_ridge)
+  print(cv_ridge$lambda.min)
+  
+  # The minimum lambda is basically standard linear regression:
+  LM_Results <- tidy(coef(cv_ridge, s = min(lambda_grid)))
+  
+  qplot(Ridge_Results$value[-1],LM_Results$value[-1])
+  
+  max(Ridge_Results$value)
+  max(LM_Results$value)
+  min(Ridge_Results$value)
+  min(LM_Results$value)
+  
+  # Split Results Out
+  Ridge_Intercept <- Ridge_Results$value[1]
+  Ridge_Rounds <- Ridge_Results[grep("Round",Ridge_Results$row),]
+  Ridge_Players <- Ridge_Results[grep("Player",Ridge_Results$row),]
+  Ridge_Results <- list(Ridge_Intercept,Ridge_Rounds,Ridge_Players)
+  
+  # Split Results Out
+  LM_Intercept <- LM_Results$value[1]
+  LM_Rounds <- LM_Results[grep("Round",LM_Results$row),]
+  LM_Players <- LM_Results[grep("Player",LM_Results$row),]   
+  LM_Results <- list(LM_Intercept,LM_Rounds,LM_Players)
+  
+
+  if (RegType=="Ridge"){
+    Results <- Ridge_Results
+  } else {
+    Results <- LM_Results
+  }
+
+  return(Results)
+  
+}
+  
+
 ### Select data to use in regression ###
 
-Results_Source <- Filter_Player_Results(Player_Results,"2014-01-01","2016-01-01",40,15)
+Results_Source <- Filter_Player_Results(Player_Results,"2014-01-01","2016-01-01",40,15) 
+
+Trial_Regression1415 <- LM_Regression_Ratings(Results_Source,1,"Linear")
+
+Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
+
+Trial_Regression1617 <- LM_Regression_Ratings(Results_Source,1,"Linear")
+
+# Checking to see how using before/after affecting rating of round difficulties
+
+Compare_overlap_rounds <- merge(Trial_Regression1415[2],Trial_Regression1617[2], by = "row")
+
+qplot(Compare_overlap_rounds$value.x,Compare_overlap_rounds$value.y)
 
 
-Variables_Sparse_Reg <- Results_Source[,c("Round_ID","Player_ID")]
-Response_Vector <- Results_Source[,c("Score")]
-str(Results_Sparse_Reg)
 
 
-Matrix_Sparse_Reg <- data.frame.2.sparseMatrix(Variables_Sparse_Reg)
-str(Matrix_Sparse_Reg)
 
 
-# Elastic Net
-# Elastic Net only keeps those variables that are clearly non-zero.
 
-# fit_elastic <- glmnet(Matrix_Sparse_Reg,Response_Vector)
-# cv_elastic <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10)
-# pred_elastic <- predict(fit_elastic, Matrix_Sparse_Reg,type="response", s=cv_elastic$lambda.min)
-# plot(fit_elastic)
-# plot(cv_elastic)
-# head(coef(cv_elastic, s = "lambda.min"))
-# print(cv_elastic$lambda.min)
 
-# Ridge Regression
-# Ridge regression keeps all variables, but cross validates a shrinkage
-# parameter which pushes all variables towards 0
 
-lambda_grid=10^seq(4,-10,length=100)
-fit_ridge <- glmnet(Matrix_Sparse_Reg,Response_Vector, alpha = 0, lambda=lambda_grid)
-cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10, alpha = 0, lambda=lambda_grid)
-pred_ridge <- predict(fit_ridge, Matrix_Sparse_Reg,type="response", s=cv_ridge$lambda.min)
-Ridge_Results <- tidy(coef(cv_ridge, s = "lambda.min"))
-plot(cv_ridge)
-print(cv_ridge$lambda.min)
 
-# The minimum lambda is basically standard linear regression:
-LM_Results <- tidy(coef(cv_ridge, s = min(lambda_grid)))
 
-qplot(Ridge_Results$value[-1],LM_Results$value[-1])
-
-max(Ridge_Results$value)
-max(LM_Results$value)
-min(Ridge_Results$value)
-min(LM_Results$value)
-
-# Split Results Out
-LM_Intercept <- LM_Results$value[1]
-LM_Rounds <- LM_Results[grep("Round",LM_Results$row),]
-LM_Players <- LM_Results[grep("Player",LM_Results$row),]
 
 
 
