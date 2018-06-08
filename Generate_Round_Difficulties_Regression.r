@@ -9,15 +9,48 @@
 ### Libraries ####
 
 library(plyr)
-library(rvest)
-library(magrittr)
+library(tidyverse)
 library(lubridate)
-library(stringr)
-library(dplyr)
-library(purrr)
+library(rvest)
+library(broom)
+library(glmnet)
+library(magrittr)
 
 
-###  Section to attempt to do sparse matrix regression ###
+### Function to create sparse matrix ###
+
+# This function is from https://gist.github.com/kotaishr/75a7912ab3e0d0af3847ee0fdec29205
+# It converts a dataframe to a standard sparse matrix
+data.frame.2.sparseMatrix <- function(df) {
+  dtypes = lapply(df, class)
+  nrows = dim(df)[1]
+  ncols = dim(df)[2]
+  
+  for (col_idx in 1:ncols) {
+    # convert target column into sparseMatrix with colname(s)
+    colname = colnames(df)[col_idx]
+    if(dtypes[col_idx] == 'factor'){
+      col_in_sprMtx = sparse.model.matrix(as.formula(paste("~-1+", colname)), df)
+    }
+    else{
+      col_in_sprMtx = sparseMatrix(i=1:nrows, j=rep(1, nrows), x=df[, col_idx], dims = c(nrows, 1))
+      colnames(col_in_sprMtx) = c(colname)
+    }
+    col_in_sprMtx = drop0(col_in_sprMtx)
+    
+    # Add column in sparseMatrix form to the result sparseMatrix
+    if(col_idx == 1){
+      result = col_in_sprMtx
+    }
+    else{
+      result = cbind(result, col_in_sprMtx)
+    }
+  }                             
+  return(result)
+}
+
+
+###  Import Player Results Data ###
 
 Player_Result_Folder <- "Data/Player_Results/"
 Player_Result_File_List <- dir(Player_Result_Folder, pattern="Player_Results_.*\\.csv")
@@ -46,40 +79,6 @@ str(Results_Source)
 Variables_Sparse_Reg <- Results_Source[,c("Round_ID","Player_ID")]
 Response_Vector <- Results_Source[,c("Score")]
 str(Results_Sparse_Reg)
-
-library(glmnet)
-library(broom)
-library(ggplot2)
-
-
-
-data.frame.2.sparseMatrix <- function(df) {
-  dtypes = lapply(df, class)
-  nrows = dim(df)[1]
-  ncols = dim(df)[2]
-  
-  for (col_idx in 1:ncols) {
-    # convert target column into sparseMatrix with colname(s)
-    colname = colnames(df)[col_idx]
-    if(dtypes[col_idx] == 'factor'){
-      col_in_sprMtx = sparse.model.matrix(as.formula(paste("~-1+", colname)), df)
-    }
-    else{
-      col_in_sprMtx = sparseMatrix(i=1:nrows, j=rep(1, nrows), x=df[, col_idx], dims = c(nrows, 1))
-      colnames(col_in_sprMtx) = c(colname)
-    }
-    col_in_sprMtx = drop0(col_in_sprMtx)
-    
-    # Add column in sparseMatrix form to the result sparseMatrix
-    if(col_idx == 1){
-      result = col_in_sprMtx
-    }
-    else{
-      result = cbind(result, col_in_sprMtx)
-    }
-  }                             
-  return(result)
-}
 
 
 Matrix_Sparse_Reg <- data.frame.2.sparseMatrix(Variables_Sparse_Reg)
