@@ -180,16 +180,25 @@ LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Wee
   
   # Split Results Out
   Ridge_Intercept <- Ridge_Results$value[1]
-  Ridge_Rounds <- Ridge_Results[grep("Round",Ridge_Results$row),]
-  Ridge_Players <- Ridge_Results[grep("Player",Ridge_Results$row),]
+  Ridge_Rounds <- Ridge_Results[grep("Round",Ridge_Results$row),] %>% 
+    mutate(Round_ID = as.factor(gsub("^.*ID","",row))) %>%
+    select(.,Round_ID, Round_Value = value) 
+  Ridge_Players <- Ridge_Results[grep("Player",Ridge_Results$row),] %>% 
+    mutate(Player_ID = as.factor(gsub("^.*ID","",row))) %>%
+    select(.,Player_ID, Player_Value = value) 
   Ridge_Results <- list(Ridge_Intercept,Ridge_Rounds,Ridge_Players)
   
   # Split Results Out
   LM_Intercept <- LM_Results$value[1]
-  LM_Rounds <- LM_Results[grep("Round",LM_Results$row),]
-  LM_Players <- LM_Results[grep("Player",LM_Results$row),]   
+  LM_Rounds <- LM_Results[grep("Round",LM_Results$row),] %>% 
+    mutate(Round_ID = as.factor(gsub("^.*ID","",row))) %>%
+    select(.,Round_ID, Round_Value = value) 
+  LM_Players <- LM_Results[grep("Player",LM_Results$row),] %>% 
+    mutate(Player_ID = as.factor(gsub("^.*ID","",row))) %>%
+    select(.,Player_ID, Player_Value = value)  
   LM_Results <- list(LM_Intercept,LM_Rounds,LM_Players)
-  
+ 
+
 
   if (RegType=="Ridge"){
     Results <- Ridge_Results
@@ -208,6 +217,10 @@ Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-0
 
 Current_Regression <- LM_Regression_Ratings(Results_Source, Sys.Date(), 0.97, "Linear")
 
+
+Player_Ratings <- Current_Regression[[3]] %>% 
+  left_join(.,Player_Results[,c("Player_ID","Player_Name","Country")]) %>%
+  unique() %>% sort()
 
 
 # Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
