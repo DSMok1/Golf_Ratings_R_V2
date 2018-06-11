@@ -91,6 +91,32 @@ Filter_Player_Results<- function(Raw_Data=Player_Results,
   return(Filtered_Results)
 }
 
+
+### Function to develop weighting vector from dates and exponent
+
+Weight_Vector <- function (Source_Data, 
+                           Key_Date = Sys.Date(), 
+                           Weight_Weekly_Exponent = 1, 
+                           Date_Name = "Event_Date") {
+  # Note: the defaults are to weight all data equally,
+  # to set the "key date" to today, and to use the default
+  # name for the date column in the source data
+  
+  # Eventually figure out how to do this dynamically with "Date_Name"
+  Date_Vector <- Source_Data$Event_Date  
+
+  Week_Delta <-   as.integer(round(as.integer(as.Date(Key_Date) - Date_Vector) / 7))
+  
+  Weights <- as.data.frame(Weight_Weekly_Exponent ^ Week_Delta) %>% set_names(c("Weight"))
+  
+  return(Weights)
+  
+}
+
+
+# Test_weights <- Weight_Vector(Player_Results, "2016-01-01",0.99)
+
+
 ### Ridge Regression and Linear Regression as a function ###
 
 LM_Regression_Ratings <- function(Source_Data, Weight_Weekly_Exponent = 1, RegType = "Linear") {
