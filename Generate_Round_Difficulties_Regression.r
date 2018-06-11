@@ -105,7 +105,7 @@ Weight_Vector <- function (Source_Data,
   # Eventually figure out how to do this dynamically with "Date_Name"
   Date_Vector <- Source_Data$Event_Date  
 
-  Week_Delta <-   as.integer(round(as.integer(as.Date(Key_Date) - Date_Vector) / 7))
+  Week_Delta <-   as.integer(round(abs(as.integer(as.Date(Key_Date) - Date_Vector)) / 7))
   
   Weights <- as.data.frame(Weight_Weekly_Exponent ^ Week_Delta) %>% set_names(c("Weight"))
   
@@ -119,7 +119,9 @@ Weight_Vector <- function (Source_Data,
 
 ### Ridge Regression and Linear Regression as a function ###
 
-LM_Regression_Ratings <- function(Source_Data, Weight_Weekly_Exponent = 1, RegType = "Linear") {
+LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Weekly_Exponent = 1, RegType = "Linear") {
+  
+  Weights_Vector <- Weight_Vector(Source_Data, Key_Date, Weight_Weekly_Exponent)
   
   #Pull out the data that will be needed for the regression
   Variables_Sparse_Reg <- Source_Data[,c("Round_ID","Player_ID")]
@@ -147,9 +149,21 @@ LM_Regression_Ratings <- function(Source_Data, Weight_Weekly_Exponent = 1, RegTy
   # parameter which pushes all variables towards 0
   
   lambda_grid=10^seq(4,-10,length=100)
-  fit_ridge <- glmnet(Matrix_Sparse_Reg,Response_Vector, alpha = 0, lambda=lambda_grid)
-  cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,Response_Vector,nfolds=10, alpha = 0, lambda=lambda_grid)
-  pred_ridge <- predict(fit_ridge, Matrix_Sparse_Reg,type="response", s=cv_ridge$lambda.min)
+  fit_ridge <- glmnet(Matrix_Sparse_Reg,
+                      Response_Vector, 
+                      weights = Weights_Vector, 
+                      alpha = 0, 
+                      lambda=lambda_grid)
+  cv_ridge <- cv.glmnet(Matrix_Sparse_Reg,
+                        Response_Vector, 
+                        weights = Weights_Vector, 
+                        nfolds=10, 
+                        alpha = 0, 
+                        lambda=lambda_grid)
+  pred_ridge <- predict(fit_ridge, 
+                        Matrix_Sparse_Reg,
+                        type="response", 
+                        s=cv_ridge$lambda.min)
   Ridge_Results <- tidy(coef(cv_ridge, s = "lambda.min"))
   plot(cv_ridge)
   print(cv_ridge$lambda.min)
@@ -190,19 +204,21 @@ LM_Regression_Ratings <- function(Source_Data, Weight_Weekly_Exponent = 1, RegTy
 
 ### Select data to use in regression ###
 
-Results_Source <- Filter_Player_Results(Player_Results,"2014-01-01","2016-01-01",40,15) 
+Results_Source <- Filter_Player_Results(Player_Results,"2014-01-01","2018-10-01",40,15) 
 
-Trial_Regression1415 <- LM_Regression_Ratings(Results_Source,1,"Linear")
+Current_Regression <- LM_Regression_Ratings(Results_Source,Sys.Date(),0.97,"Linear")
 
-Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
 
-Trial_Regression1617 <- LM_Regression_Ratings(Results_Source,1,"Linear")
 
-# Checking to see how using before/after affecting rating of round difficulties
-
-Compare_overlap_rounds <- merge(Trial_Regression1415[2],Trial_Regression1617[2], by = "row")
-
-qplot(Compare_overlap_rounds$value.x,Compare_overlap_rounds$value.y)
+# Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
+# 
+# Trial_Regression1617 <- LM_Regression_Ratings(Results_Source,1,"Linear")
+# 
+# # Checking to see how using before/after affecting rating of round difficulties
+# 
+# Compare_overlap_rounds <- merge(Trial_Regression1415[2],Trial_Regression1617[2], by = "row")
+# 
+# qplot(Compare_overlap_rounds$value.x,Compare_overlap_rounds$value.y)
 
 
 
