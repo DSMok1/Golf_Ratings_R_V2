@@ -122,6 +122,7 @@ Weight_Vector <- function (Source_Data,
 LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Weekly_Exponent = 1, RegType = "Linear") {
   
   Weights_Vector <- Weight_Vector(Source_Data, Key_Date, Weight_Weekly_Exponent)[,c("Weight")]
+  str(Weights_Vector)
   
   #Pull out the data that will be needed for the regression
   Variables_Sparse_Reg <- Source_Data[,c("Round_ID","Player_ID")]
@@ -220,7 +221,17 @@ Current_Regression <- LM_Regression_Ratings(Results_Source, Sys.Date(), 0.97, "L
 
 Player_Ratings <- Current_Regression[[3]] %>% 
   left_join(.,Player_Results[,c("Player_ID","Player_Name","Country")]) %>%
-  unique() %>% sort()
+  unique() %>% mutate (Rank = rank(Player_Value)) %>% .[order(.$Rank),] %>%
+  .[,c("Rank",
+       "Player_Name",
+       "Player_Value",
+       "Country",
+       "Player_ID")] %T>%
+  write.csv(
+    .,file = (
+      "Output/Trial_Ratings_US_Open_2018.csv"
+    ), row.names = FALSE
+  )
 
 
 # Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
