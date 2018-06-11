@@ -121,7 +121,7 @@ Weight_Vector <- function (Source_Data,
 
 LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Weekly_Exponent = 1, RegType = "Linear") {
   
-  Weights_Vector <- Weight_Vector(Source_Data, Key_Date, Weight_Weekly_Exponent)
+  Weights_Vector <- Weight_Vector(Source_Data, Key_Date, Weight_Weekly_Exponent)[,c("Weight")]
   
   #Pull out the data that will be needed for the regression
   Variables_Sparse_Reg <- Source_Data[,c("Round_ID","Player_ID")]
@@ -204,9 +204,9 @@ LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Wee
 
 ### Select data to use in regression ###
 
-Results_Source <- Filter_Player_Results(Player_Results,"2014-01-01","2018-10-01",40,15) 
+Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
 
-Current_Regression <- LM_Regression_Ratings(Results_Source,Sys.Date(),0.97,"Linear")
+Current_Regression <- LM_Regression_Ratings(Results_Source, Sys.Date(), 0.97, "Linear")
 
 
 
@@ -300,143 +300,6 @@ remove(Factor_Cols)
 str(Results_Source)
 
 
-### Weeks before beginning of 2016 ####
-
-Results_Source$Week_Delta <-
-  as.integer(round(as.integer(
-    as.Date("2016-01-01") - Results_Source$Event_Date
-  ) / 7))
-# head(Results_Source)
-
-
-### Reduced Regression Data ####
-
-Results <-
-  subset(
-    Results_Source, select = c(
-      Player_Name,Player_ID,Round_ID,Score,Event_Date, Event_Name,Event_ID,Tour_Name, Week_Delta, Country
-    )
-  )
-
-remove(Results_Source)
-
-str(Results)
-
-
-### Choose Split Date and Intervals ####
-
-Interval_Before <-
-  as.integer(as.Date("2010-07-14")) - as.integer(as.Date("2006-07-14"))  # Prior 4 years
-Interval_After <-
-  as.integer(as.Date("2012-10-10")) - as.integer(as.Date("2010-07-14"))  # End of season and following 2 seasons
-
-
-Target_Subset <- if (Split_Type == "Before") {
-  subset(Results, (
-    Event_Date < Rating_Date &
-      Event_Date >= as.Date(Rating_Date - Interval_Before)
-  ))
-} else if (Split_Type == "After") {
-  subset(Results, (Event_Date >= Rating_Date &
-                     Event_Date < as.Date(Rating_Date + Interval_After)))
-} else {
-  "Error"
-}
-
-
-
-### Choose Weighting function for data ####
-
-# Target_Subset$Weight <- ifelse(Target_Subset$Event_Date < as.Date("2010-10-01"),1,0.20)
-
-Target_Subset$Weight <- if (Split_Type == "Before") {
-  (Exponential_Decay_Constant ^ (Target_Subset$Week_Delta))*10
-} else {
-  ifelse ((Target_Subset$Event_Date < as.Date(Rating_Date + 88)),
-          Step_Weights[1],ifelse((
-            Target_Subset$Event_Date >= as.Date(Rating_Date + 88) &
-              Target_Subset$Event_Date < as.Date(Rating_Date + 88 + 365)
-          ),Step_Weights[2],Step_Weights[3]
-          )
-  )
-}
-
-
-Max_Weight <- max(Target_Subset$Weight)
-
-Target_Subset$Weight <- Target_Subset$Weight/Max_Weight
-
-
-
-### Functions for Removing Rare Players/Rounds ####
-
-library(dplyr)
-
-Count_Rounds_Players <- function (Data) {
-  library(dplyr)
-  Player_ID_Group <- group_by(Data, Player_ID)
-  Number_Rounds_Target <- summarise(Player_ID_Group,
-                                    Rounds_Player = length(Score))
-  
-  Data <-
-    merge(Data,Number_Rounds_Target,by = c("Player_ID"))
-  
-  # Number of Recent Rounds
-  Data_Recent <-   subset(Data, (Event_Date >= as.Date(Rating_Date - 365)&
-                                            Event_Date <= as.Date(Rating_Date + 365)))
-  
-  Player_ID_Group <- group_by(Data_Recent,Player_ID)
-  Rounds_Last_Year <- summarise(Player_ID_Group,
-                                Rounds_Last_Year = length(Weight))
-  Data <- merge(Data,Rounds_Last_Year, by = c("Player_ID"), all.x=TRUE)
-  Data$Rounds_Last_Year[is.na(Data$Rounds_Last_Year)] <- 0
-  
-  return (Data)
-}
-
-Count_Rounds_Tournaments <- function (Data) {
-  library(dplyr)
-  Round_ID_Group <- group_by(Data,Round_ID)
-  Number_Rounds_Target <- summarise(Round_ID_Group,
-                                    Rounds_Round_ID = length(Score))
-  Data <-
-    merge(Data,Number_Rounds_Target,by = c("Round_ID"))
-  
-  
-  return (Data)
-}
-
-Remove_Rare_Data <-
-  function (Results_Sample) {
-    Results_Sample <- Count_Rounds_Players(Results_Sample)
-    Results_Sample <-
-      subset(Results_Sample, Rounds_Player > Min_Player_Rounds | Rounds_Last_Year > Min_Player_Rounds_Last_Yr )
-    
-    Results_Sample <- droplevels(Results_Sample)
-    
-    
-    Results_Sample <- Count_Rounds_Tournaments(Results_Sample)
-    Results_Sample <-
-      subset(Results_Sample, Rounds_Round_ID > Minimum_Player_In_Round)
-    
-    Results_Sample <- droplevels(Results_Sample)
-    
-    Results_Sample <- subset(
-      Results_Sample,
-      select = -c(
-        Rounds_Player,Rounds_Last_Year,Rounds_Round_ID
-      )
-    )
-    
-    Results_Sample <- Count_Rounds_Players(Results_Sample)
-    Results_Sample <-
-      subset(Results_Sample, Rounds_Player > Min_Player_Rounds | Rounds_Last_Year > Min_Player_Rounds_Last_Yr)
-    
-    Results_Sample <- droplevels(Results_Sample)
-    
-    return (Results_Sample)
-    
-  }
 
 
 ### Choose what players & Rounds to include in regression  ####
@@ -542,88 +405,7 @@ Player_Info$Recent_Tour[Player_Info$Rounds_Last_Year<17] <- "None"
 str(Player_Info)
 
 
-### Set a prior  - Does not work currently ####
 
-# Target_Prior <- subset(Number_Rounds_Primary, Primary_Player > 0 )
-# Target_Prior$Weight <- 0.2
-# Target_Prior$Round_ID <- NA
-# Target_Prior$Score <- 0
-
-
-###  The BigLM Regression Function ####
-
-BigLM_Golf_Regression <- function (Golf_Data) {
-  Sys.time()
-  
-  library(biglm)
-  
-  chunksize <- 1000                           #Set Chunk size
-  length_Target <-
-    NROW(Golf_Data)           #Get length of the dataset
-  
-  
-  Chunk_1 <-
-    Golf_Data[1:chunksize,]       #Get the starting chunk of data
-  # levels(Chunk_1$Player_ID) <- c(Factor_Player_ID)
-  # str(Chunk_1)
-  
-  round_down <- function(x,to = 10)
-  {
-    to * (x %/% to - as.logical(x %% to))
-  }
-  
-  End_of_Chunks <-
-    (round_down(length_Target,chunksize))       #Identify the end of the chunks
-  
-  Chunk_Last <-
-    Golf_Data[End_of_Chunks + 1:length_Target,]        #Get the last, odd chunk
-  
-  Begin_Time <- Sys.time()
-  cat("Regression started at ",format(Begin_Time, "%b %d %H:%M:%S"),"\n")
-  
-  fit_Target <-
-    biglm(Score ~ Player_ID + Round_ID, data = Chunk_1, weights = ~ Weight)
-  
-  Current_Time <- Sys.time()
-  Begin_Time <- Sys.time()
-  
-  for (i in seq(chunksize,End_of_Chunks,chunksize)) {
-    # Update regression
-    fit_Target = update(fit_Target, moredata = Golf_Data[(i + 1):(i + chunksize),])
-    
-    # Block tracking progress and predicting finish time
-    Percent_Done <- round((i)/length_Target*100,2)/100  
-    Prev_Time <- Current_Time
-    Current_Time <- Sys.time()
-    Current_Interval <- (Current_Time - Prev_Time)
-    Average_Interval <- (Current_Time - Begin_Time)*chunksize/(i)
-    Interval_Slope <- (Current_Interval - Average_Interval)/(Percent_Done/2)
-    Future_Avg_Interval <- Average_Interval + (1-Percent_Done/2)*Interval_Slope
-    Finish_Time <- Current_Time + Future_Avg_Interval*(length_Target-(i))/chunksize
-    
-    # Text output of progress
-    cat(i + chunksize,"of", length_Target, "- (", Percent_Done*100,
-        ")%, Time is",
-        format(Current_Time, "%b %d %H:%M:%S"),
-        " Estimated finish at",
-        format(Finish_Time, "%b %d %H:%M:%S"),"\n")
-  }
-
-  fit_Target = update(fit_Target, moredata = Chunk_Last)
-  
-  cat("Regression ended at ",format(Sys.time(), "%b %d %H:%M:%S"),"\n")
-  
-  # ### Store Levels of Factors
-  # Factor_Round_ID <- levels(factor(Golf_Data$Round_ID))
-  #
-  # Target_Prior$Round_ID <- as.factor(Target_Prior$Round_ID)
-  # levels(Target_Prior$Round_ID) <- Factor_Round_ID
-  #
-  # fit_Target=update(fit_Target, moredata=Target_Prior)
-  
-  
-  return (fit_Target)
-}
 
 
 ### Call Regression and Clean Up Results ####
