@@ -227,6 +227,16 @@ LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Wee
 }
   
 
+### Function to compile information about players & Tournaments ###
+
+Player_Information <- function(Source_Data) {
+  
+  
+  
+}
+
+
+
 ### Select data to use in regression ###
 
 Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
