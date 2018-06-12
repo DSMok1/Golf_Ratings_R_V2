@@ -54,10 +54,10 @@ data.frame.2.sparseMatrix <- function(df) {
 
 Player_Result_Folder <- "Data/Player_Results/"
 Player_Result_File_List <- dir(Player_Result_Folder, pattern="Player_Results_.*\\.csv")
-Player_Results_Raw <- Player_Result_File_List %>%
-  map_dfr(~ read.csv(file.path(Player_Result_Folder,.),stringsAsFactors = FALSE))
+Player_Results <- Player_Result_File_List %>%
+  map_dfr(~ read.csv(file.path(Player_Result_Folder,.),stringsAsFactors = FALSE)) %>%
+  .[!is.na(Player_Results_Raw$Event_Date),]
 
-Player_Results <- Player_Results_Raw[!is.na(Player_Results_Raw$Event_Date),]
 Player_Results$Year <- NULL
 Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
 
@@ -65,6 +65,21 @@ Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
 Player_Results$Round_ID <-
   paste(Player_Results$Event_ID,Player_Results$Round_Num,sep = "_") %>% as.factor()
 Player_Results$Player_ID %<>% as.factor()
+
+# Identify if round is part of a Primary Tour:
+Primary_Tours <-
+  c("European Tour",
+    "Major Championship",
+    "PGA Tour", 
+    "World Golf Championships",
+    "Olympic Golf Competition")
+
+Player_Results$Primary_Round <-
+  pmin((3 - (as.integer(is.na((match(Player_Results$Event_Tour_1,Primary_Tours)))) +  
+          as.integer(is.na((match(Player_Results$Event_Tour_2,Primary_Tours)))) + 
+          as.integer(is.na((match(Player_Results$Event_Tour_3,Primary_Tours)))))),1)
+
+
 str(Player_Results)
 
 
