@@ -56,7 +56,7 @@ Player_Result_Folder <- "Data/Player_Results/"
 Player_Result_File_List <- dir(Player_Result_Folder, pattern="Player_Results_.*\\.csv")
 Player_Results <- Player_Result_File_List %>%
   map_dfr(~ read.csv(file.path(Player_Result_Folder,.),stringsAsFactors = FALSE)) %>%
-  .[!is.na(Player_Results_Raw$Event_Date),]
+  .[!is.na(.$Event_Date),]
 
 Player_Results$Year <- NULL
 Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
