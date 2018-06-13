@@ -124,7 +124,7 @@ Weight_Vector <- function (Source_Data,
   
   Weights <- as.data.frame(Weight_Weekly_Exponent ^ Week_Delta) %>% set_names(c("Weight"))
   
-  return(Weights)
+  return(Weights[,c("Weight")])
   
 }
 
@@ -134,9 +134,9 @@ Weight_Vector <- function (Source_Data,
 
 ### Ridge Regression and Linear Regression as a function ###
 
-LM_Regression_Ratings <- function(Source_Data, Key_Date = Sys.Date(), Weight_Weekly_Exponent = 1, RegType = "Linear") {
+LM_Regression_Ratings <- function(Source_Data, Weights_Vector, RegType = "Linear") {
   
-  Weights_Vector <- Weight_Vector(Source_Data, Key_Date, Weight_Weekly_Exponent)[,c("Weight")]
+  
   str(Weights_Vector)
   
   #Pull out the data that will be needed for the regression
@@ -241,7 +241,9 @@ Player_Information <- function(Source_Data) {
 
 Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
 
-Current_Regression <- LM_Regression_Ratings(Results_Source, Sys.Date(), 0.97, "Linear")
+Weights_Vector <- Weight_Vector(Results_Source, Sys.Date(), 0.97)
+
+Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, "Linear")
 
 
 Player_Ratings <- Current_Regression[[3]] %>% 
