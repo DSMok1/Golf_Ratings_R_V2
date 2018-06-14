@@ -138,7 +138,7 @@ Weight_Vector <- function (Source_Data,
 
 ### Ridge Regression and Linear Regression as a function ###
 
-LM_Regression_Ratings <- function(Source_Data, Weights_Vector, RegType = "Linear") {
+LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegType = "Linear") {
   
   
   str(Weights_Vector)
@@ -169,6 +169,7 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, RegType = "Linear
   # parameter which pushes all variables towards 0
   
   lambda_grid=10^seq(4,-10,length=100)
+  str(lambda_grid)
   fit_ridge <- glmnet(Matrix_Sparse_Reg,
                       Response_Vector, 
                       weights = Weights_Vector, 
@@ -206,6 +207,8 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, RegType = "Linear
   Ridge_Players <- Ridge_Results[grep("Player",Ridge_Results$row),] %>% 
     mutate(Player_ID = as.factor(gsub("^.*ID","",row))) %>%
     select(.,Player_ID, Player_Value = value) 
+  
+  
   Ridge_Results <- list(Ridge_Intercept,Ridge_Rounds,Ridge_Players)
   
   # Split Results Out
@@ -215,8 +218,15 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, RegType = "Linear
     select(.,Round_ID, Round_Value = value) 
   LM_Players <- LM_Results[grep("Player",LM_Results$row),] %>% 
     mutate(Player_ID = as.factor(gsub("^.*ID","",row))) %>%
-    select(.,Player_ID, Player_Value = value)  
-  LM_Results <- list(LM_Intercept,LM_Rounds,LM_Players)
+    select(.,Player_ID, Player_Value = value) %>%
+    merge(.,Player_Info, by = "Player_ID") %T>% str()
+  
+  Avg_Primary_Rating <- mean(LM_Players$Player_Value)[LM_Players$Primary_Player==1] %T>% View()
+  
+  LM_Players %<>% mutate(Player_Value = Player_Value - Avg_Primary_Rating)
+  LM_Rounds %<>% mutate(Round_Value = Round_Value + Avg_Primary_Rating + LM_Intercept)
+  
+  LM_Results <- list(LM_Rounds,LM_Players)
  
 
 
@@ -250,6 +260,8 @@ Player_Information <- function(Source_Data, Weight) {
 
 
 
+
+
 ### Select data to use in regression ###
 
 Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
@@ -258,7 +270,7 @@ Weights_Vector <- Weight_Vector(Results_Source, Sys.Date(), 0.97)
 
 Player_Information_Trial <- Player_Information(Results_Source,Weights_Vector)
 
-Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, "Linear")
+Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
 
 
 Player_Ratings <- Current_Regression[[3]] %>% 
