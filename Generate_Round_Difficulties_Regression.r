@@ -229,9 +229,18 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, RegType = "Linear
 
 ### Function to compile information about players & Tournaments ###
 
-Player_Information <- function(Source_Data) {
+Player_Information <- function(Source_Data, Weight) {
   
+  Player_Summary <- Source_Data %>% mutate(Weights = Weight) %>%
+    group_by(Player_Name, Player_ID) %>% 
+    summarize(Num_Rounds = n(),
+               Sum_Primary = sum(Primary_Round*Weights),
+               Sum_Weight = sum(Weights),
+               Primary_Ratio = sum(Primary_Round*Weights)/sum(Weights),
+               Primary_Player = round(sum(Primary_Round*Weights)/sum(Weights))
+               )
   
+  return (Player_Summary)
   
 }
 
@@ -242,6 +251,8 @@ Player_Information <- function(Source_Data) {
 Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
 
 Weights_Vector <- Weight_Vector(Results_Source, Sys.Date(), 0.97)
+
+Player_Information_Trial <- Player_Information(Results_Source,Weights_Vector)
 
 Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, "Linear")
 
