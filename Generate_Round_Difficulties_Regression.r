@@ -79,6 +79,10 @@ Player_Results$Primary_Round <-
           as.integer(is.na((match(Player_Results$Event_Tour_2,Primary_Tours)))) + 
           as.integer(is.na((match(Player_Results$Event_Tour_3,Primary_Tours)))))),1)
 
+# If there are multiple player_names for a given Player_ID, use most common Player_Name for all
+Player_Results %<>% group_by(Player_ID) %>%
+  mutate(Player_Name = names(table(Player_Name))[table(Player_Name) == max(table(Player_Name))][1]) %>% 
+  ungroup()
 
 str(Player_Results)
 
