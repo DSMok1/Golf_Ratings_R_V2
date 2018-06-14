@@ -82,7 +82,7 @@ Player_Results$Primary_Round <-
 # If there are multiple player_names for a given Player_ID, use most common Player_Name for all
 Player_Results %<>% group_by(Player_ID) %>%
   mutate(Player_Name = names(table(Player_Name))[table(Player_Name) == max(table(Player_Name))][1]) %>% 
-  ungroup()
+  ungroup() %>% as.data.frame()
 
 str(Player_Results)
 
@@ -145,8 +145,9 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
   
   #Pull out the data that will be needed for the regression
   Variables_Sparse_Reg <- Source_Data[,c("Round_ID","Player_ID")]
-  Response_Vector <- Source_Data[,c("Score")]
+  Response_Vector <- as.vector(Source_Data[,c("Score")])
   str(Variables_Sparse_Reg)
+  str(Response_Vector)
   
   #Convert to sparse matrix
   Matrix_Sparse_Reg <- data.frame.2.sparseMatrix(Variables_Sparse_Reg)
@@ -221,7 +222,7 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
     select(.,Player_ID, Player_Value = value) %>%
     merge(.,Player_Info, by = "Player_ID") %T>% str()
   
-  Avg_Primary_Rating <- mean(LM_Players$Player_Value)[LM_Players$Primary_Player==1] %T>% View()
+  Avg_Primary_Rating <- mean(LM_Players$Player_Value[LM_Players$Primary_Player==1]) %T>% print()
   
   LM_Players %<>% mutate(Player_Value = Player_Value - Avg_Primary_Rating)
   LM_Rounds %<>% mutate(Round_Value = Round_Value + Avg_Primary_Rating + LM_Intercept)
@@ -273,7 +274,7 @@ Player_Information_Trial <- Player_Information(Results_Source,Weights_Vector)
 Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
 
 
-Player_Ratings <- Current_Regression[[3]] %>% 
+Player_Ratings <- Current_Regression[[2]] %>% 
   left_join(.,Player_Results[,c("Player_ID","Player_Name","Country")]) %>%
   unique() %>% mutate (Rank = rank(Player_Value)) %>% .[order(.$Rank),] %>%
   .[,c("Rank",
