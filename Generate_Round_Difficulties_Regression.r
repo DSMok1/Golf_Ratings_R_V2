@@ -375,39 +375,6 @@ str(Target_Subset)
 
 
 
-### Function Identifying "Primary Players"  ####
-
-
-Primary_Tour_Players <- function (Results_Sample) {
-  library(dplyr)
-  
-  Primary_Tours <-
-    c("European Tour","Major Championship","PGA Tour", "WGC")
-  
-  Results_Sample$Primary_Round <-
-    1 - as.integer(is.na((
-      match(Results_Sample$Tour_Name,Primary_Tours)
-    )))
-  
-  Primary_Round_Group <-
-    group_by(Results_Sample,Player_Name, Player_ID,Rounds_Player)
-  Number_Rounds_Primary <- summarise (Primary_Round_Group,
-                                      Sum_Primary = sum(Primary_Round*Weight),Sum_Weight = sum(Weight))
-  
-  Number_Rounds_Primary$Primary_Player <-
-    round(Number_Rounds_Primary$Sum_Primary / Number_Rounds_Primary$Sum_Weight)
-  
-  Results_Sample <-
-    merge(Results_Sample,subset(Number_Rounds_Primary, select = c(Player_ID,Primary_Player)),by = c("Player_ID"))
-  return (Results_Sample)
-}
-
-
-Target_Subset <- Primary_Tour_Players(Target_Subset)
-
-
-
-
 
 ###  Player Information Developed ####
 
