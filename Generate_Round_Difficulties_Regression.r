@@ -244,7 +244,7 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
 
 ### Function to compile information about players & Tournaments ###
 
-Player_Information <- function(Source_Data, Weight) {
+Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date(),) {
   
   Player_Summary <- Source_Data %>% mutate(Weights = Weight) %>%
     group_by(Player_Name, Player_ID) %>% 
@@ -254,6 +254,16 @@ Player_Information <- function(Source_Data, Weight) {
                Primary_Ratio = sum(Primary_Round*Weights)/sum(Weights),
                Primary_Player = round(sum(Primary_Round*Weights)/sum(Weights))
                )
+  
+  Min_Date <- min(Source_Data$Event_Date)
+  Max_Date <- max(Source_Data$Event_Date)
+  Data_Span <- Max_Date - Min_Date
+  
+  # Use closest 1 year of data to the key date that is in the data set
+  
+  # Recent_Data <- Source_Data %>% 
+  
+  
   
   return (Player_Summary)
   
@@ -265,11 +275,14 @@ Player_Information <- function(Source_Data, Weight) {
 
 ### Select data to use in regression ###
 
+# Use this to establish where to center weighting and player information
+Date_of_Interest <- Sys.Date()
+
 Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
 
-Weights_Vector <- Weight_Vector(Results_Source, Sys.Date(), 0.97)
+Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97)
 
-Player_Information_Trial <- Player_Information(Results_Source,Weights_Vector)
+Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
 
 Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
 
