@@ -244,7 +244,9 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
 
 ### Function to compile information about players & Tournaments ###
 
-Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date(),) {
+Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
+  
+  Key_Date <- as.Date(Key_Date)
   
   Player_Summary <- Source_Data %>% mutate(Weights = Weight) %>%
     group_by(Player_Name, Player_ID) %>% 
@@ -257,15 +259,27 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date(),) {
   
   Min_Date <- min(Source_Data$Event_Date)
   Max_Date <- max(Source_Data$Event_Date)
-  Data_Span <- Max_Date - Min_Date
+  Data_Span <- as.duration(Max_Date - Min_Date)
   
   # Use closest 1 year of data to the key date that is in the data set
   
-  # Recent_Data <- Source_Data %>% 
+  if (Data_Span <= dyears(1)) {
+    Max_Date_Use <- Max_Date
+    Min_Date_Use <- Min_Date
+  } else if (Min_Date >= (Key_Date - dyears(0.5))) {
+    Min_Date_Use <- Min_Date
+    Max_Date_Use <- Min_Date + dyears(1)
+  } else if (Max_Date <= (Key_Date + dyears(0.5))) {
+    Max_Date_Use <- Max_Date
+    Min_Date_Use <- Max_Date - dyears(1)
+  } else {
+    Min_Date_Use <- as.Date(Key_Date - dyears(0.5))
+    Max_Date_Use <- as.Date(Key_Date + dyears(0.5))
+  }
   
   
   
-  return (Player_Summary)
+  return (list(Min_Date_Use, Max_Date_Use))
   
 }
 
