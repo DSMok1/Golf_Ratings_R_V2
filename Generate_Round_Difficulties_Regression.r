@@ -279,7 +279,7 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
   
   
   
-  return (list(Min_Date_Use, Max_Date_Use))
+  return (Player_Summary)
   
 }
 
@@ -311,7 +311,7 @@ Player_Ratings <- Current_Regression[[2]] %>%
        "Player_ID")] %T>%
   write.csv(
     .,file = (
-      "Output/Trial_Ratings_US_Open_2018.csv"
+      "Output/Trial_Ratings_2018-07-03.csv"
     ), row.names = FALSE
   )
 
