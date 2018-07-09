@@ -248,7 +248,13 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
   
   Key_Date <- as.Date(Key_Date)
   
-  Player_Summary <- Source_Data %>% mutate(Weights = Weight) %>%
+  Min_Date <- min(Source_Data$Event_Date)
+  Max_Date <- max(Source_Data$Event_Date)
+  Data_Span <- as.duration(Max_Date - Min_Date)
+  
+  Source_Data %<>% mutate(Weights = Weight)
+  
+  Player_Summary <- Source_Data %>%
     group_by(Player_Name, Player_ID) %>% 
     summarize(Num_Rounds = n(),
                Sum_Primary = sum(Primary_Round*Weights),
@@ -257,9 +263,7 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
                Primary_Player = round(sum(Primary_Round*Weights)/sum(Weights))
                )
   
-  Min_Date <- min(Source_Data$Event_Date)
-  Max_Date <- max(Source_Data$Event_Date)
-  Data_Span <- as.duration(Max_Date - Min_Date)
+
   
   # Use closest 1 year of data to the key date that is in the data set
   
@@ -277,9 +281,22 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
     Max_Date_Use <- as.Date(Key_Date + dyears(0.5))
   }
   
+  Year_Duration <- as.duration(Max_Date_Use - Min_Date_Use)
+  
+  Player_Summary_Year <- Source_Data %>% 
+    filter(Event_Date>Min_Date_Use) %>%
+    filter(Event_Date<Max_Date_Use) %>% 
+    group_by(Player_Name, Player_ID) %>% 
+    summarize(Num_Rounds_Yr = n(),
+              Sum_Primary_Yr = sum(Primary_Round*Weights),
+              Sum_Weight_Yr = sum(Weights),
+              Primary_Ratio_Yr = sum(Primary_Round*Weights)/sum(Weights),
+              Primary_Player_Yr = round(sum(Primary_Round*Weights)/sum(Weights))
+    ) %>% ungroup %>%
+    mutate(Primary_Player_Yr = pmin(round(Num_Rounds_Yr/max(Num_Rounds_Yr)),Primary_Player_Yr))
   
   
-  return (Player_Summary)
+  return (Player_Summary_Year)
   
 }
 
