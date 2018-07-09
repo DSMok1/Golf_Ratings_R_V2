@@ -260,7 +260,9 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
                Sum_Primary = sum(Primary_Round*Weights),
                Sum_Weight = sum(Weights),
                Primary_Ratio = sum(Primary_Round*Weights)/sum(Weights),
-               Primary_Player = round(sum(Primary_Round*Weights)/sum(Weights))
+               Primary_Player = round(sum(Primary_Round*Weights)/sum(Weights)),
+               Country = names(table(Country))[table(Country) == max(table(Country))][1],
+               Tour = names(table(Event_Tour_1))[table(Event_Tour_1) == max(table(Event_Tour_1))][1]
                )
   
 
@@ -291,12 +293,15 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
               Sum_Primary_Yr = sum(Primary_Round*Weights),
               Sum_Weight_Yr = sum(Weights),
               Primary_Ratio_Yr = sum(Primary_Round*Weights)/sum(Weights),
-              Primary_Player_Yr = round(sum(Primary_Round*Weights)/sum(Weights))
+              Primary_Player_Yr = round(sum(Primary_Round*Weights)/sum(Weights)),
+              Tour_Yr = names(table(Event_Tour_1))[table(Event_Tour_1) == max(table(Event_Tour_1))][1]
     ) %>% ungroup %>%
     mutate(Primary_Player_Yr = pmin(round(Num_Rounds_Yr/max(Num_Rounds_Yr)),Primary_Player_Yr))
   
+  Player_Information_Combined <- left_join(Player_Summary,Player_Summary_Year, by = c("Player_Name","Player_ID")) 
+  #  working on getting rid of NAs:    mutate_all(funs(if_else(is.na(.), 0, .)))
   
-  return (Player_Summary_Year)
+  return (Player_Information_Combined)
   
 }
 
