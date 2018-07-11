@@ -330,14 +330,13 @@ Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Play
 Player_Ratings <- Current_Regression[[2]] %>% 
   left_join(.,Player_Results[,c("Player_ID","Player_Name","Country")]) %>%
   unique() %>% mutate (Rank = rank(Player_Value)) %>% .[order(.$Rank),] %>%
-  .[,c("Rank",
-       "Player_Name",
-       "Player_Value",
-       "Country",
-       "Player_ID")] %T>%
+  select("Rank",
+         "Player_Name",
+         "Player_Value",
+         everything()) %T>%
   write.csv(
     .,file = (
-      "Output/Trial_Ratings_2018-07-03.csv"
+      "Output/Trial_Ratings_2018-07-11.csv"
     ), row.names = FALSE
   )
 
