@@ -222,7 +222,7 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
     select(.,Player_ID, Player_Value = value) %>%
     merge(.,Player_Info, by = "Player_ID") %T>% str()
   
-  Avg_Primary_Rating <- mean(LM_Players$Player_Value[LM_Players$Primary_Player==1]) %T>% print()
+  Avg_Primary_Rating <- mean(LM_Players$Player_Value[LM_Players$Primary_Player_Yr==1]) %T>% print()
   
   LM_Players %<>% mutate(Player_Value = Player_Value - Avg_Primary_Rating)
   LM_Rounds %<>% mutate(Round_Value = Round_Value + Avg_Primary_Rating + LM_Intercept)
@@ -298,8 +298,12 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
     ) %>% ungroup %>%
     mutate(Primary_Player_Yr = pmin(round(Num_Rounds_Yr/max(Num_Rounds_Yr)),Primary_Player_Yr))
   
-  Player_Information_Combined <- left_join(Player_Summary,Player_Summary_Year, by = c("Player_Name","Player_ID")) 
-  #  working on getting rid of NAs:    mutate_all(funs(if_else(is.na(.), 0, .)))
+  Player_Information_Combined <- left_join(Player_Summary,Player_Summary_Year, by = c("Player_Name","Player_ID")) %>% 
+    mutate(Num_Rounds_Yr = ifelse(is.na(Num_Rounds_Yr), 0, Num_Rounds_Yr),
+           Sum_Primary_Yr = ifelse(is.na(Sum_Primary_Yr), 0, Sum_Primary_Yr),
+           Sum_Weight_Yr = ifelse(is.na(Sum_Weight_Yr), 0, Sum_Weight_Yr),
+           Primary_Player_Yr = ifelse(is.na(Primary_Player_Yr), 0, Primary_Player_Yr)
+           )
   
   return (Player_Information_Combined)
   
