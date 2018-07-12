@@ -231,11 +231,13 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
   LM_Intercept <- LM_Results$value[1]
   LM_Rounds <- LM_Results[grep("Round",LM_Results$row),] %>% 
     mutate(Round_ID = as.factor(gsub("^.*ID","",row))) %>%
-    select(.,Round_ID, Round_Value = value) 
+    select(.,Round_ID, Round_Value = value) %>%
+    mutate(Event_ID = gsub("_.*","",Round_ID)) %>%
+    merge(.,Tournament_Info) %T>% glimpse()
   LM_Players <- LM_Results[grep("Player",LM_Results$row),] %>% 
     mutate(Player_ID = as.factor(gsub("^.*ID","",row))) %>%
     select(.,Player_ID, Player_Value = value) %>%
-    merge(.,Player_Info, by = "Player_ID") %T>% str()
+    merge(.,Player_Info, by = "Player_ID") %T>% glimpse()
   
   Avg_Primary_Rating <- mean(LM_Players$Player_Value[LM_Players$Primary_Player_Yr==1]) %T>% print()
   
