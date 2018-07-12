@@ -84,7 +84,22 @@ Player_Results %<>% group_by(Player_ID) %>%
   mutate(Player_Name = names(table(Player_Name))[table(Player_Name) == max(table(Player_Name))][1]) %>% 
   ungroup() %>% as.data.frame()
 
-str(Player_Results)
+glimpse(Player_Results)
+
+### Import Event Information  ###
+Tournament_Info <- read.csv("Data/Tournament_Info_RVest.csv", stringsAsFactors = FALSE) %>%
+  .[!is.na(.$Event_Date),] %>%
+  mutate( Event_Date = as.Date(Event_Date),
+          Scrape_Date = as.Date(Scrape_Date))
+
+# Add in the replacement of the Event_Tour designations
+
+Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
+
+Tournament_Info$Event_Tour_1 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+Tournament_Info$Event_Tour_2 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+Tournament_Info$Event_Tour_3 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+
 
 
 ### Function to select data to use in Regression ###
@@ -333,7 +348,7 @@ Player_Ratings <- Current_Regression[[2]] %>%
   select("Rank",
          "Player_Name",
          "Player_Value",
-         everything()) %T>%
+         everything()) %T>%  # This selection call puts these 3 columns first, everything() else after
   write.csv(
     .,file = (
       "Output/Trial_Ratings_2018-07-11.csv"
