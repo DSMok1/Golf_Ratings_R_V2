@@ -334,17 +334,26 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
 
 # Use this to establish where to center weighting and player information
 Date_of_Interest <- Sys.Date()
+Begin_Date <- "2015-01-01"
+End_Date <- Sys.Date()
 
-Results_Source <- Filter_Player_Results(Player_Results, "2014-01-01", "2018-10-01", 40, 15) 
+Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
 
-Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97)
+Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 1.0)
 
 Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
 
 Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
 
 
-Player_Ratings <- Current_Regression[[2]] %>% 
+Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_Date) %>%
+  merge(.,select(Current_Regression[[1]],"Round_ID","Round_Value"),all.x=TRUE) %>%
+  mutate(Adjusted_Score = Score - Round_Value) %>%
+  select("Score","Round_Value","Adjusted_Score",everything()) %>% 
+  .[order(.$Adjusted_Score),]
+
+
+Regression_Player_Ratings <- Current_Regression[[2]] %>% 
   left_join(.,Player_Results[,c("Player_ID","Player_Name","Country")]) %>%
   unique() %>% mutate (Rank = rank(Player_Value)) %>% .[order(.$Rank),] %>%
   select("Rank",
@@ -356,7 +365,6 @@ Player_Ratings <- Current_Regression[[2]] %>%
       "Output/Trial_Ratings_2018-07-11.csv"
     ), row.names = FALSE
   )
-
 
 # Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
 # 
