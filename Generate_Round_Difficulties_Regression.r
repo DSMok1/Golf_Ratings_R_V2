@@ -326,7 +326,34 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
   
 }
 
+### Player Regression Wrapper ###
 
+Player_Rating_Regression <- function(Raw_Data=Player_Results,
+                                     Key_Date = Sys.Date(),
+                                     Begin_Date="1990-01-01",
+                                     End_Date="2050-01-01",
+                                     Player_Min_Rounds=0,
+                                     Tourn_Min_Players=0,
+                                     Weight_Weekly_Exponent = 1) {
+  
+  Results_Source <- Filter_Player_Results(Raw_Data, Begin_Date, End_Date, Player_Min_Rounds, Tourn_Min_Players) 
+  
+  Weights_Vector <- Weight_Vector(Results_Source, Key_Date, Weight_Weekly_Exponent)
+  
+  Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Key_Date)
+  
+  Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
+ 
+  Regression_Player_Ratings <- Current_Regression[[2]] %>% 
+    mutate (Rank = rank(Player_Value)) %>% .[order(.$Rank),] %>%
+    select("Rank",
+           "Player_Name",
+           "Player_Value",
+           everything())
+  
+  return(Regression_Player_Ratings)
+   
+}
 
 
 
@@ -334,12 +361,12 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
 
 # Use this to establish where to center weighting and player information
 Date_of_Interest <- Sys.Date()
-Begin_Date <- "2015-01-01"
+Begin_Date <- "2013-01-01"
 End_Date <- Sys.Date()
 
 Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
 
-Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 1.0)
+Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97)
 
 Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
 
