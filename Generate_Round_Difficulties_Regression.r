@@ -131,24 +131,30 @@ Filter_Player_Results<- function(Raw_Data=Player_Results,
 Weight_Vector <- function (Source_Data, 
                            Key_Date = Sys.Date(), 
                            Weight_Weekly_Exponent = 1, 
-                           Date_Name = "Event_Date") {
+                           Duration_Full_Weight = weeks(0)) {
   # Note: the defaults are to weight all data equally,
-  # to set the "key date" to today, and to use the default
-  # name for the date column in the source data
+  # to set the "key date" to today, to have no plateau of equal weights
+  # and to simply use Event_Date for all data
   
-  # Eventually figure out how to do this dynamically with "Date_Name"
   Date_Vector <- Source_Data$Event_Date  
+  Key_Date<- as.Date(Key_Date)
+  
+  # Duration full weight is distance from the key date
+  Begin_Full_Wt <- Key_Date - Duration_Full_Weight
+  End_Full_Wt <- Key_Date + Duration_Full_Weight
 
-  Week_Delta <-   as.integer(round(abs(as.integer(as.Date(Key_Date) - Date_Vector)) / 7))
+  Begin_Delta <- pmax(as.integer(as.Date(Begin_Full_Wt) - Date_Vector),0)
+  End_Delta <- pmax(as.integer(Date_Vector - as.Date(End_Full_Wt)),0)
+  
+  Week_Delta <-   as.integer(round(pmax(Begin_Delta,End_Delta)) / 7)
   
   Weights <- as.data.frame(Weight_Weekly_Exponent ^ Week_Delta) %>% set_names(c("Weight"))
-  
+
   return(Weights[,c("Weight")])
   
 }
 
 
-# Test_weights <- Weight_Vector(Player_Results, "2016-01-01",0.99)
 
 
 ### Ridge Regression and Linear Regression as a function ###
@@ -366,7 +372,7 @@ End_Date <- Sys.Date()
 
 Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
 
-Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97)
+Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97,weeks(0))
 
 Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
 
