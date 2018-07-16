@@ -380,18 +380,34 @@ Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_
   .[order(.$Adjusted_Score),]
 
 
-Regression_Player_Ratings <- Current_Regression[[2]] %>% 
-  left_join(.,Player_Results[,c("Player_ID","Player_Name","Country")]) %>%
-  unique() %>% mutate (Rank = rank(Player_Value)) %>% .[order(.$Rank),] %>%
-  select("Rank",
-         "Player_Name",
-         "Player_Value",
-         everything()) %T>%  # This selection call puts these 3 columns first, everything() else after
+### Simple Regression-Based Player Ratings ###
+
+Date_of_Interest <- Sys.Date()
+Begin_Date <- Date_of_Interest - years(3)
+End_Date <- Date_of_Interest
+
+# This outputs a pure "regression-based" player rating
+Regression_Player_Ratings <- Player_Results %>%
+  Player_Rating_Regression(.,
+                           Key_Date = Date_of_Interest,
+                           Begin_Date=Begin_Date,
+                           End_Date=End_Date,
+                           Player_Min_Rounds=40,
+                           Tourn_Min_Players=15,
+                           Weight_Weekly_Exponent = 0.97) %T>%  
   write.csv(
     .,file = (
-      "Output/Trial_Ratings_2018-07-11.csv"
+      paste0("Output/Archive/Trial_Ratings_",Date_of_Interest,".csv")
     ), row.names = FALSE
   )
+  
+  
+ 
+
+
+
+
+
 
 # Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
 # 
