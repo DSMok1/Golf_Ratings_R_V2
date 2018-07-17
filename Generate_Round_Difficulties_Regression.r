@@ -340,11 +340,12 @@ Player_Rating_Regression <- function(Raw_Data=Player_Results,
                                      End_Date="2050-01-01",
                                      Player_Min_Rounds=0,
                                      Tourn_Min_Players=0,
-                                     Weight_Weekly_Exponent = 1) {
+                                     Weight_Weekly_Exponent = 1,
+                                     Duration_Full_Weight = weeks(0)) {
   
   Results_Source <- Filter_Player_Results(Raw_Data, Begin_Date, End_Date, Player_Min_Rounds, Tourn_Min_Players) 
   
-  Weights_Vector <- Weight_Vector(Results_Source, Key_Date, Weight_Weekly_Exponent)
+  Weights_Vector <- Weight_Vector(Results_Source, Key_Date, Weight_Weekly_Exponent, Duration_Full_Weight)
   
   Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Key_Date)
   
@@ -386,6 +387,8 @@ Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_
   .[order(.$Adjusted_Score),]
 
 
+
+  
 ### Simple Regression-Based Player Ratings ###
 
 Date_of_Interest <- Sys.Date()
