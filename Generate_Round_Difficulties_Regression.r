@@ -435,18 +435,31 @@ Regression_Player_Ratings <- Player_Results %>%
                            End_Date=End_Date,
                            Player_Min_Rounds=40,
                            Tourn_Min_Players=15,
-                           Weight_Weekly_Exponent = 0.97) %T>%  
+                           Weight_Weekly_Exponent = 0.97,
+                           Duration_Full_Weight = weeks(0)) %T>%  
   write.csv(
     .,file = (
       paste0("Output/Archive/Trial_Ratings_",Date_of_Interest,".csv")
     ), row.names = FALSE
-  )
-  
-  
- 
+  ) 
 
 
+### Simple Regression-Based Round Ratings ###
 
+Date_of_Interest <- Sys.Date()
+Begin_Date <- Date_of_Interest - years(3)
+End_Date <- Date_of_Interest
+
+# This outputs a pure "regression-based" round rating
+Round_Diff_Ratings <- Player_Results %>%
+  Round_Difficulty_Regression(.,
+                           Key_Date = Date_of_Interest,
+                           Begin_Date=Begin_Date,
+                           End_Date=End_Date,
+                           Player_Min_Rounds=40,
+                           Tourn_Min_Players=15,
+                           Weight_Weekly_Exponent = 0.97,
+                           Duration_Full_Weight = weeks(0)) %T>% View()
 
 
 
