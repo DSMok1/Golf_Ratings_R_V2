@@ -400,7 +400,7 @@ Round_Difficulty_Regression <- function(Raw_Data=Player_Results,
 
 # Use this to establish where to center weighting and player information
 Date_of_Interest <- Sys.Date()
-Begin_Date <- "2015-01-01"
+Begin_Date <- Date_of_Interest - years(3)
 End_Date <- Sys.Date()
 
 Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
@@ -439,7 +439,7 @@ Regression_Player_Ratings <- Player_Results %>%
                            Duration_Full_Weight = weeks(0)) %T>%  
   write.csv(
     .,file = (
-      paste0("Output/Archive/Trial_Ratings_",Date_of_Interest,".csv")
+      paste0("Output/Trial_Ratings_",Date_of_Interest,".csv")
     ), row.names = FALSE
   ) 
 
