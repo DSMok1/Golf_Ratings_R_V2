@@ -396,29 +396,6 @@ Round_Difficulty_Regression <- function(Raw_Data=Player_Results,
 
 
 
-### Select data to use in regression ###
-
-# Use this to establish where to center weighting and player information
-Date_of_Interest <- Sys.Date()
-Begin_Date <- Date_of_Interest - years(3)
-End_Date <- Sys.Date()
-
-Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
-
-Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97, weeks(0))
-
-Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
-
-Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
-
-
-Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_Date) %>%
-  merge(.,select(Current_Regression[[1]],"Round_ID","Round_Value"),all.x=TRUE) %>%
-  mutate(Adjusted_Score = Score - Round_Value) %>%
-  select("Score","Round_Value","Adjusted_Score",everything()) %>% 
-  .[order(.$Adjusted_Score),]
-
-
 
   
 ### Simple Regression-Based Player Ratings ###
@@ -460,6 +437,31 @@ Round_Diff_Ratings <- Player_Results %>%
                            Tourn_Min_Players=15,
                            Weight_Weekly_Exponent = 0.97,
                            Duration_Full_Weight = weeks(0)) %T>% View()
+
+
+
+### Select data to use in regression ###
+
+# Use this to establish where to center weighting and player information
+Date_of_Interest <- Sys.Date()
+Begin_Date <- Date_of_Interest - years(3)
+End_Date <- Sys.Date()
+
+Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
+
+Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97, weeks(0))
+
+Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
+
+Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
+
+
+Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_Date) %>%
+  merge(.,select(Current_Regression[[1]],"Round_ID","Round_Value"),all.x=TRUE) %>%
+  mutate(Adjusted_Score = Score - Round_Value) %>%
+  select("Score","Round_Value","Adjusted_Score",everything()) %>% 
+  .[order(.$Adjusted_Score),]
+
 
 
 
