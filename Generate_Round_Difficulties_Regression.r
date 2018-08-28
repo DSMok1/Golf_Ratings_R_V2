@@ -421,6 +421,15 @@ Regression_Player_Ratings <- Player_Results %>%
   ) 
 
 
+### Upload Current Player Ratings to Google Spreadsheets ###
+
+Upload_Google <- drive_upload(
+  paste0("Output/Trial_Ratings_",Date_of_Interest,".csv"),
+  "Sports/Golf/Golf Ratings/Recent_Ratings.csv",
+  type = "spreadsheet"
+) %>% drive_publish()
+
+
 ### Simple Regression-Based Round Ratings ###
 
 Date_of_Interest <- Sys.Date()
