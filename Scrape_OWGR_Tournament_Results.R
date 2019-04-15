@@ -116,7 +116,7 @@ Import_Tourney_Results <- function(ID)  {
       
       # Remove header data from first row, if it's there
       if (Player_Data_Raw[1,1]=="Pos") {
-        Player_Data_Raw  %<>% set_colnames(Raw_Table_Header) %>% extract(-1, )
+        Player_Data_Raw  %<>% set_colnames(Raw_Table_Header) %>% magrittr::extract(-1, )
       }
       
       # Clean up data types
@@ -360,6 +360,7 @@ Scrape_Status <- merge(Scrape_Status,Tournament_Info[,c("Event_ID","Event_Name",
 Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
 
 Player_Results$Event_Tour_1 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+Player_Results$Event_Tour_1[is.na(Player_Results$Event_Tour_1)] <- "Unknown"
 Player_Results$Event_Tour_2 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 Player_Results$Event_Tour_3 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 
