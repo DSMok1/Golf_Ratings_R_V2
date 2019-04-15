@@ -98,6 +98,7 @@ Tournament_Info <- read.csv("Data/Tournament_Info_RVest.csv", stringsAsFactors =
 Tour_Remap <- read.csv("ID_Maps/Tour_ID_Map.csv", stringsAsFactors = FALSE)
 
 Tournament_Info$Event_Tour_1 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+Tournament_Info$Event_Tour_1[is.na(Tournament_Info$Event_Tour_1)] <- "Unknown"
 Tournament_Info$Event_Tour_2 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 Tournament_Info$Event_Tour_3 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 
@@ -270,7 +271,7 @@ LM_Regression_Ratings <- function(Source_Data, Weights_Vector, Player_Info, RegT
 
 Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
   
-  Key_Date <- as.Date(Key_Date)
+  Key_Date <- as.Date(Key_Date) #Key_Date
   
   Min_Date <- min(Source_Data$Event_Date)
   Max_Date <- max(Source_Data$Event_Date)
@@ -311,14 +312,14 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
   
   Player_Summary_Year <- Source_Data %>% 
     filter(Event_Date>Min_Date_Use) %>%
-    filter(Event_Date<Max_Date_Use) %>% 
+    filter(Event_Date<Max_Date_Use) %>%
     group_by(Player_Name, Player_ID) %>% 
     summarize(Num_Rounds_Yr = n(),
               Sum_Primary_Yr = sum(Primary_Round*Weights),
               Sum_Weight_Yr = sum(Weights),
               Primary_Ratio_Yr = sum(Primary_Round*Weights)/sum(Weights),
               Primary_Player_Yr = round(sum(Primary_Round*Weights)/sum(Weights)),
-              Tour_Yr = names(table(Event_Tour_1))[table(Event_Tour_1) == max(table(Event_Tour_1))][1]
+              Tour_Yr = length(tail(names(sort(table(Event_Tour_1))),1))
     ) %>% ungroup %>%
     mutate(Primary_Player_Yr = pmin(round(Num_Rounds_Yr/max(Num_Rounds_Yr)),Primary_Player_Yr))
   
