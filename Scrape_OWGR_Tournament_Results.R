@@ -351,7 +351,12 @@ for (ID in Begin_ID:End_ID) {
 ### Clean up unnecessary player result data ####
 
 Player_Results <- Player_Results %>% 
-  filter(Score > 55 & Score < 125 & Pos != "WD" & Pos != "DQ" )
+  filter(Score > 55 & 
+           Score < 125 & 
+           Pos != "WD" & 
+           Pos != "DQ" &
+           Event_ID != 7411   # Master of the Monster is messed up
+         )
 
 Scrape_Status <- merge(Scrape_Status,Tournament_Info[,c("Event_ID","Event_Name","Event_Date")],all.x = TRUE)
 
