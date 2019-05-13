@@ -121,7 +121,7 @@ The full output is located at
 |   93 | Aaron Baddeley       |        \-0.46 |         234 |              85 | AUS     |        1 |
 |   94 | Graeme McDowell      |        \-0.46 |         267 |              82 | NIR     |        1 |
 |   95 | Mike Lorenzo-Vera    |        \-0.44 |         238 |              85 | FRA     |        1 |
-|   96 | Justin Harding       |        \-0.44 |         245 |              97 | RSA     |        1 |
+|   96 | Justin Harding       |        \-0.43 |         245 |              97 | RSA     |        1 |
 |   97 | Branden Grace        |        \-0.43 |         291 |             102 | RSA     |        1 |
 |   98 | Alexander Bjork      |        \-0.42 |         292 |              81 | SWE     |        1 |
 |   99 | Talor Gooch          |        \-0.41 |         229 |              59 | USA     |        1 |
@@ -152,7 +152,7 @@ The full output is located at
 |  124 | Harold Varner III    |        \-0.24 |         298 |              92 | USA     |        1 |
 |  125 | David Lipsky         |        \-0.24 |         280 |              94 | USA     |        1 |
 |  126 | Scott Stallings      |        \-0.24 |         253 |              85 | USA     |        1 |
-|  127 | Stewart Cink         |        \-0.24 |         235 |              71 | USA     |        1 |
+|  127 | Stewart Cink         |        \-0.23 |         235 |              71 | USA     |        1 |
 |  128 | Erik van Rooyen      |        \-0.23 |         247 |              93 | RSA     |        1 |
 |  129 | Nick Watney          |        \-0.23 |         212 |              93 | USA     |        1 |
 |  130 | J.J Spaun            |        \-0.23 |         270 |              89 | USA     |        1 |
@@ -167,8 +167,8 @@ The full output is located at
 |  139 | Corey Conners        |        \-0.16 |         297 |              90 | CAN     |        1 |
 |  140 | Martin Kaymer        |        \-0.15 |         270 |              89 | GER     |        1 |
 |  141 | Nate Lashley         |        \-0.15 |         262 |              62 | USA     |        1 |
-|  142 | Tyler McCumber       |        \-0.14 |         189 |              80 | USA     |        1 |
-|  143 | Beau Hossler         |        \-0.14 |         235 |              94 | USA     |        1 |
+|  142 | Beau Hossler         |        \-0.14 |         235 |              94 | USA     |        1 |
+|  143 | Tyler McCumber       |        \-0.14 |         189 |              80 | USA     |        1 |
 |  144 | Ryan Fox             |        \-0.14 |         289 |              93 | NZL     |        1 |
 |  145 | Chris Kirk           |        \-0.13 |         272 |              93 | USA     |        1 |
 |  146 | Chesson Hadley       |        \-0.12 |         265 |              89 | USA     |        1 |
@@ -191,8 +191,8 @@ The full output is located at
 |  163 | James Hahn           |        \-0.02 |         252 |              68 | USA     |        1 |
 |  164 | Juan Sebastian Munoz |        \-0.02 |         254 |             104 | COL     |        1 |
 |  165 | Jonas Blixt          |        \-0.02 |         229 |              78 | SWE     |        1 |
-|  166 | D.J. Trahan          |        \-0.01 |         105 |              38 | USA     |        1 |
-|  167 | Benjamin Hebert      |        \-0.01 |         249 |              78 | FRA     |        1 |
+|  166 | Benjamin Hebert      |        \-0.01 |         249 |              78 | FRA     |        1 |
+|  167 | D.J. Trahan          |        \-0.01 |         105 |              38 | USA     |        1 |
 |  168 | Gaganjeet Bhullar    |        \-0.01 |         234 |              92 | IND     |        1 |
 |  169 | Robert Rock          |        \-0.01 |         236 |              77 | ENG     |        1 |
 |  170 | Joseph Bramlett      |        \-0.01 |         117 |              86 | USA     |        1 |
@@ -202,15 +202,15 @@ The full output is located at
 |  174 | Bill Haas            |          0.00 |         248 |              76 | USA     |        1 |
 |  175 | Mark Anderson        |          0.01 |         218 |              73 | USA     |        1 |
 |  176 | Richy Werenski       |          0.01 |         265 |              95 | USA     |        1 |
-|  177 | Sanghyun Park        |          0.02 |         263 |              88 | KOR     |        1 |
-|  178 | Nacho Elvira         |          0.02 |         266 |              86 | ESP     |        1 |
-|  179 | Max Homa             |          0.02 |         215 |             101 | USA     |        1 |
-|  180 | Andrea Pavan         |          0.02 |         246 |              94 | ITA     |        1 |
+|  177 | Nacho Elvira         |          0.02 |         266 |              86 | ESP     |        1 |
+|  178 | Sanghyun Park        |          0.02 |         263 |              88 | KOR     |        1 |
+|  179 | Andrea Pavan         |          0.02 |         246 |              94 | ITA     |        1 |
+|  180 | Max Homa             |          0.02 |         215 |             101 | USA     |        1 |
 |  181 | Brian Harman         |          0.03 |         285 |              89 | USA     |        1 |
 |  182 | Bronson Burgoon      |          0.04 |         159 |              63 | USA     |        1 |
 |  183 | Kyounghoon Lee       |          0.04 |         328 |             108 | KOR     |        1 |
-|  184 | George Cunningham    |          0.05 |          85 |              81 | USA     |        1 |
-|  185 | Adrian Otaegui       |          0.05 |         277 |              90 | ESP     |        1 |
+|  184 | Adrian Otaegui       |          0.05 |         277 |              90 | ESP     |        1 |
+|  185 | George Cunningham    |          0.05 |          85 |              81 | USA     |        1 |
 |  186 | Chase Seiffert       |          0.05 |          63 |              56 | USA     |        1 |
 |  187 | Paul Waring          |          0.05 |         200 |              69 | ENG     |        1 |
 |  188 | Lucas Herbert        |          0.07 |         159 |              85 | AUS     |        1 |
