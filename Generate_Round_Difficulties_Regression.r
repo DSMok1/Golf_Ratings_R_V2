@@ -436,65 +436,65 @@ Update_Google <- drive_update(
 ) 
 
 
-# Upload_Google <- drive_upload(
-#   paste0("Output/Trial_Ratings_",Date_of_Interest,".csv"),
-#   "Sports/Golf/Golf Ratings/Recent_Ratings.csv",
-#   type = "spreadsheet"
-# ) %>% drive_publish()
-
-### Simple Regression-Based Round Ratings ###
-
-Date_of_Interest <- Sys.Date()
-Begin_Date <- Date_of_Interest - years(3)
-End_Date <- Date_of_Interest
-
-# This outputs a pure "regression-based" round rating
-Round_Diff_Ratings <- Player_Results %>%
-  Round_Difficulty_Regression(.,
-                           Key_Date = Date_of_Interest,
-                           Begin_Date=Begin_Date,
-                           End_Date=End_Date,
-                           Player_Min_Rounds=40,
-                           Tourn_Min_Players=15,
-                           Weight_Weekly_Exponent = 0.97,
-                           Duration_Full_Weight = weeks(0)) %T>% View()
-
-
-
-### Select data to use in regression ###
-
-# Use this to establish where to center weighting and player information
-Date_of_Interest <- Sys.Date()
-Begin_Date <- Date_of_Interest - years(3)
-End_Date <- Sys.Date()
-
-Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
-
-Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97, weeks(0))
-
-Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
-
-Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
-
-
-Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_Date) %>%
-  merge(.,select(Current_Regression[[1]],"Round_ID","Round_Value"),all.x=TRUE) %>%
-  mutate(Adjusted_Score = Score - Round_Value) %>%
-  select("Score","Round_Value","Adjusted_Score",everything()) %>% 
-  .[order(.$Adjusted_Score),]
-
-
-
-
-# Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
+# # Upload_Google <- drive_upload(
+# #   paste0("Output/Trial_Ratings_",Date_of_Interest,".csv"),
+# #   "Sports/Golf/Golf Ratings/Recent_Ratings.csv",
+# #   type = "spreadsheet"
+# # ) %>% drive_publish()
 # 
-# Trial_Regression1617 <- LM_Regression_Ratings(Results_Source,1,"Linear")
+# ### Simple Regression-Based Round Ratings ###
 # 
-# # Checking to see how using before/after affecting rating of round difficulties
+# Date_of_Interest <- Sys.Date()
+# Begin_Date <- Date_of_Interest - years(3)
+# End_Date <- Date_of_Interest
 # 
-# Compare_overlap_rounds <- merge(Trial_Regression1415[2],Trial_Regression1617[2], by = "row")
+# # This outputs a pure "regression-based" round rating
+# Round_Diff_Ratings <- Player_Results %>%
+#   Round_Difficulty_Regression(.,
+#                            Key_Date = Date_of_Interest,
+#                            Begin_Date=Begin_Date,
+#                            End_Date=End_Date,
+#                            Player_Min_Rounds=40,
+#                            Tourn_Min_Players=15,
+#                            Weight_Weekly_Exponent = 0.97,
+#                            Duration_Full_Weight = weeks(0)) %T>% View()
 # 
-# qplot(Compare_overlap_rounds$value.x,Compare_overlap_rounds$value.y)
+# 
+# 
+# ### Select data to use in regression ###
+# 
+# # Use this to establish where to center weighting and player information
+# Date_of_Interest <- Sys.Date()
+# Begin_Date <- Date_of_Interest - years(3)
+# End_Date <- Sys.Date()
+# 
+# Results_Source <- Filter_Player_Results(Player_Results, Begin_Date, End_Date, 40, 15) 
+# 
+# Weights_Vector <- Weight_Vector(Results_Source, Date_of_Interest, 0.97, weeks(0))
+# 
+# Player_Information_Trial <- Player_Information(Results_Source, Weights_Vector, Date_of_Interest)
+# 
+# Current_Regression <- LM_Regression_Ratings(Results_Source, Weights_Vector, Player_Information_Trial, "Linear")
+# 
+# 
+# Player_Adjusted_Scores <- Filter_Player_Results(Player_Results, Begin_Date, End_Date) %>%
+#   merge(.,select(Current_Regression[[1]],"Round_ID","Round_Value"),all.x=TRUE) %>%
+#   mutate(Adjusted_Score = Score - Round_Value) %>%
+#   select("Score","Round_Value","Adjusted_Score",everything()) %>% 
+#   .[order(.$Adjusted_Score),]
+# 
+# 
+# 
+# 
+# # Results_Source <- Filter_Player_Results(Player_Results,"2015-10-01","2017-10-01",40,15) 
+# # 
+# # Trial_Regression1617 <- LM_Regression_Ratings(Results_Source,1,"Linear")
+# # 
+# # # Checking to see how using before/after affecting rating of round difficulties
+# # 
+# # Compare_overlap_rounds <- merge(Trial_Regression1415[2],Trial_Regression1617[2], by = "row")
+# # 
+# # qplot(Compare_overlap_rounds$value.x,Compare_overlap_rounds$value.y)
 
 
 
