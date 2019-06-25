@@ -3658,48 +3658,74 @@
 "Big Easy Challenge 3 - Modderfontein",7449,2019-05-19,"Big Easy Tour",NA,NA,2019-06-10
 "Tata Steel PGTI Players Championship 2019 presented by Chandigarh Golf Club",7450,2019-05-19,"PGTI2",NA,NA,2019-06-10
 "HEIWA PGM Challenge I Road to CHAMPIONSHIP",7451,2019-05-19,"ATVT Logo1",NA,NA,2019-06-10
-"Charles Schwab Challenge",7452,2019-05-26,"PGA",NA,NA,2019-06-10
-"Made in Denmark presented by FREJA",7457,2019-05-26,"european_tour",NA,NA,2019-06-10
-"Evans Scholars Invitational",7458,2019-05-26,"webcom",NA,NA,2019-06-10
-"Canada Life Open",7459,2019-05-26,"CAN3",NA,NA,2019-06-10
-"60 Abierto Mexicano de Golf",7460,2019-05-26,"pga_latinoamerica",NA,NA,2019-06-10
-"Nantong Championship",7461,2019-05-26,"PGA Tour China Logo",NA,NA,2019-06-10
-"D+D REAL Czech Challenge",7462,2019-05-26,"european_challenge",NA,NA,2019-06-10
-"Kansai Open Golf Championship",7463,2019-05-26,"JapanGolfTour",NA,NA,2019-06-10
-"KB Finance Liiv Championship",7464,2019-05-26,"KPGA Korea Logo3",NA,NA,2019-06-10
-"Memorial Giorgio Bordoni",7465,2019-05-26,"Alps Golf Tour",NA,NA,2019-06-10
-"The IFX Payments Championship",7466,2019-05-26,"EPT Logo",NA,NA,2019-06-10
-"Elisefarm Open",7467,2019-05-26,"NGL Logo",NA,NA,2019-06-10
-"the Memorial Tournament presented by Nationwide",7469,2019-06-02,"PGA",NA,NA,2019-06-10
-"Bayview Place DCBank Open presented by Times Colonist ",7470,2019-06-02,"CAN3",NA,NA,2019-06-10
-"Bupa Match Play ",7471,2019-06-02,"pga_latinoamerica",NA,NA,2019-06-10
-"Gate Way To The Open Mizuno Open at The Royal GC ",7472,2019-06-02,"JapanGolfTour",NA,NA,2019-06-10
-"Rex Hospital Open ",7473,2019-06-02,"webcom",NA,NA,2019-06-10
-"Wuhan Optics Valley Open",7474,2019-06-02,"China Tour-CGA 2018",NA,NA,2019-06-10
-"The Matchroom Sport Championship",7475,2019-06-02,"EPT Logo",NA,NA,2019-06-10
-"Barseb‰ck Resort Masters",7476,2019-06-02,"NGL Logo",NA,NA,2019-06-10
-"Singha Classic",7478,2019-06-02,"ATGT Logo 2",NA,NA,2019-06-10
-"Taiheiyo Club Challenge Tournament",7479,2019-06-02,"ATVT Logo1",NA,NA,2019-06-10
-"Belgian Knockout",7480,2019-06-02,"european_tour",NA,NA,2019-06-10
-"RBC Canadian Open",7481,2019-06-09,"PGA",NA,NA,2019-06-10
-"BMW Charity Pro-Am presented by SYNNEX Corporation ",7482,2019-06-09,"webcom",NA,NA,2019-06-10
-"JGTC Mori Building Cup Shishido Hills ",7483,2019-06-09,"JapanGolfTour",NA,NA,2019-06-10
-"Sun City Challenge",7484,2019-06-09,"sunshine_tour",NA,NA,2019-06-10
-"Swiss Challenge Presented by Swiss Golf",7485,2019-06-09,"european_challenge",NA,NA,2019-06-10
-"The 10th Descente Korea Munsingwear Matchplay",7486,2019-06-09,"KPGA Korea Logo3",NA,NA,2019-06-10
-"Open de Saint Francois Region Guadeloupe",7487,2019-06-09,"Alps Golf Tour",NA,NA,2019-06-10
-"Lushan Open",7488,2019-06-09,"China Tour-CGA 2018",NA,NA,2019-06-10
-"The World Snooker Championship",7489,2019-06-09,"EPT Logo",NA,NA,2019-06-10
-"Thisted Forsikring Championship",7490,2019-06-09,"NGL Logo",NA,NA,2019-06-10
-"KUHN Maﬂkonfektion Open",7491,2019-06-09,"PGT Logo",NA,NA,2019-06-10
-"Big Easy Challenge 4 - Reading",7492,2019-06-09,"Big Easy Tour",NA,NA,2019-06-10
-"U.S. Open",7493,2019-06-16,"Major Combo 2",NA,NA,2019-06-10
-"Lincoln Land Championship presented by LRS",7494,2019-06-16,"webcom",NA,NA,2019-06-10
-"Hauts de France - Pas de Calais Golf Open",7495,2019-06-16,"european_challenge",NA,NA,2019-06-10
-"KEB Hana Bank Invitational",7496,2019-06-16,"KPGA Korea Logo3",NA,NA,2019-06-10
-"Acaya Open Dailies Total 1",7497,2019-06-16,"Alps Golf Tour",NA,NA,2019-06-10
-"PGA Championship hosted by Ingelsta Kalkon",7498,2019-06-16,"NGL Logo",NA,NA,2019-06-10
-"GolfBC Championship ",7499,2019-06-16,"CAN3",NA,NA,2019-06-10
-"Suzhou Open",7500,2019-06-16,"PGA Tour China Logo",NA,NA,2019-06-10
-"Singha all Thailand Championship",7501,2019-06-16,"ATGT Logo 2",NA,NA,2019-06-10
-"LANDIC CHALLENGE 7",7502,2019-06-16,"ATVT Logo1",NA,NA,2019-06-10
+"Charles Schwab Challenge",7452,2019-05-26,"PGA",NA,NA,2019-06-25
+"Made in Denmark presented by FREJA",7457,2019-05-26,"european_tour",NA,NA,2019-06-25
+"Evans Scholars Invitational",7458,2019-05-26,"webcom",NA,NA,2019-06-25
+"Canada Life Open",7459,2019-05-26,"CAN3",NA,NA,2019-06-25
+"60 Abierto Mexicano de Golf",7460,2019-05-26,"pga_latinoamerica",NA,NA,2019-06-25
+"Nantong Championship",7461,2019-05-26,"PGA Tour China Logo",NA,NA,2019-06-25
+"D+D REAL Czech Challenge",7462,2019-05-26,"european_challenge",NA,NA,2019-06-25
+"Kansai Open Golf Championship",7463,2019-05-26,"JapanGolfTour",NA,NA,2019-06-25
+"KB Finance Liiv Championship",7464,2019-05-26,"KPGA Korea Logo3",NA,NA,2019-06-25
+"Memorial Giorgio Bordoni",7465,2019-05-26,"Alps Golf Tour",NA,NA,2019-06-25
+"The IFX Payments Championship",7466,2019-05-26,"EPT Logo",NA,NA,2019-06-25
+"Elisefarm Open",7467,2019-05-26,"NGL Logo",NA,NA,2019-06-25
+"the Memorial Tournament presented by Nationwide",7469,2019-06-02,"PGA",NA,NA,2019-06-25
+"Bayview Place DCBank Open presented by Times Colonist ",7470,2019-06-02,"CAN3",NA,NA,2019-06-25
+"Bupa Match Play ",7471,2019-06-02,"pga_latinoamerica",NA,NA,2019-06-25
+"Gate Way To The Open Mizuno Open at The Royal GC ",7472,2019-06-02,"JapanGolfTour",NA,NA,2019-06-25
+"Rex Hospital Open ",7473,2019-06-02,"webcom",NA,NA,2019-06-25
+"Wuhan Optics Valley Open",7474,2019-06-02,"China Tour-CGA 2018",NA,NA,2019-06-25
+"The Matchroom Sport Championship",7475,2019-06-02,"EPT Logo",NA,NA,2019-06-25
+"Barseb‰ck Resort Masters",7476,2019-06-02,"NGL Logo",NA,NA,2019-06-25
+"Singha Classic",7478,2019-06-02,"ATGT Logo 2",NA,NA,2019-06-25
+"Taiheiyo Club Challenge Tournament",7479,2019-06-02,"ATVT Logo1",NA,NA,2019-06-25
+"Belgian Knockout",7480,2019-06-02,"european_tour",NA,NA,2019-06-25
+"RBC Canadian Open",7481,2019-06-09,"PGA",NA,NA,2019-06-25
+"BMW Charity Pro-Am presented by SYNNEX Corporation ",7482,2019-06-09,"webcom",NA,NA,2019-06-25
+"JGTC Mori Building Cup Shishido Hills ",7483,2019-06-09,"JapanGolfTour",NA,NA,2019-06-25
+"Sun City Challenge",7484,2019-06-09,"sunshine_tour",NA,NA,2019-06-25
+"Swiss Challenge Presented by Swiss Golf",7485,2019-06-09,"european_challenge",NA,NA,2019-06-25
+"The 10th Descente Korea Munsingwear Matchplay",7486,2019-06-09,"KPGA Korea Logo3",NA,NA,2019-06-25
+"Open de Saint Francois Region Guadeloupe",7487,2019-06-09,"Alps Golf Tour",NA,NA,2019-06-25
+"Lushan Open",7488,2019-06-09,"China Tour-CGA 2018",NA,NA,2019-06-25
+"The World Snooker Championship",7489,2019-06-09,"EPT Logo",NA,NA,2019-06-25
+"Thisted Forsikring Championship",7490,2019-06-09,"NGL Logo",NA,NA,2019-06-25
+"KUHN Maﬂkonfektion Open",7491,2019-06-09,"PGT Logo",NA,NA,2019-06-25
+"Big Easy Challenge 4 - Reading",7492,2019-06-09,"Big Easy Tour",NA,NA,2019-06-25
+"U.S. Open",7493,2019-06-16,"Major Combo 2",NA,NA,2019-06-25
+"Lincoln Land Championship presented by LRS",7494,2019-06-16,"webcom",NA,NA,2019-06-25
+"Hauts de France - Pas de Calais Golf Open",7495,2019-06-16,"european_challenge",NA,NA,2019-06-25
+"KEB Hana Bank Invitational",7496,2019-06-16,"KPGA Korea Logo3",NA,NA,2019-06-25
+"Acaya Open Dailies Total 1",7497,2019-06-16,"Alps Golf Tour",NA,NA,2019-06-25
+"PGA Championship hosted by Ingelsta Kalkon",7498,2019-06-16,"NGL Logo",NA,NA,2019-06-25
+"GolfBC Championship ",7499,2019-06-16,"CAN3",NA,NA,2019-06-25
+"Suzhou Open",7500,2019-06-16,"PGA Tour China Logo",NA,NA,2019-06-25
+"Singha all Thailand Championship",7501,2019-06-16,"ATGT Logo 2",NA,NA,2019-06-25
+"LANDIC CHALLENGE 7",7502,2019-06-16,"ATVT Logo1",NA,NA,2019-06-25
+"Travelers Championship ",7503,2019-06-23,"PGA",NA,NA,2019-06-25
+"Wichita Open Supporting Wichita's Youth",7504,2019-06-23,"webcom",NA,NA,2019-06-25
+"Lethbridge Paradise Canyon Open ",7505,2019-06-23,"CAN3",NA,NA,2019-06-25
+"Huangshan Championship",7506,2019-06-23,"PGA Tour China Logo",NA,NA,2019-06-25
+"BMW International Open",7507,2019-06-23,"european_tour",NA,NA,2019-06-25
+"Andalucia - Costa del Sol Match Play 9",7508,2019-06-23,"european_challenge",NA,NA,2019-06-25
+"Minamiakita CC Michinoku Challenge",7509,2019-06-23,"ATVT Logo1",NA,NA,2019-06-25
+"Kolon the 62nd Korea Open",7510,2019-06-23,"Asian Tour 2018","KPGA Korea Logo3",NA,2019-06-25
+"Open de la Mirabelle d'Or",7512,2019-06-23,"Alps Golf Tour",NA,NA,2019-06-25
+"The Diamond X Open",7513,2019-06-23,"EPT Logo",NA,NA,2019-06-25
+"Gamle Fredrikstad Open",7514,2019-06-23,"NGL Logo",NA,NA,2019-06-25
+"Czech Classic",7515,2019-06-23,"PGT Logo",NA,NA,2019-06-25
+"Estrella Damm N.A. AndalucÌa Masters hosted by the Sergio Garcia Foundation",7516,2019-06-30,"european_tour",NA,NA,2019-06-25
+"Rocket Mortgage Classic ",7517,2019-06-30,"PGA",NA,NA,2019-06-25
+"Utah Championship presented by Zions Bank ",7518,2019-06-30,"webcom",NA,NA,2019-06-25
+"Dunlop SRIXON Fukushima Open",7519,2019-06-30,"JapanGolfTour",NA,NA,2019-06-25
+"KCB Karen Masters",7520,2019-06-30,"sunshine_tour",NA,NA,2019-06-25
+"Italian Challenge Open Eneos Motor Oil",7521,2019-06-30,"european_challenge",NA,NA,2019-06-25
+"The 62nd KPGA Championship with A-ONE CC",7522,2019-06-30,"KPGA Korea Logo3",NA,NA,2019-06-25
+"PGM ADT Championship @ Tiara Melaka",7523,2019-06-30,"ADT 2018",NA,NA,2019-06-25
+"Beijing Open",7524,2019-06-30,"China Tour-CGA 2018",NA,NA,2019-06-25
+"The Golfcatcher Championship",7525,2019-06-30,"EPT Logo",NA,NA,2019-06-25
+"Tinderbox Charity Challenge - For De Vildeste Fugle",7526,2019-06-30,"NGL Logo",NA,NA,2019-06-25
+"Polish Open 2019 by John Deere ",7527,2019-06-30,"PGT Logo",NA,NA,2019-06-25
+"Big Easy Challenge 5 - State Mines",7528,2019-06-30,"Big Easy Tour",NA,NA,2019-06-25
+"Daisendori Cup ",7529,2019-06-30,"ATVT Logo1",NA,NA,2019-06-25
