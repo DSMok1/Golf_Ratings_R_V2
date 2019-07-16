@@ -3703,51 +3703,58 @@
 "Suzhou Open",7500,2019-06-16,"PGA Tour China Logo",NA,NA,2019-07-10
 "Singha all Thailand Championship",7501,2019-06-16,"ATGT Logo 2",NA,NA,2019-07-10
 "LANDIC CHALLENGE 7",7502,2019-06-16,"ATVT Logo1",NA,NA,2019-07-10
-"Travelers Championship ",7503,2019-06-23,"PGA",NA,NA,2019-07-10
-"Wichita Open Supporting Wichita's Youth",7504,2019-06-23,"Korn Ferry Tour KGT",NA,NA,2019-07-10
-"Lethbridge Paradise Canyon Open ",7505,2019-06-23,"CAN3",NA,NA,2019-07-10
-"Huangshan Championship",7506,2019-06-23,"PGA Tour China Logo",NA,NA,2019-07-10
-"BMW International Open",7507,2019-06-23,"european_tour",NA,NA,2019-07-10
-"Andalucia - Costa del Sol Match Play 9",7508,2019-06-23,"european_challenge",NA,NA,2019-07-10
-"Minamiakita CC Michinoku Challenge",7509,2019-06-23,"ATVT Logo1",NA,NA,2019-07-10
-"Kolon the 62nd Korea Open",7510,2019-06-23,"Asian Tour 2018","KPGA Korea Logo3",NA,2019-07-10
-"Open de la Mirabelle d'Or",7512,2019-06-23,"Alps Golf Tour",NA,NA,2019-07-10
-"The Diamond X Open",7513,2019-06-23,"EPT Logo",NA,NA,2019-07-10
-"Gamle Fredrikstad Open",7514,2019-06-23,"NGL Logo",NA,NA,2019-07-10
-"Czech Classic",7515,2019-06-23,"PGT Logo",NA,NA,2019-07-10
-"Estrella Damm N.A. Andalucía Masters hosted by the Sergio Garcia Foundation",7516,2019-06-30,"european_tour",NA,NA,2019-07-10
-"Rocket Mortgage Classic ",7517,2019-06-30,"PGA",NA,NA,2019-07-10
-"Utah Championship presented by Zions Bank ",7518,2019-06-30,"Korn Ferry Tour KGT",NA,NA,2019-07-10
-"Dunlop SRIXON Fukushima Open",7519,2019-06-30,"JapanGolfTour",NA,NA,2019-07-10
-"KCB Karen Masters",7520,2019-06-30,"sunshine_tour",NA,NA,2019-07-10
-"Italian Challenge Open Eneos Motor Oil",7521,2019-06-30,"european_challenge",NA,NA,2019-07-10
-"The 62nd KPGA Championship with A-ONE CC",7522,2019-06-30,"KPGA Korea Logo3",NA,NA,2019-07-10
-"PGM ADT Championship @ Tiara Melaka",7523,2019-06-30,"ADT 2018",NA,NA,2019-07-10
-"Beijing Open",7524,2019-06-30,"China Tour-CGA 2018",NA,NA,2019-07-10
-"The Golfcatcher Championship",7525,2019-06-30,"EPT Logo",NA,NA,2019-07-10
-"Tinderbox Charity Challenge - For De Vildeste Fugle",7526,2019-06-30,"NGL Logo",NA,NA,2019-07-10
-"Polish Open 2019 by John Deere ",7527,2019-06-30,"PGT Logo",NA,NA,2019-07-10
-"Big Easy Challenge 5 - State Mines",7528,2019-06-30,"Big Easy Tour",NA,NA,2019-07-10
-"Daisendori Cup ",7529,2019-06-30,"ATVT Logo1",NA,NA,2019-07-10
-"3M Open",7531,2019-07-07,"PGA",NA,NA,2019-07-10
-"LECOM Health Challenge",7532,2019-07-07,"Korn Ferry Tour KGT",NA,NA,2019-07-10
-"Windsor Championship",7533,2019-07-07,"CAN3",NA,NA,2019-07-10
-"D+D REAL Slovakia Challenge",7534,2019-07-07,"european_challenge",NA,NA,2019-07-10
-"	Japan PGA Championship",7535,2019-07-07,"JapanGolfTour",NA,NA,2019-07-10
-"Saint Malo Golf Open",7536,2019-07-07,"Alps Golf Tour",NA,NA,2019-07-10
-"Big Easy Challenge 6 - Akasia",7537,2019-07-07,"Big Easy Tour",NA,NA,2019-07-10
-"Dubai Duty Free Irish Open",7538,2019-07-07,"european_tour",NA,NA,2019-07-10
-"Tianjin Binhai Forest Open",7539,2019-07-07,"China Tour-CGA 2018",NA,NA,2019-07-10
-"Motocaddy Masters",7540,2019-07-07,"EPT Logo",NA,NA,2019-07-10
-"Camfil Nordic Championship",7541,2019-07-07,"NGL Logo",NA,NA,2019-07-10
-"Leipziger Golf Open",7542,2019-07-07,"PGT Logo",NA,NA,2019-07-10
-"Singha all Thailand Memorial",7543,2019-07-07,"ATGT Logo 2",NA,NA,2019-07-10
-"Le Vaudreuil Golf Challenge",7545,2019-07-14,"european_challenge",NA,NA,2019-07-10
-"John Deere Classic",7546,2019-07-14,"PGA",NA,NA,2019-07-10
-"Osprey Valley Open",7547,2019-07-14,"CAN3",NA,NA,2019-07-10
-"TPC Colorado Championship at Heron Lakes ",7549,2019-07-14,"Korn Ferry Tour KGT",NA,NA,2019-07-10
-"Fred Olsen Alps de La Gomera",7550,2019-07-14,"Alps Golf Tour",NA,NA,2019-07-10
-"The COBRA PUMA Championship",7551,2019-07-14,"EPT Logo",NA,NA,2019-07-10
-"Svea Leasing Open",7552,2019-07-14,"NGL Logo",NA,NA,2019-07-10
-"Broekpolder International Open",7553,2019-07-14,"PGT Logo",NA,NA,2019-07-10
-"Aberdeen Standard Investments Scottish Open ",7554,2019-07-14,"european_tour",NA,NA,2019-07-10
+"Travelers Championship ",7503,2019-06-23,"PGA",NA,NA,2019-07-16
+"Wichita Open Supporting Wichita's Youth",7504,2019-06-23,"Korn Ferry Tour KGT",NA,NA,2019-07-16
+"Lethbridge Paradise Canyon Open ",7505,2019-06-23,"CAN3",NA,NA,2019-07-16
+"Huangshan Championship",7506,2019-06-23,"PGA Tour China Logo",NA,NA,2019-07-16
+"BMW International Open",7507,2019-06-23,"european_tour",NA,NA,2019-07-16
+"Andalucia - Costa del Sol Match Play 9",7508,2019-06-23,"european_challenge",NA,NA,2019-07-16
+"Minamiakita CC Michinoku Challenge",7509,2019-06-23,"ATVT Logo1",NA,NA,2019-07-16
+"Kolon the 62nd Korea Open",7510,2019-06-23,"Asian Tour 2018","KPGA Korea Logo3",NA,2019-07-16
+"Open de la Mirabelle d'Or",7512,2019-06-23,"Alps Golf Tour",NA,NA,2019-07-16
+"The Diamond X Open",7513,2019-06-23,"EPT Logo",NA,NA,2019-07-16
+"Gamle Fredrikstad Open",7514,2019-06-23,"NGL Logo",NA,NA,2019-07-16
+"Czech Classic",7515,2019-06-23,"PGT Logo",NA,NA,2019-07-16
+"Estrella Damm N.A. Andalucía Masters hosted by the Sergio Garcia Foundation",7516,2019-06-30,"european_tour",NA,NA,2019-07-16
+"Rocket Mortgage Classic ",7517,2019-06-30,"PGA",NA,NA,2019-07-16
+"Utah Championship presented by Zions Bank ",7518,2019-06-30,"Korn Ferry Tour KGT",NA,NA,2019-07-16
+"Dunlop SRIXON Fukushima Open",7519,2019-06-30,"JapanGolfTour",NA,NA,2019-07-16
+"KCB Karen Masters",7520,2019-06-30,"sunshine_tour",NA,NA,2019-07-16
+"Italian Challenge Open Eneos Motor Oil",7521,2019-06-30,"european_challenge",NA,NA,2019-07-16
+"The 62nd KPGA Championship with A-ONE CC",7522,2019-06-30,"KPGA Korea Logo3",NA,NA,2019-07-16
+"PGM ADT Championship @ Tiara Melaka",7523,2019-06-30,"ADT 2018",NA,NA,2019-07-16
+"Beijing Open",7524,2019-06-30,"China Tour-CGA 2018",NA,NA,2019-07-16
+"The Golfcatcher Championship",7525,2019-06-30,"EPT Logo",NA,NA,2019-07-16
+"Tinderbox Charity Challenge - For De Vildeste Fugle",7526,2019-06-30,"NGL Logo",NA,NA,2019-07-16
+"Polish Open 2019 by John Deere ",7527,2019-06-30,"PGT Logo",NA,NA,2019-07-16
+"Big Easy Challenge 5 - State Mines",7528,2019-06-30,"Big Easy Tour",NA,NA,2019-07-16
+"Daisendori Cup ",7529,2019-06-30,"ATVT Logo1",NA,NA,2019-07-16
+"3M Open",7531,2019-07-07,"PGA",NA,NA,2019-07-16
+"LECOM Health Challenge",7532,2019-07-07,"Korn Ferry Tour KGT",NA,NA,2019-07-16
+"Windsor Championship",7533,2019-07-07,"CAN3",NA,NA,2019-07-16
+"D+D REAL Slovakia Challenge",7534,2019-07-07,"european_challenge",NA,NA,2019-07-16
+"	Japan PGA Championship",7535,2019-07-07,"JapanGolfTour",NA,NA,2019-07-16
+"Saint Malo Golf Open",7536,2019-07-07,"Alps Golf Tour",NA,NA,2019-07-16
+"Big Easy Challenge 6 - Akasia",7537,2019-07-07,"Big Easy Tour",NA,NA,2019-07-16
+"Dubai Duty Free Irish Open",7538,2019-07-07,"european_tour",NA,NA,2019-07-16
+"Tianjin Binhai Forest Open",7539,2019-07-07,"China Tour-CGA 2018",NA,NA,2019-07-16
+"Motocaddy Masters",7540,2019-07-07,"EPT Logo",NA,NA,2019-07-16
+"Camfil Nordic Championship",7541,2019-07-07,"NGL Logo",NA,NA,2019-07-16
+"Leipziger Golf Open",7542,2019-07-07,"PGT Logo",NA,NA,2019-07-16
+"Singha all Thailand Memorial",7543,2019-07-07,"ATGT Logo 2",NA,NA,2019-07-16
+"Le Vaudreuil Golf Challenge",7545,2019-07-14,"european_challenge",NA,NA,2019-07-16
+"John Deere Classic",7546,2019-07-14,"PGA",NA,NA,2019-07-16
+"Osprey Valley Open",7547,2019-07-14,"CAN3",NA,NA,2019-07-16
+"TPC Colorado Championship at Heron Lakes ",7549,2019-07-14,"Korn Ferry Tour KGT",NA,NA,2019-07-16
+"Fred Olsen Alps de La Gomera",7550,2019-07-14,"Alps Golf Tour",NA,NA,2019-07-16
+"The COBRA PUMA Championship",7551,2019-07-14,"EPT Logo",NA,NA,2019-07-16
+"Svea Leasing Open",7552,2019-07-14,"NGL Logo",NA,NA,2019-07-16
+"Broekpolder International Open",7553,2019-07-14,"PGT Logo",NA,NA,2019-07-16
+"Aberdeen Standard Investments Scottish Open ",7554,2019-07-14,"european_tour",NA,NA,2019-07-16
+"148th Open Championship",7555,2019-07-21,"Major Combo 2",NA,NA,2019-07-16
+"Euram Bank Open",7556,2019-07-21,"european_challenge",NA,NA,2019-07-16
+"Barbasol Championship",7557,2019-07-21,"PGA",NA,NA,2019-07-16
+"Pinnacle Bank Championship presented by Chevrolet",7558,2019-07-21,"Korn Ferry Tour KGT",NA,NA,2019-07-16
+"HFX Pro-Am presented by Steele Jaguar ",7559,2019-07-21,"CAN3",NA,NA,2019-07-16
+"Guangzhou Open",7560,2019-07-21,"PGA Tour China Logo",NA,NA,2019-07-16
+"The Eagle Orchid Scottish Masters",7561,2019-07-21,"EPT Logo",NA,NA,2019-07-16
