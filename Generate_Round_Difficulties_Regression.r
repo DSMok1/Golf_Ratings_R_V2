@@ -319,7 +319,7 @@ Player_Information <- function(Source_Data, Weight, Key_Date = Sys.Date()) {
               Sum_Weight_Yr = sum(Weights),
               Primary_Ratio_Yr = sum(Primary_Round*Weights)/sum(Weights),
               Primary_Player_Yr = round(sum(Primary_Round*Weights)/sum(Weights)),
-              Tour_Yr = length(tail(names(sort(table(Event_Tour_1))),1))
+              Tour_Yr = names(table(Event_Tour_1))[table(Event_Tour_1) == max(table(Event_Tour_1))][1]
     ) %>% ungroup %>%
     mutate(Primary_Player_Yr = pmin(round(Num_Rounds_Yr/max(Num_Rounds_Yr)),Primary_Player_Yr))
   
