@@ -412,7 +412,7 @@ Regression_Player_Ratings <- Player_Results %>%
                            Key_Date = Date_of_Interest,
                            Begin_Date=Begin_Date,
                            End_Date=End_Date,
-                           Player_Min_Rounds=40,
+                           Player_Min_Rounds=24,
                            Tourn_Min_Players=15,
                            Weight_Weekly_Exponent = 0.97,
                            Duration_Full_Weight = weeks(0)) %T>%  
