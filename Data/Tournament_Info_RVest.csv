@@ -3816,38 +3816,95 @@
 "PREM Group Irish Masters",7618,2019-09-01,"EPT Logo",NA,NA,2019-09-23
 "Timberwise Finnish Open hosted by Jaakko Mäkitalo",7619,2019-09-01,"NGL Logo",NA,NA,2019-09-23
 "Korn Ferry Tour Championship presented by United Leasing & Finance",7620,2019-09-01,"Korn Ferry Tour KGT",NA,NA,2019-09-23
-"Porsche European Open",7621,2019-09-08,"european_tour",NA,NA,2019-09-23
-"Open de Bretagne",7622,2019-09-08,"european_challenge",NA,NA,2019-09-23
-"Mackenzie Investments Open",7623,2019-09-08,"CAN3",NA,NA,2019-09-23
-"Fujisankei Classic",7624,2019-09-08,"JapanGolfTour",NA,NA,2019-09-23
-"Yeangder TPC",7625,2019-09-08,"Asian Tour 2018",NA,NA,2019-09-23
-"Hunan Taohuayuan Open",7626,2019-09-08,"China Tour-CGA 2018",NA,NA,2019-09-23
-"King's Cup",7627,2019-09-08,"sunshine_tour",NA,NA,2019-09-23
-"Cervino Open",7628,2019-09-08,"Alps Golf Tour",NA,NA,2019-09-23
-"The PDC Championship",7629,2019-09-08,"EPT Logo",NA,NA,2019-09-23
-"SM Match presented by Greatdays",7630,2019-09-08,"NGL Logo",NA,NA,2019-09-23
-"KLM Open",7631,2019-09-15,"european_tour",NA,NA,2019-09-23
-"57º Open De Portugal @ Morgado Golf Resort",7632,2019-09-15,"european_challenge",NA,NA,2019-09-23
-"A Military Tribute at The Greenbrier",7633,2019-09-15,"PGA",NA,NA,2019-09-23
-"Canada Life Championship",7634,2019-09-15,"CAN3",NA,NA,2019-09-23
-"Haikou Classic",7635,2019-09-15,"PGA Tour China Logo",NA,NA,2019-09-23
-"ANA Open",7636,2019-09-15,"JapanGolfTour",NA,NA,2019-09-23
-"Delight Works ASP Challenge",7637,2019-09-15,"ATVT Logo1",NA,NA,2019-09-23
-"Classic Golf and Country Club International Championship",7638,2019-09-15,"Asian Tour 2018","PGTI2",NA,2019-09-23
-"PGM Sabah ADT Championship",7639,2019-09-15,"ADT 2018",NA,NA,2019-09-23
-"Big Easy Challenge 11 - Services",7640,2019-09-15,"Big Easy Tour",NA,NA,2019-09-23
-"Sanderson Farms Championship",7641,2019-09-22,"PGA",NA,NA,2019-09-23
-"Sao Paulo Golf Club Championship",7642,2019-09-22,"pga_latinoamerica",NA,NA,2019-09-23
-"Zhuzhou Classic",7643,2019-09-22,"PGA Tour China Logo",NA,NA,2019-09-23
-"BMW PGA Championship",7644,2019-09-22,"european_tour",NA,NA,2019-09-23
-"Shinhan Donghae Open",7645,2019-09-22,"Asian Tour 2018","JapanGolfTour","KPGA Korea Logo3",2019-09-23
-"HEIWA PGM Challenge II Road to CHAMPIONSHIP",7646,2019-09-22,"ATVT Logo1",NA,NA,2019-09-23
-"PGM MNRB ADT Championship",7647,2019-09-22,"ADT 2018",NA,NA,2019-09-23
-"Newmachar Golf Club Challenge",7648,2019-09-22,"EPT Logo",NA,NA,2019-09-23
-"Willis Towers Watson Masters",7649,2019-09-22,"NGL Logo",NA,NA,2019-09-23
-"Safeway Open",7650,2019-09-29,"PGA",NA,NA,2019-09-23
-"66 JHSF Aberto do Brasil",7651,2019-09-29,"pga_latinoamerica",NA,NA,2019-09-23
-"Alfred Dunhill Links Championship",7652,2019-09-29,"european_tour",NA,NA,2019-09-23
-"Hopps Open de Provence",7653,2019-09-29,"european_challenge",NA,NA,2019-09-23
-"Panasonic Open Golf Championship",7654,2019-09-29,"Asian Tour 2018",NA,NA,2019-09-23
-"Combiphar Players Championship",7655,2019-09-29,"ADT 2018",NA,NA,2019-09-23
+"Porsche European Open",7621,2019-09-08,"European Tour(3)",NA,NA,2019-11-01
+"Open de Bretagne",7622,2019-09-08,"Challenge Tour2",NA,NA,2019-11-01
+"Mackenzie Investments Open",7623,2019-09-08,"CAN3",NA,NA,2019-11-01
+"Fujisankei Classic",7624,2019-09-08,"JapanGolfTour",NA,NA,2019-11-01
+"Yeangder TPC",7625,2019-09-08,"Asian Tour 2018",NA,NA,2019-11-01
+"Hunan Taohuayuan Open",7626,2019-09-08,"China Tour-CGA 2018",NA,NA,2019-11-01
+"King's Cup",7627,2019-09-08,"sunshine_tour",NA,NA,2019-11-01
+"Cervino Open",7628,2019-09-08,"Alps Golf Tour",NA,NA,2019-11-01
+"The PDC Championship",7629,2019-09-08,"EPT Logo",NA,NA,2019-11-01
+"SM Match presented by Greatdays",7630,2019-09-08,"NGL Logo",NA,NA,2019-11-01
+"KLM Open",7631,2019-09-15,"European Tour(3)",NA,NA,2019-11-01
+"57º Open De Portugal @ Morgado Golf Resort",7632,2019-09-15,"Challenge Tour2",NA,NA,2019-11-01
+"A Military Tribute at The Greenbrier",7633,2019-09-15,"PGA",NA,NA,2019-11-01
+"Canada Life Championship",7634,2019-09-15,"CAN3",NA,NA,2019-11-01
+"Haikou Classic",7635,2019-09-15,"PGA Tour China Logo",NA,NA,2019-11-01
+"ANA Open",7636,2019-09-15,"JapanGolfTour",NA,NA,2019-11-01
+"Delight Works ASP Challenge",7637,2019-09-15,"ATVT Logo1",NA,NA,2019-11-01
+"Classic Golf and Country Club International Championship",7638,2019-09-15,"Asian Tour 2018","PGTI2",NA,2019-11-01
+"PGM Sabah ADT Championship",7639,2019-09-15,"ADT 2018",NA,NA,2019-11-01
+"Big Easy Challenge 11 - Services",7640,2019-09-15,"Big Easy Tour",NA,NA,2019-11-01
+"Sanderson Farms Championship",7641,2019-09-22,"PGA",NA,NA,2019-11-01
+"Sao Paulo Golf Club Championship",7642,2019-09-22,"pga_latinoamerica",NA,NA,2019-11-01
+"Zhuzhou Classic",7643,2019-09-22,"PGA Tour China Logo",NA,NA,2019-11-01
+"BMW PGA Championship",7644,2019-09-22,"European Tour(3)",NA,NA,2019-11-01
+"Shinhan Donghae Open",7645,2019-09-22,"Asian Tour 2018","JapanGolfTour","KPGA Korea Logo3",2019-11-01
+"HEIWA PGM Challenge II Road to CHAMPIONSHIP",7646,2019-09-22,"ATVT Logo1",NA,NA,2019-11-01
+"PGM MNRB ADT Championship",7647,2019-09-22,"ADT 2018",NA,NA,2019-11-01
+"Newmachar Golf Club Challenge",7648,2019-09-22,"EPT Logo",NA,NA,2019-11-01
+"Willis Towers Watson Masters",7649,2019-09-22,"NGL Logo",NA,NA,2019-11-01
+"Safeway Open",7650,2019-09-29,"PGA",NA,NA,2019-11-01
+"66 JHSF Aberto do Brasil",7651,2019-09-29,"pga_latinoamerica",NA,NA,2019-11-01
+"Alfred Dunhill Links Championship",7652,2019-09-29,"European Tour(3)",NA,NA,2019-11-01
+"Hopps Open de Provence",7653,2019-09-29,"Challenge Tour2",NA,NA,2019-11-01
+"Combiphar Players Championship",7655,2019-09-29,"ADT 2018",NA,NA,2019-11-01
+"Vodacom Origins of Golf Humewood",7656,2019-09-29,"sunshine_tour",NA,NA,2019-11-01
+"Big Easy Tour 12 - Centurion CC ",7657,2019-09-29,"Big Easy Tour",NA,NA,2019-11-01
+"Elite Grips Challenge",7659,2019-09-29,"ATVT Logo1",NA,NA,2019-11-01
+"DGB Financial Group Volvik Daegu Gyeongbuk Open",7660,2019-09-29,"KPGA Korea Logo3",NA,NA,2019-11-01
+"Lindbytvätten Masters",7661,2019-09-29,"NGL Logo",NA,NA,2019-11-01
+"Jaipur Open",7662,2019-09-29,"PGTI2",NA,NA,2019-11-01
+"Panasonic Open Golf Championship",7663,2019-09-29,"Asian Tour 2018","JapanGolfTour",NA,2019-11-01
+"Mutuactivos Open de España",7664,2019-10-06,"European Tour(3)",NA,NA,2019-11-01
+"Lalla Aïcha Challenge Tour",7665,2019-10-06,"Challenge Tour2",NA,NA,2019-11-01
+"Shriners Hospitals for Children Open",7666,2019-10-06,"PGA",NA,NA,2019-11-01
+"Banco del Pacifico Open presentado por Quito Alcaldia",7667,2019-10-06,"pga_latinoamerica",NA,NA,2019-11-01
+"Top Cup Tokai Classic",7668,2019-10-06,"JapanGolfTour",NA,NA,2019-11-01
+"TOSHIN CHALLENGE IN Meishin Yokaichi CC",7669,2019-10-06,"ATVT Logo1",NA,NA,2019-11-01
+"Mercuries Taiwan Masters",7670,2019-10-06,"Asian Tour 2018",NA,NA,2019-11-01
+"Vodacom Origins Stellenbosch",7671,2019-10-06,"sunshine_tour",NA,NA,2019-11-01
+"Hyundai Insurance KJ Choi Invitational",7672,2019-10-06,"KPGA Korea Logo3",NA,NA,2019-11-01
+"Race to Himmerland - Presented by FREJA",7673,2019-10-06,"NGL Logo",NA,NA,2019-11-01
+"Castanea Resort Championship",7674,2019-10-06,"PGT Logo",NA,NA,2019-11-01
+"Journey to Jordan 2 - Ayla",7675,2019-10-06,"MGTNEW",NA,NA,2019-11-01
+"Big Easy Challenge 13 - Parkview",7676,2019-10-06,"Big Easy Tour",NA,NA,2019-11-01
+"Italian Open",7677,2019-10-13,"European Tour(3)",NA,NA,2019-11-01
+"Stone Irish Challenge",7678,2019-10-13,"Challenge Tour2",NA,NA,2019-11-01
+"Houston Open",7679,2019-10-13,"PGA",NA,NA,2019-11-01
+"Macau Championship",7680,2019-10-13,"PGA Tour China Logo",NA,NA,2019-11-01
+"Bridgestone Open",7681,2019-10-13,"JapanGolfTour",NA,NA,2019-11-01
+"Ryo Ishikawa everyone PROJECT Challenge",7682,2019-10-13,"ATVT Logo1",NA,NA,2019-11-01
+"TX Civil & Logistics WA PGA Championship",7683,2019-10-13,"AUS Logo2",NA,NA,2019-11-01
+"Sun Wild Coast Sun Challenge",7684,2019-10-13,"sunshine_tour",NA,NA,2019-11-01
+"Big Easy Challenge 14 - CMR",7685,2019-10-13,"Big Easy Tour",NA,NA,2019-11-01
+"Genesis Championship",7686,2019-10-13,"KPGA Korea Logo3",NA,NA,2019-11-01
+"Tour Final by Pärnu Bay Golf Links",7687,2019-10-13,"NGL Logo",NA,NA,2019-11-01
+"Singha Pattaya Open",7688,2019-10-13,"ATGT Logo 2",NA,NA,2019-11-01
+"The Abu Dhabi Open by Arena",7689,2019-10-13,"MGTNEW",NA,NA,2019-11-01
+"Amundi Open de France",7690,2019-10-20,"European Tour(3)",NA,NA,2019-11-01
+"The CJ Cup @ Nine Bridges",7691,2019-10-20,"PGA",NA,NA,2019-11-01
+"Vodacom Origins of Golf - Selborne",7692,2019-10-20,"sunshine_tour",NA,NA,2019-11-01
+"Hainan Open",7693,2019-10-20,"Challenge Tour2","China Tour-CGA 2018",NA,2019-11-01
+"Diners Club Peru Open presentado por Volvo",7694,2019-10-20,"pga_latinoamerica",NA,NA,2019-11-01
+"BG Bangkok Open",7695,2019-10-20,"ATGT Logo 2",NA,NA,2019-11-01
+"Jeev Milkha Singh Invitational presented by TAKE Solutions",7696,2019-10-20,"PGTI2",NA,NA,2019-11-01
+"Japan Open Golf Championship",7697,2019-10-20,"JapanGolfTour",NA,NA,2019-11-01
+"Portugal Masters",7700,2019-10-27,"European Tour(3)",NA,NA,2019-11-01
+"Foshan Open",7701,2019-10-27,"Challenge Tour2","China Tour-CGA 2018",NA,2019-11-01
+"The ZOZO Championship",7702,2019-10-27,"PGA",NA,NA,2019-11-01
+"JGTO Novil Final",7703,2019-10-27,"ATVT Logo1",NA,NA,2019-11-01
+"Victorian PGA Championship",7704,2019-10-27,"AUS Logo2",NA,NA,2019-11-01
+"Sibaya Challenge",7705,2019-10-27,"sunshine_tour",NA,NA,2019-11-01
+"Big Easy Challenge 15 - Krugersdorp",7706,2019-10-27,"Big Easy Tour",NA,NA,2019-11-01
+"Alps Tour Grand Final",7707,2019-10-27,"Alps Golf Tour",NA,NA,2019-11-01
+"The Al Ain Open by Arena",7708,2019-10-27,"MGTNEW",NA,NA,2019-11-01
+"WGC - HSBC Champions",7709,2019-11-03,"WGC",NA,NA,2019-11-01
+"Termas de Rio Hondo Invitational",7710,2019-11-03,"pga_latinoamerica",NA,NA,2019-11-01
+"Tour Championships",7711,2019-11-03,"EPT Logo",NA,NA,2019-11-01
+"Big Easy Challenge 16 - Reading",7712,2019-11-03,"Big Easy Tour",NA,NA,2019-11-01
+"The Ras Al Khaimah Open by Arena",7713,2019-11-03,"MGTNEW",NA,NA,2019-11-01
+"Bermuda Championship",7714,2019-11-03,"PGA",NA,NA,2019-11-01
+"Vodacom Origins Final",7715,2019-11-03,"sunshine_tour",NA,NA,2019-11-01
+"Mynavi ABC Championship",7716,2019-11-03,"JapanGolfTour",NA,NA,2019-11-01

@@ -4120,67 +4120,141 @@
 7618,"Tournament Results Collected",2019-09-23,"PREM Group Irish Masters",2019-09-01
 7619,"Tournament Results Collected",2019-09-23,"Timberwise Finnish Open hosted by Jaakko Mäkitalo",2019-09-01
 7620,"Tournament Results Collected",2019-09-23,"Korn Ferry Tour Championship presented by United Leasing & Finance",2019-09-01
-7621,"Tournament Results Collected",2019-09-23,"Porsche European Open",2019-09-08
-7622,"Tournament Results Collected",2019-09-23,"Open de Bretagne",2019-09-08
-7623,"Tournament Results Collected",2019-09-23,"Mackenzie Investments Open",2019-09-08
-7624,"Tournament Results Collected",2019-09-23,"Fujisankei Classic",2019-09-08
-7625,"Tournament Results Collected",2019-09-23,"Yeangder TPC",2019-09-08
-7626,"Tournament Results Collected",2019-09-23,"Hunan Taohuayuan Open",2019-09-08
-7627,"Tournament Results Collected",2019-09-23,"King's Cup",2019-09-08
-7628,"Tournament Results Collected",2019-09-23,"Cervino Open",2019-09-08
-7629,"Tournament Results Collected",2019-09-23,"The PDC Championship",2019-09-08
-7630,"No Tournament Scores Available",2019-09-23,"SM Match presented by Greatdays",2019-09-08
-7631,"Tournament Results Collected",2019-09-23,"KLM Open",2019-09-15
-7632,"Tournament Results Collected",2019-09-23,"57º Open De Portugal @ Morgado Golf Resort",2019-09-15
-7633,"Tournament Results Collected",2019-09-23,"A Military Tribute at The Greenbrier",2019-09-15
-7634,"Tournament Results Collected",2019-09-23,"Canada Life Championship",2019-09-15
-7635,"Tournament Results Collected",2019-09-23,"Haikou Classic",2019-09-15
-7636,"Tournament Results Collected",2019-09-23,"ANA Open",2019-09-15
-7637,"Tournament Results Collected",2019-09-23,"Delight Works ASP Challenge",2019-09-15
-7638,"Tournament Results Collected",2019-09-23,"Classic Golf and Country Club International Championship",2019-09-15
-7639,"Tournament Results Collected",2019-09-23,"PGM Sabah ADT Championship",2019-09-15
-7640,"Tournament Results Collected",2019-09-23,"Big Easy Challenge 11 - Services",2019-09-15
-7641,"Tournament Results Collected",2019-09-23,"Sanderson Farms Championship",2019-09-22
-7642,"Tournament Results Collected",2019-09-23,"Sao Paulo Golf Club Championship",2019-09-22
-7643,"Tournament Results Collected",2019-09-23,"Zhuzhou Classic",2019-09-22
-7644,"Tournament Results Collected",2019-09-23,"BMW PGA Championship",2019-09-22
-7645,"Tournament Results Collected",2019-09-23,"Shinhan Donghae Open",2019-09-22
-7646,"Tournament Results Collected",2019-09-23,"HEIWA PGM Challenge II Road to CHAMPIONSHIP",2019-09-22
-7647,"Tournament Results Collected",2019-09-23,"PGM MNRB ADT Championship",2019-09-22
-7648,"Tournament Results Collected",2019-09-23,"Newmachar Golf Club Challenge",2019-09-22
-7649,"Tournament Results Collected",2019-09-23,"Willis Towers Watson Masters",2019-09-22
-7650,"No Player Information for this tournament available",2019-09-23,"Safeway Open",2019-09-29
-7651,"No Player Information for this tournament available",2019-09-23,"66 JHSF Aberto do Brasil",2019-09-29
-7652,"No Player Information for this tournament available",2019-09-23,"Alfred Dunhill Links Championship",2019-09-29
-7653,"No Player Information for this tournament available",2019-09-23,"Hopps Open de Provence",2019-09-29
-7654,"No Player Information for this tournament available",2019-09-23,"Panasonic Open Golf Championship",2019-09-29
-7655,"No Player Information for this tournament available",2019-09-23,"Combiphar Players Championship",2019-09-29
-7656,"Tournament ID Not Valid",2019-09-23,NA,NA
-7657,"Tournament ID Not Valid",2019-09-23,NA,NA
-7658,"Tournament ID Not Valid",2019-09-23,NA,NA
-7659,"Tournament ID Not Valid",2019-09-23,NA,NA
-7660,"Tournament ID Not Valid",2019-09-23,NA,NA
-7661,"Tournament ID Not Valid",2019-09-23,NA,NA
-7662,"Tournament ID Not Valid",2019-09-23,NA,NA
-7663,"Tournament ID Not Valid",2019-09-23,NA,NA
-7664,"Tournament ID Not Valid",2019-09-23,NA,NA
-7665,"Tournament ID Not Valid",2019-09-23,NA,NA
-7666,"Tournament ID Not Valid",2019-09-23,NA,NA
-7667,"Tournament ID Not Valid",2019-09-23,NA,NA
-7668,"Tournament ID Not Valid",2019-09-23,NA,NA
-7669,"Tournament ID Not Valid",2019-09-23,NA,NA
-7670,"Tournament ID Not Valid",2019-09-23,NA,NA
-7671,"Tournament ID Not Valid",2019-09-23,NA,NA
-7672,"Tournament ID Not Valid",2019-09-23,NA,NA
-7673,"Tournament ID Not Valid",2019-09-23,NA,NA
-7674,"Tournament ID Not Valid",2019-09-23,NA,NA
-7675,"Tournament ID Not Valid",2019-09-23,NA,NA
-7676,"Tournament ID Not Valid",2019-09-23,NA,NA
-7677,"Tournament ID Not Valid",2019-09-23,NA,NA
-7678,"Tournament ID Not Valid",2019-09-23,NA,NA
-7679,"Tournament ID Not Valid",2019-09-23,NA,NA
-7680,"Tournament ID Not Valid",2019-09-23,NA,NA
-7681,"Tournament ID Not Valid",2019-09-23,NA,NA
-7682,"Tournament ID Not Valid",2019-09-23,NA,NA
-7683,"Tournament ID Not Valid",2019-09-23,NA,NA
-7684,"Tournament ID Not Valid",2019-09-23,NA,NA
+7621,"Tournament Results Collected",2019-11-01,"Porsche European Open",2019-09-08
+7622,"Tournament Results Collected",2019-11-01,"Open de Bretagne",2019-09-08
+7623,"Tournament Results Collected",2019-11-01,"Mackenzie Investments Open",2019-09-08
+7624,"Tournament Results Collected",2019-11-01,"Fujisankei Classic",2019-09-08
+7625,"Tournament Results Collected",2019-11-01,"Yeangder TPC",2019-09-08
+7626,"Tournament Results Collected",2019-11-01,"Hunan Taohuayuan Open",2019-09-08
+7627,"Tournament Results Collected",2019-11-01,"King's Cup",2019-09-08
+7628,"Tournament Results Collected",2019-11-01,"Cervino Open",2019-09-08
+7629,"Tournament Results Collected",2019-11-01,"The PDC Championship",2019-09-08
+7630,"No Tournament Scores Available",2019-11-01,"SM Match presented by Greatdays",2019-09-08
+7631,"Tournament Results Collected",2019-11-01,"KLM Open",2019-09-15
+7632,"Tournament Results Collected",2019-11-01,"57º Open De Portugal @ Morgado Golf Resort",2019-09-15
+7633,"Tournament Results Collected",2019-11-01,"A Military Tribute at The Greenbrier",2019-09-15
+7634,"Tournament Results Collected",2019-11-01,"Canada Life Championship",2019-09-15
+7635,"Tournament Results Collected",2019-11-01,"Haikou Classic",2019-09-15
+7636,"Tournament Results Collected",2019-11-01,"ANA Open",2019-09-15
+7637,"Tournament Results Collected",2019-11-01,"Delight Works ASP Challenge",2019-09-15
+7638,"Tournament Results Collected",2019-11-01,"Classic Golf and Country Club International Championship",2019-09-15
+7639,"Tournament Results Collected",2019-11-01,"PGM Sabah ADT Championship",2019-09-15
+7640,"Tournament Results Collected",2019-11-01,"Big Easy Challenge 11 - Services",2019-09-15
+7641,"Tournament Results Collected",2019-11-01,"Sanderson Farms Championship",2019-09-22
+7642,"Tournament Results Collected",2019-11-01,"Sao Paulo Golf Club Championship",2019-09-22
+7643,"Tournament Results Collected",2019-11-01,"Zhuzhou Classic",2019-09-22
+7644,"Tournament Results Collected",2019-11-01,"BMW PGA Championship",2019-09-22
+7645,"Tournament Results Collected",2019-11-01,"Shinhan Donghae Open",2019-09-22
+7646,"Tournament Results Collected",2019-11-01,"HEIWA PGM Challenge II Road to CHAMPIONSHIP",2019-09-22
+7647,"Tournament Results Collected",2019-11-01,"PGM MNRB ADT Championship",2019-09-22
+7648,"Tournament Results Collected",2019-11-01,"Newmachar Golf Club Challenge",2019-09-22
+7649,"Tournament Results Collected",2019-11-01,"Willis Towers Watson Masters",2019-09-22
+7650,"Tournament Results Collected",2019-11-01,"Safeway Open",2019-09-29
+7651,"Tournament Results Collected",2019-11-01,"66 JHSF Aberto do Brasil",2019-09-29
+7652,"Tournament Results Collected",2019-11-01,"Alfred Dunhill Links Championship",2019-09-29
+7653,"Tournament Results Collected",2019-11-01,"Hopps Open de Provence",2019-09-29
+7654,"Tournament ID Not Valid",2019-11-01,NA,NA
+7655,"Tournament Results Collected",2019-11-01,"Combiphar Players Championship",2019-09-29
+7656,"Tournament Results Collected",2019-11-01,"Vodacom Origins of Golf Humewood",2019-09-29
+7657,"Tournament Results Collected",2019-11-01,"Big Easy Tour 12 - Centurion CC ",2019-09-29
+7658,"Tournament ID Not Valid",2019-11-01,NA,NA
+7659,"Tournament Results Collected",2019-11-01,"Elite Grips Challenge",2019-09-29
+7660,"Tournament Results Collected",2019-11-01,"DGB Financial Group Volvik Daegu Gyeongbuk Open",2019-09-29
+7661,"Tournament Results Collected",2019-11-01,"Lindbytvätten Masters",2019-09-29
+7662,"Tournament Results Collected",2019-11-01,"Jaipur Open",2019-09-29
+7663,"Tournament Results Collected",2019-11-01,"Panasonic Open Golf Championship",2019-09-29
+7664,"Tournament Results Collected",2019-11-01,"Mutuactivos Open de España",2019-10-06
+7665,"Tournament Results Collected",2019-11-01,"Lalla Aïcha Challenge Tour",2019-10-06
+7666,"Tournament Results Collected",2019-11-01,"Shriners Hospitals for Children Open",2019-10-06
+7667,"Tournament Results Collected",2019-11-01,"Banco del Pacifico Open presentado por Quito Alcaldia",2019-10-06
+7668,"Tournament Results Collected",2019-11-01,"Top Cup Tokai Classic",2019-10-06
+7669,"Tournament Results Collected",2019-11-01,"TOSHIN CHALLENGE IN Meishin Yokaichi CC",2019-10-06
+7670,"Tournament Results Collected",2019-11-01,"Mercuries Taiwan Masters",2019-10-06
+7671,"Tournament Results Collected",2019-11-01,"Vodacom Origins Stellenbosch",2019-10-06
+7672,"Tournament Results Collected",2019-11-01,"Hyundai Insurance KJ Choi Invitational",2019-10-06
+7673,"Tournament Results Collected",2019-11-01,"Race to Himmerland - Presented by FREJA",2019-10-06
+7674,"Tournament Results Collected",2019-11-01,"Castanea Resort Championship",2019-10-06
+7675,"Tournament Results Collected",2019-11-01,"Journey to Jordan 2 - Ayla",2019-10-06
+7676,"Tournament Results Collected",2019-11-01,"Big Easy Challenge 13 - Parkview",2019-10-06
+7677,"Tournament Results Collected",2019-11-01,"Italian Open",2019-10-13
+7678,"Tournament Results Collected",2019-11-01,"Stone Irish Challenge",2019-10-13
+7679,"Tournament Results Collected",2019-11-01,"Houston Open",2019-10-13
+7680,"Tournament Results Collected",2019-11-01,"Macau Championship",2019-10-13
+7681,"Tournament Results Collected",2019-11-01,"Bridgestone Open",2019-10-13
+7682,"Tournament Results Collected",2019-11-01,"Ryo Ishikawa everyone PROJECT Challenge",2019-10-13
+7683,"Tournament Results Collected",2019-11-01,"TX Civil & Logistics WA PGA Championship",2019-10-13
+7684,"Tournament Results Collected",2019-11-01,"Sun Wild Coast Sun Challenge",2019-10-13
+7685,"Tournament Results Collected",2019-11-01,"Big Easy Challenge 14 - CMR",2019-10-13
+7686,"Tournament Results Collected",2019-11-01,"Genesis Championship",2019-10-13
+7687,"Tournament Results Collected",2019-11-01,"Tour Final by Pärnu Bay Golf Links",2019-10-13
+7688,"Tournament Results Collected",2019-11-01,"Singha Pattaya Open",2019-10-13
+7689,"Tournament Results Collected",2019-11-01,"The Abu Dhabi Open by Arena",2019-10-13
+7690,"Tournament Results Collected",2019-11-01,"Amundi Open de France",2019-10-20
+7691,"Tournament Results Collected",2019-11-01,"The CJ Cup @ Nine Bridges",2019-10-20
+7692,"Tournament Results Collected",2019-11-01,"Vodacom Origins of Golf - Selborne",2019-10-20
+7693,"Tournament Results Collected",2019-11-01,"Hainan Open",2019-10-20
+7694,"Tournament Results Collected",2019-11-01,"Diners Club Peru Open presentado por Volvo",2019-10-20
+7695,"Tournament Results Collected",2019-11-01,"BG Bangkok Open",2019-10-20
+7696,"Tournament Results Collected",2019-11-01,"Jeev Milkha Singh Invitational presented by TAKE Solutions",2019-10-20
+7697,"Tournament Results Collected",2019-11-01,"Japan Open Golf Championship",2019-10-20
+7698,"Tournament ID Not Valid",2019-11-01,NA,NA
+7699,"Tournament ID Not Valid",2019-11-01,NA,NA
+7700,"Tournament Results Collected",2019-11-01,"Portugal Masters",2019-10-27
+7701,"Tournament Results Collected",2019-11-01,"Foshan Open",2019-10-27
+7702,"Tournament Results Collected",2019-11-01,"The ZOZO Championship",2019-10-27
+7703,"Tournament Results Collected",2019-11-01,"JGTO Novil Final",2019-10-27
+7704,"Tournament Results Collected",2019-11-01,"Victorian PGA Championship",2019-10-27
+7705,"Tournament Results Collected",2019-11-01,"Sibaya Challenge",2019-10-27
+7706,"Tournament Results Collected",2019-11-01,"Big Easy Challenge 15 - Krugersdorp",2019-10-27
+7707,"Tournament Results Collected",2019-11-01,"Alps Tour Grand Final",2019-10-27
+7708,"Tournament Results Collected",2019-11-01,"The Al Ain Open by Arena",2019-10-27
+7709,"No Player Information for this tournament available",2019-11-01,"WGC - HSBC Champions",2019-11-03
+7710,"No Player Information for this tournament available",2019-11-01,"Termas de Rio Hondo Invitational",2019-11-03
+7711,"No Player Information for this tournament available",2019-11-01,"Tour Championships",2019-11-03
+7712,"Tournament Results Collected",2019-11-01,"Big Easy Challenge 16 - Reading",2019-11-03
+7713,"Tournament Results Collected",2019-11-01,"The Ras Al Khaimah Open by Arena",2019-11-03
+7714,"No Player Information for this tournament available",2019-11-01,"Bermuda Championship",2019-11-03
+7715,"No Player Information for this tournament available",2019-11-01,"Vodacom Origins Final",2019-11-03
+7716,"No Player Information for this tournament available",2019-11-01,"Mynavi ABC Championship",2019-11-03
+7717,"Tournament ID Not Valid",2019-11-01,NA,NA
+7718,"Tournament ID Not Valid",2019-11-01,NA,NA
+7719,"Tournament ID Not Valid",2019-11-01,NA,NA
+7720,"Tournament ID Not Valid",2019-11-01,NA,NA
+7721,"Tournament ID Not Valid",2019-11-01,NA,NA
+7722,"Tournament ID Not Valid",2019-11-01,NA,NA
+7723,"Tournament ID Not Valid",2019-11-01,NA,NA
+7724,"Tournament ID Not Valid",2019-11-01,NA,NA
+7725,"Tournament ID Not Valid",2019-11-01,NA,NA
+7726,"Tournament ID Not Valid",2019-11-01,NA,NA
+7727,"Tournament ID Not Valid",2019-11-01,NA,NA
+7728,"Tournament ID Not Valid",2019-11-01,NA,NA
+7729,"Tournament ID Not Valid",2019-11-01,NA,NA
+7730,"Tournament ID Not Valid",2019-11-01,NA,NA
+7731,"Tournament ID Not Valid",2019-11-01,NA,NA
+7732,"Tournament ID Not Valid",2019-11-01,NA,NA
+7733,"Tournament ID Not Valid",2019-11-01,NA,NA
+7734,"Tournament ID Not Valid",2019-11-01,NA,NA
+7735,"Tournament ID Not Valid",2019-11-01,NA,NA
+7736,"Tournament ID Not Valid",2019-11-01,NA,NA
+7737,"Tournament ID Not Valid",2019-11-01,NA,NA
+7738,"Tournament ID Not Valid",2019-11-01,NA,NA
+7739,"Tournament ID Not Valid",2019-11-01,NA,NA
+7740,"Tournament ID Not Valid",2019-11-01,NA,NA
+7741,"Tournament ID Not Valid",2019-11-01,NA,NA
+7742,"Tournament ID Not Valid",2019-11-01,NA,NA
+7743,"Tournament ID Not Valid",2019-11-01,NA,NA
+7744,"Tournament ID Not Valid",2019-11-01,NA,NA
+7745,"Tournament ID Not Valid",2019-11-01,NA,NA
+7746,"Tournament ID Not Valid",2019-11-01,NA,NA
+7747,"Tournament ID Not Valid",2019-11-01,NA,NA
+7748,"Tournament ID Not Valid",2019-11-01,NA,NA
+7749,"Tournament ID Not Valid",2019-11-01,NA,NA
+7750,"Tournament ID Not Valid",2019-11-01,NA,NA
+7751,"Tournament ID Not Valid",2019-11-01,NA,NA
+7752,"Tournament ID Not Valid",2019-11-01,NA,NA
+7753,"Tournament ID Not Valid",2019-11-01,NA,NA
+7754,"Tournament ID Not Valid",2019-11-01,NA,NA
+7755,"Tournament ID Not Valid",2019-11-01,NA,NA
+7756,"Tournament ID Not Valid",2019-11-01,NA,NA
+7757,"Tournament ID Not Valid",2019-11-01,NA,NA
+7758,"Tournament ID Not Valid",2019-11-01,NA,NA
