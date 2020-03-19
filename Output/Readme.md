@@ -1,7 +1,7 @@
 Current Golf Ratings
 ================
 DSMok1
-March 10, 2020
+March 19, 2020
 
 ## Summary
 
@@ -28,205 +28,205 @@ The full output is located at
 
 | Rank | Player\_Name            | Player\_Value | Num\_Rounds | Num\_Rounds\_Yr | Country | Tour\_Yr               |
 | ---: | :---------------------- | ------------: | ----------: | --------------: | :------ | :--------------------- |
-|    1 | Rory McIlroy            |        \-2.29 |         249 |              88 | NIR     | PGA Tour               |
-|    2 | Jon Rahm                |        \-2.18 |         270 |              87 | ESP     | PGA Tour               |
-|    3 | Justin Thomas           |        \-1.87 |         249 |              76 | USA     | PGA Tour               |
-|    4 | Webb Simpson            |        \-1.55 |         258 |              78 | USA     | PGA Tour               |
-|    5 | Patrick Cantlay         |        \-1.46 |         228 |              74 | USA     | PGA Tour               |
-|    6 | Xander Schauffele       |        \-1.42 |         279 |              76 | USA     | PGA Tour               |
-|    7 | Hideki Matsuyama        |        \-1.39 |         275 |             101 | JPN     | PGA Tour               |
-|    8 | Dustin Johnson          |        \-1.31 |         232 |              70 | USA     | PGA Tour               |
-|    9 | Tommy Fleetwood         |        \-1.31 |         314 |             104 | ENG     | PGA Tour               |
-|   10 | Patrick Reed            |        \-1.25 |         336 |             116 | USA     | PGA Tour               |
-|   11 | Bryson DeChambeau       |        \-1.25 |         280 |              84 | USA     | PGA Tour               |
-|   12 | Tiger Woods             |        \-1.22 |         128 |              40 | USA     | PGA Tour               |
-|   13 | Rickie Fowler           |        \-1.19 |         250 |              74 | USA     | PGA Tour               |
-|   14 | Adam Scott              |        \-1.17 |         223 |              72 | AUS     | PGA Tour               |
-|   15 | Collin Morikawa         |        \-1.14 |          83 |              75 | USA     | PGA Tour               |
-|   16 | Gary Woodland           |        \-1.12 |         268 |              79 | USA     | PGA Tour               |
-|   17 | Tyrrell Hatton          |        \-1.03 |         252 |              80 | ENG     | PGA Tour               |
-|   18 | Sungjae Im              |        \-1.00 |         378 |             127 | KOR     | PGA Tour               |
-|   19 | Matt Kuchar             |        \-1.00 |         295 |              90 | USA     | PGA Tour               |
-|   20 | Paul Casey              |        \-0.97 |         260 |              90 | ENG     | PGA Tour               |
-|   21 | Louis Oosthuizen        |        \-0.95 |         236 |              92 | RSA     | PGA Tour               |
-|   22 | Justin Rose             |        \-0.94 |         268 |              90 | ENG     | PGA Tour               |
-|   23 | Marc Leishman           |        \-0.93 |         270 |              76 | AUS     | PGA Tour               |
-|   24 | Tony Finau              |        \-0.93 |         308 |             100 | USA     | PGA Tour               |
-|   25 | Brooks Koepka           |        \-0.92 |         238 |              70 | USA     | PGA Tour               |
-|   26 | Jason Day               |        \-0.87 |         212 |              64 | AUS     | PGA Tour               |
-|   27 | Matthew Fitzpatrick     |        \-0.77 |         298 |             106 | ENG     | PGA Tour               |
-|   28 | Billy Horschel          |        \-0.77 |         276 |              97 | USA     | PGA Tour               |
-|   29 | Scottie Scheffler       |        \-0.75 |         146 |             110 | USA     | PGA Tour               |
-|   30 | Daniel Berger           |        \-0.71 |         242 |              88 | USA     | PGA Tour               |
-|   31 | Shane Lowry             |        \-0.69 |         267 |              86 | IRL     | European Tour(3)       |
-|   32 | Viktor Hovland          |        \-0.67 |          90 |              76 | NOR     | PGA Tour               |
-|   33 | Abraham Ancer           |        \-0.67 |         309 |             100 | MEX     | PGA Tour               |
-|   34 | Byeong Hun An           |        \-0.67 |         294 |              93 | KOR     | PGA Tour               |
-|   35 | Brandt Snedeker         |        \-0.66 |         240 |              93 | USA     | PGA Tour               |
-|   36 | Henrik Stenson          |        \-0.58 |         244 |              88 | SWE     | PGA Tour               |
-|   37 | Sergio Garcia           |        \-0.55 |         249 |              88 | ESP     | PGA Tour               |
-|   38 | Bud Cauley              |        \-0.50 |         227 |              82 | USA     | PGA Tour               |
-|   39 | Kevin Na                |        \-0.48 |         247 |              75 | USA     | PGA Tour               |
-|   40 | Ian Poulter             |        \-0.46 |         292 |              82 | ENG     | PGA Tour               |
-|   41 | Adam Hadwin             |        \-0.46 |         266 |              79 | CAN     | PGA Tour               |
-|   42 | Harris English          |        \-0.42 |         269 |             101 | USA     | PGA Tour               |
-|   43 | Ryan Moore              |        \-0.39 |         232 |              72 | USA     | PGA Tour               |
-|   44 | Joaquin Niemann         |        \-0.38 |         194 |             100 | CHI     | PGA Tour               |
-|   45 | Joel Dahmen             |        \-0.38 |         270 |              98 | USA     | PGA Tour               |
-|   46 | Vaughn Taylor           |        \-0.37 |         267 |              98 | USA     | PGA Tour               |
-|   47 | Bubba Watson            |        \-0.37 |         227 |              72 | USA     | PGA Tour               |
-|   48 | Brendon Todd            |        \-0.36 |         119 |              78 | USA     | PGA Tour               |
-|   49 | Ryan Palmer             |        \-0.35 |         198 |              70 | USA     | PGA Tour               |
-|   50 | Jason Kokrak            |        \-0.34 |         287 |              87 | USA     | PGA Tour               |
-|   51 | Erik van Rooyen         |        \-0.34 |         291 |             113 | RSA     | European Tour(3)       |
-|   52 | JT Poston               |        \-0.34 |         275 |             100 | USA     | PGA Tour               |
-|   53 | Jim Furyk               |        \-0.32 |         169 |              67 | USA     | PGA Tour               |
-|   54 | Kevin Kisner            |        \-0.32 |         277 |              99 | USA     | PGA Tour               |
-|   55 | Matthias Schwab         |        \-0.32 |         262 |              89 | AUT     | European Tour(3)       |
-|   56 | Nick Taylor             |        \-0.31 |         286 |              92 | CAN     | PGA Tour               |
-|   57 | Charles Howell III      |        \-0.31 |         277 |              93 | USA     | PGA Tour               |
-|   58 | Rafael Cabrera Bello    |        \-0.30 |         312 |             108 | ESP     | PGA Tour               |
-|   59 | Chez Reavie             |        \-0.30 |         291 |              99 | USA     | PGA Tour               |
-|   60 | Jordan Spieth           |        \-0.29 |         251 |              89 | USA     | PGA Tour               |
-|   61 | Russell Knox            |        \-0.29 |         297 |              97 | SCO     | PGA Tour               |
-|   62 | Juan Sebastian Munoz    |        \-0.28 |         280 |              94 | COL     | PGA Tour               |
-|   63 | Carlos Ortiz            |        \-0.28 |         289 |              92 | MEX     | PGA Tour               |
-|   64 | Rory Sabbatini          |        \-0.27 |         271 |             112 | SVK     | PGA Tour               |
-|   65 | Andrew Putnam           |        \-0.26 |         264 |              80 | USA     | PGA Tour               |
-|   66 | Victor Perez            |        \-0.25 |         247 |              70 | FRA     | European Tour(3)       |
-|   67 | Lee Westwood            |        \-0.25 |         232 |              77 | ENG     | European Tour(3)       |
-|   68 | Thomas Pieters          |        \-0.25 |         256 |              88 | BEL     | European Tour(3)       |
-|   69 | Talor Gooch             |        \-0.24 |         258 |              79 | USA     | PGA Tour               |
-|   70 | Max Homa                |        \-0.23 |         239 |              88 | USA     | PGA Tour               |
-|   71 | Lanto Griffin           |        \-0.23 |         290 |             109 | USA     | PGA Tour               |
-|   72 | Thomas Detry            |        \-0.21 |         281 |             102 | BEL     | European Tour(3)       |
-|   73 | Christiaan Bezuidenhout |        \-0.21 |         273 |             102 | RSA     | European Tour          |
-|   74 | Denny McCarthy          |        \-0.21 |         273 |              96 | USA     | PGA Tour               |
-|   75 | Cameron Smith           |        \-0.21 |         258 |              82 | AUS     | PGA Tour               |
-|   76 | Bernd Wiesberger        |        \-0.20 |         213 |              91 | AUT     | European Tour(3)       |
-|   77 | Thorbjorn Olesen        |        \-0.19 |         205 |              36 | DEN     | Major Championship     |
-|   78 | Corey Conners           |        \-0.19 |         294 |              98 | CAN     | PGA Tour               |
-|   79 | Brian Harman            |        \-0.18 |         285 |              98 | USA     | PGA Tour               |
-|   80 | Harold Varner III       |        \-0.18 |         303 |              90 | USA     | PGA Tour               |
-|   81 | Sean O’Hair             |        \-0.17 |         150 |              14 | USA     | Korn Ferry Tour KGT    |
-|   82 | Scott Piercy            |        \-0.17 |         233 |              88 | USA     | PGA Tour               |
-|   83 | Danny Willett           |        \-0.17 |         213 |              86 | ENG     | PGA Tour               |
-|   84 | Harry Higgs             |        \-0.17 |         185 |             112 | USA     | PGA Tour               |
-|   85 | Alex Noren              |        \-0.17 |         266 |             100 | SWE     | PGA Tour               |
-|   86 | Robert MacIntyre        |        \-0.17 |         206 |              82 | SCO     | European Tour          |
-|   87 | Paul Waring             |        \-0.16 |         232 |              82 | ENG     | European Tour(3)       |
-|   88 | Martin Kaymer           |        \-0.16 |         260 |              93 | GER     | European Tour(3)       |
-|   89 | Danny Lee               |        \-0.15 |         268 |              83 | NZL     | PGA Tour               |
-|   90 | Joost Luiten            |        \-0.14 |         239 |              94 | NED     | European Tour(3)       |
-|   91 | Keegan Bradley          |        \-0.14 |         291 |              86 | USA     | PGA Tour               |
-|   92 | Matt Jones              |        \-0.14 |         262 |              91 | AUS     | PGA Tour               |
-|   93 | Cameron Tringale        |        \-0.13 |         249 |              87 | USA     | PGA Tour               |
-|   94 | Kevin Streelman         |        \-0.13 |         269 |              87 | USA     | PGA Tour               |
-|   95 | Tom Hoge                |        \-0.10 |         289 |              96 | USA     | PGA Tour               |
-|   96 | Jhonattan Vegas         |        \-0.07 |         251 |              80 | VEN     | PGA Tour               |
-|   97 | Branden Grace           |        \-0.06 |         278 |              88 | RSA     | PGA Tour               |
-|   98 | Lucas Glover            |        \-0.05 |         264 |              97 | USA     | PGA Tour               |
-|   99 | Dylan Frittelli         |        \-0.05 |         317 |             100 | RSA     | PGA Tour               |
-|  100 | Adam Long               |        \-0.04 |         278 |             101 | USA     | PGA Tour               |
-|  101 | Mike Lorenzo-Vera       |        \-0.04 |         237 |              80 | FRA     | European Tour(3)       |
-|  102 | Nate Lashley            |        \-0.03 |         238 |              72 | USA     | PGA Tour               |
-|  103 | Phil Mickelson          |        \-0.03 |         232 |              67 | USA     | PGA Tour               |
-|  104 | Bronson Burgoon         |        \-0.01 |         199 |              70 | USA     | PGA Tour               |
-|  105 | Graeme McDowell         |        \-0.01 |         263 |              86 | NIR     | PGA Tour               |
-|  106 | Aaron Wise              |          0.00 |         235 |              77 | USA     | PGA Tour               |
-|  107 | Charley Hoffman         |          0.00 |         275 |              81 | USA     | PGA Tour               |
-|  108 | Patrick Rodgers         |          0.01 |         250 |              73 | USA     | PGA Tour               |
-|  109 | Adam Schenk             |          0.01 |         313 |             100 | USA     | PGA Tour               |
-|  110 | Zach Johnson            |          0.01 |         240 |              73 | USA     | PGA Tour               |
-|  111 | Emiliano Grillo         |          0.01 |         268 |              76 | ARG     | PGA Tour               |
-|  112 | Matthew NeSmith         |          0.01 |         164 |             106 | USA     | PGA Tour               |
-|  113 | J.B. Holmes             |          0.02 |         223 |              63 | USA     | PGA Tour               |
-|  114 | Wyndham Clark           |          0.02 |         222 |              85 | USA     | PGA Tour               |
-|  115 | Russell Henley          |          0.03 |         247 |              73 | USA     | PGA Tour               |
-|  116 | Takumi Kanaya(Am)       |          0.04 |          50 |              22 | JPN     | Japan Golf Tour        |
-|  117 | Nick Watney             |          0.04 |         252 |              79 | USA     | PGA Tour               |
-|  118 | Aaron Baddeley          |          0.05 |         213 |              61 | AUS     | PGA Tour               |
-|  119 | Tom Lewis               |          0.07 |         231 |              76 | ENG     | European Tour(3)       |
-|  120 | Matthew Wolff           |          0.07 |          65 |              57 | USA     | PGA Tour               |
-|  121 | Brice Garnett           |          0.07 |         285 |              90 | USA     | PGA Tour               |
-|  122 | Matt Wallace            |          0.08 |         308 |             102 | ENG     | European Tour(3)       |
-|  123 | Zhang Xinjun            |          0.08 |         282 |             110 | CHN     | PGA Tour               |
-|  124 | Pat Perez               |          0.08 |         230 |              65 | USA     | PGA Tour               |
-|  125 | Charl Schwartzel        |          0.08 |         197 |              30 | RSA     | PGA Tour               |
-|  126 | Doc Redman              |          0.09 |         124 |              92 | USA     | PGA Tour               |
-|  127 | Sam Burns               |          0.09 |         204 |              75 | USA     | PGA Tour               |
-|  128 | Kurt Kitayama           |          0.09 |         242 |              96 | USA     | European Tour(3)       |
-|  129 | Keith Mitchell          |          0.09 |         283 |              84 | USA     | PGA Tour               |
-|  130 | Cameron Champ           |          0.11 |         211 |              79 | USA     | PGA Tour               |
-|  131 | Brendan Steele          |          0.11 |         215 |              72 | USA     | PGA Tour               |
-|  132 | Andrew Landry           |          0.13 |         250 |              79 | USA     | PGA Tour               |
-|  133 | Will Zalatoris          |          0.13 |          93 |              67 | USA     | Korn Ferry Tour KGT    |
-|  134 | Maverick McNealy        |          0.16 |         222 |             103 | USA     | PGA Tour               |
-|  135 | Kyle Stanley            |          0.17 |         269 |              85 | USA     | PGA Tour               |
-|  136 | Mark Hubbard            |          0.17 |         268 |             110 | USA     | PGA Tour               |
-|  137 | Sunghoon Kang           |          0.17 |         289 |              94 | KOR     | PGA Tour               |
-|  138 | Beau Hossler            |          0.18 |         310 |             104 | USA     | PGA Tour               |
-|  139 | Troy Merritt            |          0.19 |         258 |              83 | USA     | PGA Tour               |
-|  140 | Eddie Pepperell         |          0.20 |         221 |              70 | ENG     | European Tour(3)       |
-|  141 | Kevin Tway              |          0.21 |         274 |              80 | USA     | PGA Tour               |
-|  142 | Benjamin Hebert         |          0.21 |         256 |              90 | FRA     | European Tour(3)       |
-|  143 | Francesco Molinari      |          0.21 |         243 |              75 | ITA     | PGA Tour               |
-|  144 | Stewart Cink            |          0.21 |         237 |              65 | USA     | PGA Tour               |
-|  145 | Luke List               |          0.22 |         263 |              79 | USA     | PGA Tour               |
-|  146 | Martin Laird            |          0.22 |         240 |              89 | SCO     | PGA Tour               |
-|  147 | Shugo Imahira           |          0.24 |         299 |             112 | JPN     | Japan Golf Tour        |
-|  148 | Scott Stallings         |          0.24 |         259 |              90 | USA     | PGA Tour               |
-|  149 | Jordan L Smith          |          0.24 |         273 |              84 | ENG     | European Tour(3)       |
-|  150 | Gavin Green             |          0.25 |         281 |             101 | MAS     | European Tour(3)       |
-|  151 | Brian Stuard            |          0.26 |         288 |             101 | USA     | PGA Tour               |
-|  152 | Miguel A Jimenez        |          0.26 |          61 |              20 | ESP     | European Tour(3)       |
-|  153 | Cameron Davis           |          0.26 |         241 |              92 | AUS     | PGA Tour               |
-|  154 | Hudson Swafford         |          0.26 |         209 |              47 | USA     | PGA Tour               |
-|  155 | James Hahn              |          0.26 |         212 |              30 | USA     | PGA Tour               |
-|  156 | Sam Ryder               |          0.26 |         269 |              84 | USA     | PGA Tour               |
-|  157 | Steve Stricker          |          0.26 |         112 |              24 | USA     | PGA Tour               |
-|  158 | Augusto Nunez           |          0.27 |         223 |              82 | ARG     | PGA Tour Latinoamerica |
-|  159 | Jazz Janewattananond    |          0.27 |         328 |             130 | THA     | Asian Tour             |
-|  160 | George Coetzee          |          0.28 |         272 |             100 | RSA     | European Tour(3)       |
-|  161 | Dylan Wu                |          0.28 |         102 |              66 | USA     | Korn Ferry Tour KGT    |
-|  162 | Marcus Kinhult          |          0.29 |         248 |              74 | SWE     | European Tour(3)       |
-|  163 | Kyounghoon Lee          |          0.30 |         308 |              91 | KOR     | PGA Tour               |
-|  164 | Cameron Percy           |          0.31 |         224 |              69 | AUS     | PGA Tour               |
-|  165 | Mikko Korhonen          |          0.31 |         229 |              82 | FIN     | European Tour(3)       |
-|  166 | Andrew Johnston         |          0.32 |         178 |              49 | ENG     | European Tour          |
-|  167 | Jimmy Walker            |          0.33 |         224 |              77 | USA     | PGA Tour               |
-|  168 | Gunn Charoenkul         |          0.33 |         243 |             108 | THA     | Japan Golf Tour        |
-|  169 | Ben Martin              |          0.33 |         173 |              55 | USA     | PGA Tour               |
-|  170 | Romain Langasque        |          0.33 |         255 |              87 | FRA     | European Tour(3)       |
-|  171 | Shaun Norris            |          0.34 |         310 |             106 | RSA     | Japan Golf Tour        |
-|  172 | Richy Werenski          |          0.35 |         251 |              84 | USA     | PGA Tour               |
-|  173 | D.J. Trahan             |          0.36 |         131 |              65 | USA     | PGA Tour               |
-|  174 | Greyson Sigg            |          0.36 |         162 |              70 | USA     | PGA Tour Canada        |
-|  175 | Grayson Murray          |          0.37 |         217 |              56 | USA     | PGA Tour               |
-|  176 | Luke Donald             |          0.37 |         140 |              60 | ENG     | PGA Tour               |
-|  177 | Jason Scrivener         |          0.38 |         275 |              85 | AUS     | European Tour(3)       |
-|  178 | Haotong Li              |          0.38 |         272 |              88 | CHN     | European Tour(3)       |
-|  179 | Justin Harding          |          0.38 |         271 |             103 | RSA     | European Tour(3)       |
-|  180 | Brandon Wu              |          0.38 |          35 |              31 | USA     | PGA Tour               |
-|  181 | Jason Dufner            |          0.40 |         236 |              77 | USA     | PGA Tour               |
-|  182 | John Huh                |          0.40 |         211 |              40 | USA     | PGA Tour               |
-|  183 | Davis Riley             |          0.41 |          93 |              85 | USA     | Korn Ferry Tour KGT    |
-|  184 | Brad Kennedy            |          0.41 |         243 |              90 | AUS     | Japan Golf Tour        |
-|  185 | Andy Sullivan           |          0.41 |         268 |              86 | ENG     | European Tour(3)       |
-|  186 | Chan Kim                |          0.41 |         160 |              90 | USA     | Japan Golf Tour        |
-|  187 | Zac Blair               |          0.41 |         293 |             115 | USA     | PGA Tour               |
-|  188 | Peter Malnati           |          0.42 |         267 |              89 | USA     | PGA Tour               |
-|  189 | Bo Hoag                 |          0.43 |         262 |             116 | USA     | PGA Tour               |
-|  190 | Brian Gay               |          0.44 |         284 |              86 | USA     | PGA Tour               |
-|  191 | Ross Fisher             |          0.44 |         247 |              77 | ENG     | European Tour(3)       |
-|  192 | Lucas Herbert           |          0.45 |         202 |              83 | AUS     | European Tour(3)       |
-|  193 | Michael Thompson        |          0.45 |         203 |              73 | USA     | PGA Tour               |
-|  194 | Ryan Fox                |          0.46 |         280 |              82 | NZL     | European Tour(3)       |
-|  195 | Joseph Bramlett         |          0.46 |         198 |             105 | USA     | PGA Tour               |
-|  196 | Kalle Samooja           |          0.47 |         233 |              85 | FIN     | European Tour(3)       |
-|  197 | Chase Seiffert          |          0.47 |         142 |             100 | USA     | PGA Tour               |
-|  198 | Henrik Norlander        |          0.47 |         252 |             106 | SWE     | PGA Tour               |
-|  199 | Kramer Hickok           |          0.48 |         273 |              87 | USA     | PGA Tour               |
-|  200 | Mackenzie Hughes        |          0.49 |         242 |              82 | CAN     | PGA Tour               |
+|    1 | Rory McIlroy            |        \-2.27 |         245 |              88 | NIR     | PGA Tour               |
+|    2 | Jon Rahm                |        \-2.16 |         270 |              87 | ESP     | PGA Tour               |
+|    3 | Justin Thomas           |        \-1.86 |         247 |              76 | USA     | PGA Tour               |
+|    4 | Webb Simpson            |        \-1.54 |         252 |              78 | USA     | PGA Tour               |
+|    5 | Patrick Cantlay         |        \-1.44 |         224 |              74 | USA     | PGA Tour               |
+|    6 | Xander Schauffele       |        \-1.40 |         279 |              80 | USA     | PGA Tour               |
+|    7 | Hideki Matsuyama        |        \-1.37 |         271 |             101 | JPN     | PGA Tour               |
+|    8 | Dustin Johnson          |        \-1.30 |         232 |              70 | USA     | PGA Tour               |
+|    9 | Tommy Fleetwood         |        \-1.29 |         310 |             102 | ENG     | PGA Tour               |
+|   10 | Patrick Reed            |        \-1.23 |         332 |             116 | USA     | PGA Tour               |
+|   11 | Bryson DeChambeau       |        \-1.23 |         276 |              84 | USA     | PGA Tour               |
+|   12 | Tiger Woods             |        \-1.20 |         128 |              40 | USA     | PGA Tour               |
+|   13 | Rickie Fowler           |        \-1.17 |         246 |              74 | USA     | PGA Tour               |
+|   14 | Adam Scott              |        \-1.15 |         223 |              74 | AUS     | PGA Tour               |
+|   15 | Collin Morikawa         |        \-1.12 |          83 |              79 | USA     | PGA Tour               |
+|   16 | Gary Woodland           |        \-1.11 |         264 |              79 | USA     | PGA Tour               |
+|   17 | Tyrrell Hatton          |        \-1.01 |         248 |              80 | ENG     | PGA Tour               |
+|   18 | Sungjae Im              |        \-0.98 |         374 |             127 | KOR     | PGA Tour               |
+|   19 | Matt Kuchar             |        \-0.98 |         291 |              90 | USA     | PGA Tour               |
+|   20 | Paul Casey              |        \-0.96 |         256 |              90 | ENG     | PGA Tour               |
+|   21 | Louis Oosthuizen        |        \-0.93 |         232 |              90 | RSA     | PGA Tour               |
+|   22 | Justin Rose             |        \-0.92 |         264 |              88 | ENG     | PGA Tour               |
+|   23 | Marc Leishman           |        \-0.91 |         266 |              76 | AUS     | PGA Tour               |
+|   24 | Tony Finau              |        \-0.91 |         300 |             102 | USA     | PGA Tour               |
+|   25 | Brooks Koepka           |        \-0.90 |         236 |              72 | USA     | PGA Tour               |
+|   26 | Jason Day               |        \-0.85 |         208 |              64 | AUS     | PGA Tour               |
+|   27 | Matthew Fitzpatrick     |        \-0.75 |         294 |             106 | ENG     | PGA Tour               |
+|   28 | Billy Horschel          |        \-0.75 |         270 |              97 | USA     | PGA Tour               |
+|   29 | Scottie Scheffler       |        \-0.73 |         146 |             114 | USA     | PGA Tour               |
+|   30 | Daniel Berger           |        \-0.69 |         240 |              86 | USA     | PGA Tour               |
+|   31 | Shane Lowry             |        \-0.68 |         267 |              84 | IRL     | European Tour(3)       |
+|   32 | Viktor Hovland          |        \-0.65 |          90 |              76 | NOR     | PGA Tour               |
+|   33 | Abraham Ancer           |        \-0.65 |         309 |             102 | MEX     | PGA Tour               |
+|   34 | Byeong Hun An           |        \-0.65 |         286 |              93 | KOR     | PGA Tour               |
+|   35 | Brandt Snedeker         |        \-0.64 |         236 |              89 | USA     | PGA Tour               |
+|   36 | Henrik Stenson          |        \-0.57 |         238 |              86 | SWE     | PGA Tour               |
+|   37 | Sergio Garcia           |        \-0.53 |         249 |              88 | ESP     | PGA Tour               |
+|   38 | Bud Cauley              |        \-0.48 |         221 |              84 | USA     | PGA Tour               |
+|   39 | Kevin Na                |        \-0.46 |         243 |              77 | USA     | PGA Tour               |
+|   40 | Ian Poulter             |        \-0.44 |         284 |              82 | ENG     | PGA Tour               |
+|   41 | Adam Hadwin             |        \-0.44 |         258 |              75 | CAN     | PGA Tour               |
+|   42 | Harris English          |        \-0.40 |         263 |             101 | USA     | PGA Tour               |
+|   43 | Ryan Moore              |        \-0.37 |         224 |              72 | USA     | PGA Tour               |
+|   44 | Joaquin Niemann         |        \-0.36 |         194 |              98 | CHI     | PGA Tour               |
+|   45 | Joel Dahmen             |        \-0.36 |         270 |             100 | USA     | PGA Tour               |
+|   46 | Vaughn Taylor           |        \-0.35 |         263 |             100 | USA     | PGA Tour               |
+|   47 | Bubba Watson            |        \-0.35 |         221 |              70 | USA     | PGA Tour               |
+|   48 | Brendon Todd            |        \-0.34 |         117 |              82 | USA     | PGA Tour               |
+|   49 | Ryan Palmer             |        \-0.34 |         198 |              70 | USA     | PGA Tour               |
+|   50 | Jason Kokrak            |        \-0.33 |         279 |              87 | USA     | PGA Tour               |
+|   51 | JT Poston               |        \-0.32 |         271 |              98 | USA     | PGA Tour               |
+|   52 | Erik van Rooyen         |        \-0.32 |         291 |             109 | RSA     | European Tour(3)       |
+|   53 | Jim Furyk               |        \-0.31 |         165 |              67 | USA     | PGA Tour               |
+|   54 | Kevin Kisner            |        \-0.30 |         273 |              97 | USA     | PGA Tour               |
+|   55 | Matthias Schwab         |        \-0.30 |         260 |              89 | AUT     | European Tour(3)       |
+|   56 | Nick Taylor             |        \-0.30 |         282 |              96 | CAN     | PGA Tour               |
+|   57 | Charles Howell III      |        \-0.29 |         269 |              91 | USA     | PGA Tour               |
+|   58 | Rafael Cabrera Bello    |        \-0.28 |         308 |             106 | ESP     | PGA Tour               |
+|   59 | Chez Reavie             |        \-0.28 |         285 |              99 | USA     | PGA Tour               |
+|   60 | Jordan Spieth           |        \-0.27 |         251 |              89 | USA     | PGA Tour               |
+|   61 | Russell Knox            |        \-0.27 |         295 |              99 | SCO     | PGA Tour               |
+|   62 | Juan Sebastian Munoz    |        \-0.27 |         280 |              96 | COL     | PGA Tour               |
+|   63 | Carlos Ortiz            |        \-0.26 |         289 |              90 | MEX     | PGA Tour               |
+|   64 | Rory Sabbatini          |        \-0.25 |         271 |             116 | SVK     | PGA Tour               |
+|   65 | Andrew Putnam           |        \-0.24 |         264 |              82 | USA     | PGA Tour               |
+|   66 | Victor Perez            |        \-0.23 |         247 |              68 | FRA     | European Tour(3)       |
+|   67 | Lee Westwood            |        \-0.23 |         232 |              79 | ENG     | European Tour(3)       |
+|   68 | Thomas Pieters          |        \-0.23 |         254 |              90 | BEL     | European Tour(3)       |
+|   69 | Talor Gooch             |        \-0.22 |         258 |              83 | USA     | PGA Tour               |
+|   70 | Max Homa                |        \-0.21 |         239 |              92 | USA     | PGA Tour               |
+|   71 | Lanto Griffin           |        \-0.21 |         290 |             113 | USA     | PGA Tour               |
+|   72 | Thomas Detry            |        \-0.20 |         281 |             102 | BEL     | European Tour(3)       |
+|   73 | Christiaan Bezuidenhout |        \-0.19 |         273 |             102 | RSA     | European Tour          |
+|   74 | Denny McCarthy          |        \-0.19 |         273 |              98 | USA     | PGA Tour               |
+|   75 | Cameron Smith           |        \-0.19 |         250 |              82 | AUS     | PGA Tour               |
+|   76 | Bernd Wiesberger        |        \-0.18 |         213 |              87 | AUT     | European Tour(3)       |
+|   77 | Thorbjorn Olesen        |        \-0.18 |         203 |              34 | DEN     | Major Championship     |
+|   78 | Corey Conners           |        \-0.17 |         294 |              98 | CAN     | PGA Tour               |
+|   79 | Brian Harman            |        \-0.17 |         279 |              98 | USA     | PGA Tour               |
+|   80 | Harold Varner III       |        \-0.16 |         297 |              92 | USA     | PGA Tour               |
+|   81 | Sean O’Hair             |        \-0.16 |         148 |              14 | USA     | Korn Ferry Tour KGT    |
+|   82 | Scott Piercy            |        \-0.16 |         231 |              86 | USA     | PGA Tour               |
+|   83 | Danny Willett           |        \-0.16 |         213 |              88 | ENG     | PGA Tour               |
+|   84 | Harry Higgs             |        \-0.15 |         185 |             116 | USA     | PGA Tour               |
+|   85 | Alex Noren              |        \-0.15 |         262 |             102 | SWE     | PGA Tour               |
+|   86 | Robert MacIntyre        |        \-0.15 |         206 |              82 | SCO     | European Tour(3)       |
+|   87 | Paul Waring             |        \-0.14 |         232 |              78 | ENG     | European Tour(3)       |
+|   88 | Martin Kaymer           |        \-0.14 |         256 |              91 | GER     | European Tour(3)       |
+|   89 | Danny Lee               |        \-0.14 |         260 |              85 | NZL     | PGA Tour               |
+|   90 | Joost Luiten            |        \-0.12 |         239 |              98 | NED     | European Tour(3)       |
+|   91 | Keegan Bradley          |        \-0.12 |         283 |              86 | USA     | PGA Tour               |
+|   92 | Matt Jones              |        \-0.12 |         262 |              95 | AUS     | PGA Tour               |
+|   93 | Cameron Tringale        |        \-0.12 |         247 |              87 | USA     | PGA Tour               |
+|   94 | Kevin Streelman         |        \-0.11 |         261 |              85 | USA     | PGA Tour               |
+|   95 | Tom Hoge                |        \-0.08 |         289 |             100 | USA     | PGA Tour               |
+|   96 | Jhonattan Vegas         |        \-0.05 |         251 |              76 | VEN     | PGA Tour               |
+|   97 | Branden Grace           |        \-0.04 |         276 |              88 | RSA     | PGA Tour               |
+|   98 | Lucas Glover            |        \-0.03 |         256 |              95 | USA     | PGA Tour               |
+|   99 | Dylan Frittelli         |        \-0.03 |         313 |             104 | RSA     | PGA Tour               |
+|  100 | Adam Long               |        \-0.02 |         278 |             101 | USA     | PGA Tour               |
+|  101 | Mike Lorenzo-Vera       |        \-0.02 |         237 |              78 | FRA     | European Tour(3)       |
+|  102 | Nate Lashley            |        \-0.02 |         238 |              72 | USA     | PGA Tour               |
+|  103 | Phil Mickelson          |        \-0.02 |         232 |              67 | USA     | PGA Tour               |
+|  104 | Bronson Burgoon         |          0.00 |         199 |              68 | USA     | PGA Tour               |
+|  105 | Aaron Wise              |          0.01 |         235 |              73 | USA     | PGA Tour               |
+|  106 | Graeme McDowell         |          0.01 |         255 |              86 | NIR     | PGA Tour               |
+|  107 | Charley Hoffman         |          0.02 |         269 |              83 | USA     | PGA Tour               |
+|  108 | Patrick Rodgers         |          0.02 |         246 |              73 | USA     | PGA Tour               |
+|  109 | Adam Schenk             |          0.03 |         313 |              96 | USA     | PGA Tour               |
+|  110 | Zach Johnson            |          0.03 |         236 |              73 | USA     | PGA Tour               |
+|  111 | Matthew NeSmith         |          0.03 |         164 |             108 | USA     | PGA Tour               |
+|  112 | Emiliano Grillo         |          0.03 |         264 |              76 | ARG     | PGA Tour               |
+|  113 | J.B. Holmes             |          0.04 |         223 |              61 | USA     | PGA Tour               |
+|  114 | Wyndham Clark           |          0.04 |         222 |              89 | USA     | PGA Tour               |
+|  115 | Russell Henley          |          0.05 |         239 |              73 | USA     | PGA Tour               |
+|  116 | Takumi Kanaya(Am)       |          0.05 |          50 |              22 | JPN     | Japan Golf Tour        |
+|  117 | Nick Watney             |          0.06 |         248 |              79 | USA     | PGA Tour               |
+|  118 | Aaron Baddeley          |          0.06 |         207 |              57 | AUS     | PGA Tour               |
+|  119 | Tom Lewis               |          0.09 |         231 |              74 | ENG     | European Tour(3)       |
+|  120 | Matthew Wolff           |          0.09 |          65 |              61 | USA     | PGA Tour               |
+|  121 | Brice Garnett           |          0.09 |         285 |              88 | USA     | PGA Tour               |
+|  122 | Zhang Xinjun            |          0.09 |         282 |             114 | CHN     | PGA Tour               |
+|  123 | Matt Wallace            |          0.09 |         308 |             102 | ENG     | European Tour(3)       |
+|  124 | Pat Perez               |          0.10 |         226 |              63 | USA     | PGA Tour               |
+|  125 | Charl Schwartzel        |          0.10 |         189 |              32 | RSA     | PGA Tour               |
+|  126 | Doc Redman              |          0.11 |         124 |              96 | USA     | PGA Tour               |
+|  127 | Sam Burns               |          0.11 |         204 |              75 | USA     | PGA Tour               |
+|  128 | Kurt Kitayama           |          0.11 |         242 |              92 | USA     | European Tour(3)       |
+|  129 | Keith Mitchell          |          0.11 |         279 |              84 | USA     | PGA Tour               |
+|  130 | Cameron Champ           |          0.13 |         211 |              79 | USA     | PGA Tour               |
+|  131 | Brendan Steele          |          0.13 |         215 |              70 | USA     | PGA Tour               |
+|  132 | Andrew Landry           |          0.15 |         250 |              77 | USA     | PGA Tour               |
+|  133 | Will Zalatoris          |          0.15 |          93 |              67 | USA     | Korn Ferry Tour KGT    |
+|  134 | Maverick McNealy        |          0.17 |         222 |             105 | USA     | PGA Tour               |
+|  135 | Kyle Stanley            |          0.19 |         261 |              83 | USA     | PGA Tour               |
+|  136 | Mark Hubbard            |          0.19 |         266 |             112 | USA     | PGA Tour               |
+|  137 | Sunghoon Kang           |          0.19 |         287 |              94 | KOR     | PGA Tour               |
+|  138 | Beau Hossler            |          0.20 |         308 |             104 | USA     | PGA Tour               |
+|  139 | Troy Merritt            |          0.21 |         252 |              87 | USA     | PGA Tour               |
+|  140 | Eddie Pepperell         |          0.22 |         217 |              66 | ENG     | European Tour(3)       |
+|  141 | Kevin Tway              |          0.22 |         274 |              82 | USA     | PGA Tour               |
+|  142 | Benjamin Hebert         |          0.22 |         256 |              92 | FRA     | European Tour(3)       |
+|  143 | Francesco Molinari      |          0.23 |         239 |              71 | ITA     | PGA Tour               |
+|  144 | Stewart Cink            |          0.23 |         229 |              67 | USA     | PGA Tour               |
+|  145 | Luke List               |          0.24 |         255 |              75 | USA     | PGA Tour               |
+|  146 | Martin Laird            |          0.24 |         234 |              87 | SCO     | PGA Tour               |
+|  147 | Shugo Imahira           |          0.26 |         299 |             112 | JPN     | Japan Golf Tour        |
+|  148 | Scott Stallings         |          0.26 |         255 |              86 | USA     | PGA Tour               |
+|  149 | Jordan L Smith          |          0.26 |         269 |              84 | ENG     | European Tour(3)       |
+|  150 | Gavin Green             |          0.27 |         274 |             101 | MAS     | European Tour(3)       |
+|  151 | Brian Stuard            |          0.27 |         282 |             103 | USA     | PGA Tour               |
+|  152 | Miguel A Jimenez        |          0.28 |          61 |              20 | ESP     | European Tour(3)       |
+|  153 | Cameron Davis           |          0.28 |         241 |              92 | AUS     | PGA Tour               |
+|  154 | Sam Ryder               |          0.28 |         269 |              82 | USA     | PGA Tour               |
+|  155 | James Hahn              |          0.28 |         204 |              30 | USA     | PGA Tour               |
+|  156 | Hudson Swafford         |          0.28 |         201 |              43 | USA     | PGA Tour               |
+|  157 | Steve Stricker          |          0.28 |         110 |              24 | USA     | PGA Tour               |
+|  158 | Augusto Nunez           |          0.28 |         223 |              82 | ARG     | PGA Tour Latinoamerica |
+|  159 | Jazz Janewattananond    |          0.29 |         324 |             132 | THA     | Asian Tour             |
+|  160 | George Coetzee          |          0.30 |         268 |             100 | RSA     | European Tour(3)       |
+|  161 | Dylan Wu                |          0.30 |         102 |              66 | USA     | Korn Ferry Tour KGT    |
+|  162 | Marcus Kinhult          |          0.31 |         248 |              76 | SWE     | European Tour(3)       |
+|  163 | Kyounghoon Lee          |          0.32 |         308 |              95 | KOR     | PGA Tour               |
+|  164 | Cameron Percy           |          0.33 |         224 |              69 | AUS     | PGA Tour               |
+|  165 | Mikko Korhonen          |          0.33 |         229 |              80 | FIN     | European Tour(3)       |
+|  166 | Andrew Johnston         |          0.34 |         178 |              49 | ENG     | European Tour          |
+|  167 | Gunn Charoenkul         |          0.34 |         239 |             109 | THA     | Japan Golf Tour        |
+|  168 | Jimmy Walker            |          0.34 |         224 |              77 | USA     | PGA Tour               |
+|  169 | Ben Martin              |          0.34 |         165 |              55 | USA     | PGA Tour               |
+|  170 | Romain Langasque        |          0.35 |         251 |              89 | FRA     | European Tour(3)       |
+|  171 | Shaun Norris            |          0.35 |         306 |             106 | RSA     | Japan Golf Tour        |
+|  172 | Richy Werenski          |          0.36 |         249 |              82 | USA     | PGA Tour               |
+|  173 | D.J. Trahan             |          0.38 |         131 |              65 | USA     | PGA Tour               |
+|  174 | Greyson Sigg            |          0.38 |         162 |              70 | USA     | PGA Tour Canada        |
+|  175 | Grayson Murray          |          0.39 |         213 |              56 | USA     | PGA Tour               |
+|  176 | Luke Donald             |          0.39 |         138 |              60 | ENG     | PGA Tour               |
+|  177 | Jason Scrivener         |          0.40 |         275 |              89 | AUS     | European Tour(3)       |
+|  178 | Haotong Li              |          0.40 |         272 |              88 | CHN     | European Tour(3)       |
+|  179 | Justin Harding          |          0.40 |         271 |             103 | RSA     | European Tour(3)       |
+|  180 | Brandon Wu              |          0.40 |          35 |              31 | USA     | PGA Tour               |
+|  181 | Jason Dufner            |          0.42 |         232 |              75 | USA     | PGA Tour               |
+|  182 | John Huh                |          0.42 |         203 |              40 | USA     | PGA Tour               |
+|  183 | Davis Riley             |          0.43 |          93 |              85 | USA     | Korn Ferry Tour KGT    |
+|  184 | Brad Kennedy            |          0.43 |         235 |              86 | AUS     | Japan Golf Tour        |
+|  185 | Chan Kim                |          0.43 |         160 |              90 | USA     | Japan Golf Tour        |
+|  186 | Zac Blair               |          0.43 |         291 |             119 | USA     | PGA Tour               |
+|  187 | Andy Sullivan           |          0.43 |         268 |              86 | ENG     | European Tour(3)       |
+|  188 | Peter Malnati           |          0.44 |         265 |              89 | USA     | PGA Tour               |
+|  189 | Bo Hoag                 |          0.45 |         262 |             116 | USA     | PGA Tour               |
+|  190 | Brian Gay               |          0.45 |         282 |              88 | USA     | PGA Tour               |
+|  191 | Ross Fisher             |          0.46 |         247 |              77 | ENG     | European Tour(3)       |
+|  192 | Lucas Herbert           |          0.46 |         198 |              79 | AUS     | European Tour(3)       |
+|  193 | Michael Thompson        |          0.46 |         201 |              71 | USA     | PGA Tour               |
+|  194 | Ryan Fox                |          0.48 |         276 |              82 | NZL     | European Tour(3)       |
+|  195 | Joseph Bramlett         |          0.48 |         198 |             105 | USA     | PGA Tour               |
+|  196 | Kalle Samooja           |          0.48 |         233 |              85 | FIN     | European Tour(3)       |
+|  197 | Chase Seiffert          |          0.49 |         142 |             100 | USA     | PGA Tour               |
+|  198 | Henrik Norlander        |          0.49 |         252 |             108 | SWE     | PGA Tour               |
+|  199 | Kramer Hickok           |          0.50 |         273 |              87 | USA     | PGA Tour               |
+|  200 | Mackenzie Hughes        |          0.51 |         240 |              82 | CAN     | PGA Tour               |
 
 Current Golf Ratings
