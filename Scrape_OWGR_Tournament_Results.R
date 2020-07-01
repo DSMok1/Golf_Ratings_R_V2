@@ -216,7 +216,7 @@ Import_Tourney_Results <- function(ID)  {
 
 
 # Result <- Import_Tourney_Results(6085)
-# str(Result)
+# glimpse(Result[[4]])
 
 
 
@@ -233,6 +233,7 @@ Player_Results <- Player_Results_Raw[!is.na(Player_Results_Raw$Event_Date),]
 Player_Results$Year <- NULL
 Player_Results$Event_Date <- as.Date(Player_Results$Event_Date)
 Player_Results$Scrape_Date <- as.Date(Player_Results$Scrape_Date)
+Player_Results %<>% select(-"Round_ID",-"Primary_Round")
 
 
 Tournament_Info_Raw <- read.csv("Data/Tournament_Info_RVest.csv", stringsAsFactors = FALSE)
@@ -368,6 +369,32 @@ Player_Results$Event_Tour_1 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tou
 Player_Results$Event_Tour_1[is.na(Player_Results$Event_Tour_1)] <- "Unknown"
 Player_Results$Event_Tour_2 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
 Player_Results$Event_Tour_3 %<>% mapvalues(.,Tour_Remap$Tour_OWGR,Tour_Remap$Tour)
+
+
+# Add Round_ID variable
+Player_Results$Round_ID <-
+  paste(Player_Results$Event_ID,Player_Results$Round_Num,sep = "_") %>% as.factor()
+Player_Results$Player_ID %<>% as.factor()
+
+# Identify if round is part of a Primary Tour:
+Primary_Tours <-
+  c("European Tour",
+    "Major Championship",
+    "PGA Tour", 
+    "World Golf Championships",
+    "Olympic Golf Competition")
+
+Player_Results$Primary_Round <-
+  pmin((3 - (as.integer(is.na((match(Player_Results$Event_Tour_1,Primary_Tours)))) +  
+               as.integer(is.na((match(Player_Results$Event_Tour_2,Primary_Tours)))) + 
+               as.integer(is.na((match(Player_Results$Event_Tour_3,Primary_Tours)))))),1)
+
+# If there are multiple player_names for a given Player_ID, use most common Player_Name for all
+Player_Results %<>% group_by(Player_ID) %>%
+  mutate(Player_Name = names(table(Player_Name))[table(Player_Name) == max(table(Player_Name))][1]) %>% 
+  ungroup() %>% as.data.frame()
+
+glimpse(Player_Results)
 
 ###  Output CSVs ####
 
