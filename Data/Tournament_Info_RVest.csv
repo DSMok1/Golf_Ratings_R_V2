@@ -3966,48 +3966,56 @@
 "Limpopo Championship",7775,2020-02-02,"Sunshine Tour","Challenge Tour2",NA,2020-03-04
 "Waste Management Phoenix Open",7776,2020-02-02,"PGA Tour",NA,NA,2020-03-04
 "Panama Championship",7777,2020-02-02,"Korn Ferry Tour KGT",NA,NA,2020-03-04
-"ISPS Handa Vic Open",7778,2020-02-09,"PGA Tour Australasia","European Tour(3)",NA,2020-03-04
-"RAM Cape Town Open",7779,2020-02-09,"Sunshine Tour","Challenge Tour2",NA,2020-03-04
-"AT&T Pebble Beach Pro-Am",7780,2020-02-09,"PGA Tour",NA,NA,2020-03-04
-"Country Club de Bogota Championship",7781,2020-02-09,"Korn Ferry Tour KGT",NA,NA,2020-03-04
-"Singha E-San Open",7782,2020-02-09,"ATGT Logo 2",NA,NA,2020-03-04
-"Journey to Jordan 1 - Ayla",7783,2020-02-09,"MGTNEW",NA,NA,2020-03-04
-"Golconda Masters Golf Championship 2020 powered by Telangana Tourism",7784,2020-02-09,"PGTI2",NA,NA,2020-03-04
-"The Genesis Invitational",7785,2020-02-16,"PGA Tour",NA,NA,2020-03-10
-"LECOM Suncoast Classic",7786,2020-02-16,"Korn Ferry Tour KGT",NA,NA,2020-03-10
-"Dimension Data Pro-Am",7787,2020-02-16,"Sunshine Tour","Challenge Tour2",NA,2020-03-10
-"Coca-Cola QLD PGA Championship",7788,2020-02-16,"PGA Tour Australasia",NA,NA,2020-03-10
-"Open Palmeraie Country Club",7789,2020-02-16,"ProGolf Tour",NA,NA,2020-03-10
-"NEWGIZA Open",7790,2020-02-16,"MGTNEW",NA,NA,2020-03-10
-"Tata Steel PGTI Players Championship presented by Eagleton - The Golf Resort",7791,2020-02-16,"PGTI2",NA,NA,2020-03-10
-"WGC - Mexico Championship",7792,2020-02-23,"World Golf Championships",NA,NA,2020-03-19
-"Isuzu Queensland Open",7793,2020-02-23,"PGA Tour Australasia",NA,NA,2020-03-19
-"Puerto Rico Open",7794,2020-02-23,"PGA Tour",NA,NA,2020-03-19
-"Tour Championship",7795,2020-02-23,"Sunshine Tour",NA,NA,2020-03-19
-"Ein Bay Open",7796,2020-02-23,"Alps Golf Tour",NA,NA,2020-03-19
-"Open Casa Green Golf",7797,2020-02-23,"ProGolf Tour",NA,NA,2020-03-19
-"The Ghala Open",7798,2020-02-23,"MGTNEW",NA,NA,2020-03-19
-"Oman Open",7799,2020-03-01,"European Tour(3)",NA,NA,2020-06-20
-"The Honda Classic",7800,2020-03-01,"PGA Tour",NA,NA,2020-06-20
-"New Zealand Open presented by Sky Sport",7801,2020-03-01,"PGA Tour Australasia","Asian Tour",NA,2020-06-20
-"El Bosque Mexico Championship by INNOVA",7802,2020-03-01,"Korn Ferry Tour KGT",NA,NA,2020-06-20
-"Red Sea Little Venice Open",7803,2020-03-01,"Alps Golf Tour",NA,NA,2020-06-20
-"Lumine Hills Open",7804,2020-03-01,"Nordic Golf League",NA,NA,2020-06-20
-"Lumine Lakes Open",7805,2020-03-01,"Nordic Golf League",NA,NA,2020-06-20
-"Royal Golf Club Bahrain Open",7806,2020-03-01,"MGTNEW",NA,NA,2020-06-20
-"Commercial Bank Qatar Masters",7807,2020-03-08,"European Tour(3)",NA,NA,2020-06-20
-"Arnold Palmer Invitational presented by Mastercard",7808,2020-03-08,"PGA Tour",NA,NA,2020-06-20
-"Estrella del Mar Open",7809,2020-03-08,"PGA Tour Latinoamerica",NA,NA,2020-06-20
-"Bandar Malaysia Open",7810,2020-03-08,"Asian Tour",NA,NA,2020-06-20
-"Open Royal Golf Anfa Mohammedia",7812,2020-03-08,"ProGolf Tour",NA,NA,2020-06-20
-"Journey to Jordan 2 - Ayla",7813,2020-03-08,"MGTNEW",NA,NA,2020-06-20
-"Spanish Masters - Powered by DAT",7814,2020-03-08,"Nordic Golf League",NA,NA,2020-06-20
-"PGA Catalunya Resort Championship",7816,2020-03-15,"Nordic Golf League",NA,NA,2020-06-20
-"Open Bahia Golf Beach",7817,2020-03-15,"ProGolf Tour",NA,NA,2020-06-20
-"Bengal Open Golf Championship",7818,2020-03-15,"PGTI2",NA,NA,2020-06-20
-"Charles Schwab Challenge",7819,2020-06-14,"PGA Tour",NA,NA,2020-06-22
-"Korn Ferry Challenge at TPC Sawgrass",7820,2020-06-14,"Korn Ferry Tour KGT",NA,NA,2020-06-22
-"RBC Heritage",7821,2020-06-21,"PGA Tour",NA,NA,2020-06-22
-"The King & Bear Classic at World Golf Village",7822,2020-06-21,"Korn Ferry Tour KGT",NA,NA,2020-06-22
-"Travelers Championship",7823,2020-06-28,"PGA Tour",NA,NA,2020-06-22
-"Utah Championship presented by Zions Bank",7824,2020-06-28,"Korn Ferry Tour KGT",NA,NA,2020-06-22
+"ISPS Handa Vic Open",7778,2020-02-09,"AUS Logo2","European Tour(3)",NA,2020-06-30
+"RAM Cape Town Open",7779,2020-02-09,"sunshine_tour","Challenge Tour2",NA,2020-06-30
+"AT&T Pebble Beach Pro-Am",7780,2020-02-09,"PGA",NA,NA,2020-06-30
+"Country Club de Bogota Championship",7781,2020-02-09,"Korn Ferry Tour KGT",NA,NA,2020-06-30
+"Singha E-San Open",7782,2020-02-09,"ATGT Logo 2",NA,NA,2020-06-30
+"Journey to Jordan 1 - Ayla",7783,2020-02-09,"MGTNEW",NA,NA,2020-06-30
+"Golconda Masters Golf Championship 2020 powered by Telangana Tourism",7784,2020-02-09,"PGTI2",NA,NA,2020-06-30
+"The Genesis Invitational",7785,2020-02-16,"PGA",NA,NA,2020-06-30
+"LECOM Suncoast Classic",7786,2020-02-16,"Korn Ferry Tour KGT",NA,NA,2020-06-30
+"Dimension Data Pro-Am",7787,2020-02-16,"sunshine_tour","Challenge Tour2",NA,2020-06-30
+"Coca-Cola QLD PGA Championship",7788,2020-02-16,"AUS Logo2",NA,NA,2020-06-30
+"Open Palmeraie Country Club",7789,2020-02-16,"PGT Logo",NA,NA,2020-06-30
+"NEWGIZA Open",7790,2020-02-16,"MGTNEW",NA,NA,2020-06-30
+"Tata Steel PGTI Players Championship presented by Eagleton - The Golf Resort",7791,2020-02-16,"PGTI2",NA,NA,2020-06-30
+"WGC - Mexico Championship",7792,2020-02-23,"WGC",NA,NA,2020-06-30
+"Isuzu Queensland Open",7793,2020-02-23,"AUS Logo2",NA,NA,2020-06-30
+"Puerto Rico Open",7794,2020-02-23,"PGA",NA,NA,2020-06-30
+"Tour Championship",7795,2020-02-23,"sunshine_tour",NA,NA,2020-06-30
+"Ein Bay Open",7796,2020-02-23,"Alps Golf Tour",NA,NA,2020-06-30
+"Open Casa Green Golf",7797,2020-02-23,"PGT Logo",NA,NA,2020-06-30
+"The Ghala Open",7798,2020-02-23,"MGTNEW",NA,NA,2020-06-30
+"Oman Open",7799,2020-03-01,"European Tour(3)",NA,NA,2020-06-30
+"The Honda Classic",7800,2020-03-01,"PGA",NA,NA,2020-06-30
+"New Zealand Open presented by Sky Sport",7801,2020-03-01,"AUS Logo2","Asian Tour 2018",NA,2020-06-30
+"El Bosque Mexico Championship by INNOVA",7802,2020-03-01,"Korn Ferry Tour KGT",NA,NA,2020-06-30
+"Red Sea Little Venice Open",7803,2020-03-01,"Alps Golf Tour",NA,NA,2020-06-30
+"Lumine Hills Open",7804,2020-03-01,"NGL Logo",NA,NA,2020-06-30
+"Lumine Lakes Open",7805,2020-03-01,"NGL Logo",NA,NA,2020-06-30
+"Royal Golf Club Bahrain Open",7806,2020-03-01,"MGTNEW",NA,NA,2020-06-30
+"Commercial Bank Qatar Masters",7807,2020-03-08,"European Tour(3)",NA,NA,2020-06-30
+"Arnold Palmer Invitational presented by Mastercard",7808,2020-03-08,"PGA",NA,NA,2020-06-30
+"Estrella del Mar Open",7809,2020-03-08,"pga_latinoamerica",NA,NA,2020-06-30
+"Bandar Malaysia Open",7810,2020-03-08,"Asian Tour 2018",NA,NA,2020-06-30
+"Open Royal Golf Anfa Mohammedia",7812,2020-03-08,"PGT Logo",NA,NA,2020-06-30
+"Journey to Jordan 2 - Ayla",7813,2020-03-08,"MGTNEW",NA,NA,2020-06-30
+"Spanish Masters - Powered by DAT",7814,2020-03-08,"NGL Logo",NA,NA,2020-06-30
+"PGA Catalunya Resort Championship",7816,2020-03-15,"NGL Logo",NA,NA,2020-06-30
+"Open Bahia Golf Beach",7817,2020-03-15,"PGT Logo",NA,NA,2020-06-30
+"Bengal Open Golf Championship",7818,2020-03-15,"PGTI2",NA,NA,2020-06-30
+"Charles Schwab Challenge",7819,2020-06-14,"PGA",NA,NA,2020-07-01
+"Korn Ferry Challenge at TPC Sawgrass",7820,2020-06-14,"Korn Ferry Tour KGT",NA,NA,2020-07-01
+"RBC Heritage",7821,2020-06-21,"PGA",NA,NA,2020-07-01
+"The King & Bear Classic at World Golf Village",7822,2020-06-21,"Korn Ferry Tour KGT",NA,NA,2020-07-01
+"Travelers Championship",7823,2020-06-28,"PGA",NA,NA,2020-07-01
+"Utah Championship presented by Zions Bank",7824,2020-06-28,"Korn Ferry Tour KGT",NA,NA,2020-07-01
+"Rocket Mortgage Classic",7825,2020-07-05,"PGA",NA,NA,2020-07-01
+"TPC Colorado Championship at Heron Lakes",7826,2020-07-05,"Korn Ferry Tour KGT",NA,NA,2020-07-01
+"Woosung Construction Aramir CC Busan Gyeongnam Open",7827,2020-07-05,"KPGA Korea Logo3",NA,NA,2020-07-01
+"Katrineholm Open hosted by Robert Karlsson",7828,2020-07-05,"NGL Logo",NA,NA,2020-07-01
+"Workday Charity Open",7829,2020-07-12,"PGA",NA,NA,2020-07-01
+"TPC San Antonio Challenge at the Canyons",7830,2020-07-12,"Korn Ferry Tour KGT",NA,NA,2020-07-01
+"Austrian Open",7831,2020-07-12,"Challenge Tour2","European Tour(3)",NA,2020-07-01
+"Thongchai Jaidee Foundation",7832,2020-07-12,"ATGT Logo 2",NA,NA,2020-07-01
